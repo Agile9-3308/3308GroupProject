@@ -10,7 +10,7 @@
 
 
 ### Team Members
-- **Sergio Rojas-Aguilar** (GitHub: `sergrojas`, Email: sergrojas29@gmaail.com)
+- **Sergio Rojas-Aguilar** (GitHub: `sergrojas29`, Email: sergrojas29@gmail.com)
 - **Michael Davis** (GitHub: `mikedavissoftware`, Email: mida8682@colorado.edu)
 - **Carolina Perez** (GitHub: `cape5274`, Email: cape5274@colorado.edu)
 - **Jordan Thompson** (GitHub: `jthompson-dev`, Email: joth3456@colorado.edu)
