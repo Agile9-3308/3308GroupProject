@@ -97,11 +97,14 @@ The team will use Jira to track tasks, sprint progress, and blockers. Tasks will
 ---
 
 ## Technology Stack
+
 ### Front End
 - **HTML/CSS** for layout and styling
 - **JavaScript with React** for interactive UI components
 - Potential use of **styling frameworks/libraries** such as Tailwind, SemanticUI, Styled Components, or MaterialUI
+
 ### Back End
 - **Python with Flask** for RESTful API development
+
 ### Database
 - **SQLite for development**, with the option to migrate to **PostgreSQL**
