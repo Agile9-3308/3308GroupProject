@@ -5,7 +5,7 @@
 **Agile Flow**
 ## Team Information
 - **Team Number:** 9
-- **Team Name:** Frontline Dev
+- **Team Name:** DevDash
 - **[git Repo](https://github.com/Agile9-3308/3308GroupProject)** 
 
 
