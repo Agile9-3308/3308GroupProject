@@ -13,7 +13,7 @@
 - **Sergio Rojas-Aguilar** (GitHub: `sergrojas29`, Email: sergrojas29@gmail.com)
 - **Michael Davis** (GitHub: `mikedavissoftware`, Email: mida8682@colorado.edu)
 - **Carolina Perez** (GitHub: `cape5274`, Email: cape5274@colorado.edu)
-- **Jordan Thompson** (GitHub: `jthompson-dev`, Email: joth3456@colorado.edu)
+- **Erick Samayoa** (GitHub: `ersa7726`, Email: ericksamayoa6@colorado.edu)
 ### Scheduled Weekly Team Meeting: 
 Sundays, 12:00 PM MT
 30 minutes via Discord
