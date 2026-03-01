@@ -1,7 +1,7 @@
 # WEEKLY_STATUS.md
 ## Project Milestone 3: Weekly Status Report
 
-**Project:** 
+**Project:** Agile Flow  
 **Team Number:** 9
 **Team Name:** DevDash 
 
