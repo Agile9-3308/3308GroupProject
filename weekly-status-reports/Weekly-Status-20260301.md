@@ -62,7 +62,7 @@
 
 **Andrew MacRossie:** 
 
--
+- Became familiar with the vision behind this project and familiarized myself with the burndown chart that we are seeking to model
 
 
 
@@ -88,7 +88,7 @@ Key accomplishments include:
 
 **Andrew MacRossie:** 
 
--
+- Configured Python, Flask, and NodeJS into environment for future development. 
 
 
 ---
@@ -115,7 +115,7 @@ Key accomplishments include:
 
 **Andrew MacRossie:** 
 
--
+- Set up environment, had first meeting with the team, reviewed tech stack with Sergio
 
 
 ---
@@ -142,7 +142,7 @@ Key accomplishments include:
 
 **Andrew MacRossie:** 
 
--
+- Construct an ERD to illustrate necessary tables and relationships within the database. 
 
 
 
@@ -178,7 +178,7 @@ Key accomplishments include:
 
 **Andrew MacRossie:** 
 
--
+- No current blockers or issues at this time
 
 
 
@@ -210,7 +210,8 @@ Key accomplishments include:
 
 **Andrew MacRossie:** 
 
--
+- Sample Risk: ERD models might differ greatly between team members, requiring further discussion to agree on a model
+- Sample Mitigation: Dedicate a meeting to establishing an agreed upon ERD for use in the project
 
 
 ---
