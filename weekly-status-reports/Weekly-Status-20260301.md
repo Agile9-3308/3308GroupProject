@@ -88,7 +88,7 @@ The weekly status format was found to be useful for maintaining accountability a
 - **Sergio Rojas-Aguilar:** Individual Contribution 
 - **Mike Davis:** Added Sprint 1 and 2 tasks to Jira; Set up environment for project development; Researched Python OOP
 - **Erick Samayoa:** Individual Contribution 
-- **Andrew MacRossie:** Individual Contribution  
+- **Andrew MacRossie:** Reviewed current documentation for project plan, set up environment, researched Render and OOP in Python   
 
 ---
 
