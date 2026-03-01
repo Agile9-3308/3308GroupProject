@@ -14,6 +14,7 @@
 - **Michael Davis** (GitHub: `mikedavissoftware`, Email: mida8682@colorado.edu)
 - **Carolina Perez** (GitHub: `cape5274`, Email: cape5274@colorado.edu)
 - **Erick Samayoa** (GitHub: `ersa7726`, Email: ericksamayoa6@colorado.edu)
+- **Andrew MacRossie** (GitHub: `anmacolo`, Email: anma8243@colorado.edu)
 ### Scheduled Weekly Team Meeting: 
 Sundays, 12:00 PM MT
 30 minutes via Discord
