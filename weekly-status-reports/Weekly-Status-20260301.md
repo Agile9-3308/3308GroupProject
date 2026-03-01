@@ -232,27 +232,11 @@ Key accomplishments include:
 ---
 
 ## Individual Contributions This Week
-
-**Sergio Rojas-Aguilar:**
-
-- *Contributions:* Sample Risk
-
-
-**Michael Davis:** 
-
--
-
-**Carolina Perez:** 
-
--
-
-**Erick Samayoa:** 
-
--
-
-**Andrew MacRossie:** 
-
--
+- **Caroline Perez:** Individual Contribution 
+- **Sergio Rojas-Aguilar:** Individual Contribution 
+- **Mike Davis:** Added Sprint 1 and 2 tasks to Jira; Set up environment for project development; Researched Python OOP
+- **Erick Samayoa:** Individual Contribution 
+- **Andrew MacRossie:** Reviewed current documentation for project plan, set up environment, researched Render and OOP in Python   
 
 ---
 
