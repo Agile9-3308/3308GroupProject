@@ -86,7 +86,7 @@ The weekly status format was found to be useful for maintaining accountability a
 ## Individual Contributions This Week
 - **Caroline Perez:** Individual Contribution 
 - **Sergio Rojas-Aguilar:** Individual Contribution 
-- **Mike Davis:** Individual Contribution 
+- **Mike Davis:** Added Sprint 1 and 2 tasks to Jira; Set up environment for project development; Researched Python OOP
 - **Erick Samayoa:** Individual Contribution 
 - **Andrew MacRossie:** Individual Contribution  
 
