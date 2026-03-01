@@ -84,13 +84,16 @@ The weekly status format was found to be useful for maintaining accountability a
 ---
 
 ## Individual Contributions This Week
-- **Aisha Rahman:** Coordinated meeting agenda, drafted user stories, set up Trello board  
-- **Miguel Alvarez:** Initialized backend project structure and reviewed Flask setup  
-- **Priya Patel:** Outlined initial database entities and relationships  
-- **Jordan Thompson:** Sketched frontend layouts and navigation flow  
+- **Caroline Perez:** Individual Contribution 
+- **Sergio Rojas-Aguilar:** Individual Contribution 
+- **Mike Davis:** Individual Contribution 
+- **Erick Samayoa:** Individual Contribution 
+- **Andrew MacRossie:** Individual Contribution  
 
 ---
 
-## Notes
+## Notes and Etiquette
+#### This document is to be finished by 11:59 PM MT on Sunday, the night of the relevant Scrum Meeting.
+#### Each team member will be responsible to update their individual contributions.
 This file will be updated weekly as the project progresses.  
 Earlier weekly entries may be retained below or moved to an archive directory if the file grows large.
