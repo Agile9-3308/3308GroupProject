@@ -56,8 +56,17 @@
 
 **Sergio Rojas-Aguilar:**
 
-- This week, the I focused on **insert**. 
+- This week, the I focused on test deployment and file structure of a flask Server. Deployment on render and simple class creation for python. Research into good sql database ([neon.com](https://neon.com/)). Type hinting and vscode setting to allow error from IntelliSense.
+    - https://github.com/Sergrojas29/PythonRenderTest
+    - https://pythonrendertest.onrender.com/api/test
+    - https://pythonrendertest.onrender.com/ 
 
+- Major research and sample for python classes for OOP. (added some interesting differences)
+    * python don't have private and public member function.
+    * Python uses class and more recently in python 3 @Dataclasses as data structs
+    * Class variables are declared in the constructor _ _init_ _(self). Any other variable is consindered a static class variable. 
+    * static methods need @staticmethod decorator
+    * class memeber are not inmuttable. can added memebers to Instance on the fly
 
 **Michael Davis:** 
 
@@ -94,7 +103,15 @@
 
 **Sergio Rojas-Aguilar:**
 
-- Task 1 : Description 
+- Comleted Assigned Team Task (jira include more informaiton):
+    - Environment Setup
+    - Research OOP in Python
+    - Research Deployment on Render.com
+- Completed Persoanl Task:
+    - Simple API with flask
+    - Deploy to flask using render
+    - Research Class and File Structure in python
+
 
 
 **Michael Davis:** 
@@ -132,7 +149,15 @@
 
 **Sergio Rojas-Aguilar:**
 
-- Task 1 : Description 
+- Assigned Team Task (Jira includes more information):
+    - Research Python File Structure
+    - Explore Data Structures in Python
+    - DB Schema - mock-up
+- Personal Task:
+    - Using PostgreSQL, create a test database on neon.com.
+    - Expand the test Render API to connect to the Neon DB
+    - Research and use the Python PostgreSQL framework.
+    - Add project-focused OOP to test the API on render
 
 
 **Michael Davis:** 
@@ -170,7 +195,7 @@
 
 **Sergio Rojas-Aguilar:**
 
-- Task 1 : Description 
+- Blockers and Issues : At the moment I don't see any blockers or issues. Currently allowing everyone to mock up and test at their own pace. This will allow everyone to understand the basics of our project.
 
 
 **Michael Davis:** 
@@ -210,8 +235,8 @@
 
 **Sergio Rojas-Aguilar:**
 
-- *Identified Risk:* Sample Risk
-- *Mitigation:* Smaple Mitigation
+- *Identified Risk:* Risk could come if one or more are not able to create an SQL mock and will lag behind in the base knowledge of our projects database.
+- *Mitigation:* The documentation on Jira created by Carolina based on our meeting is extremely clear if anyone is confused on the initial mock schema for this project.
 
 
 
@@ -256,7 +281,11 @@
 
 **Sergio Rojas-Aguilar:**
 
-- Individual Contributions
+- Initial Jira creation tasks for initial week as scum master
+- Creation of [Figma White Board](https://www.figma.com/board/8n7cFnRBbC0CtSv0sO0taG/User-Stories--Community-?t=LKsH3UYiRODAbSJv-0) template for:
+    * User Stories
+    * MoSCoW Board
+    * PLannig Poker
 - 
 
 
