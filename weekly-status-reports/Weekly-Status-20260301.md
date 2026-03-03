@@ -43,6 +43,17 @@
 ## Progress Since Last Week
 
 
+    NOTES FROM TEMPLATE(DELETE LATER)
+
+    This week, the team focused on **initial project setup and scope definition**. Major infrastructure and planning milestones were completed to prepare for active development.
+
+    Key accomplishments include:
+    - Creation of a shared GitHub repository with all members added
+    - Establishment of a basic frontend and backend project structure
+    - Agreement on the minimum viable product (MVP) feature set
+    - Initial wireframe sketches for core pages (scheduling and tasks)
+
+
 **Sergio Rojas-Aguilar:**
 
 - This week, the I focused on **insert**. 
@@ -65,35 +76,20 @@
 - Became familiar with the vision behind this project and familiarized myself with the burndown chart that we are seeking to model
 
 
-
-Key accomplishments include:
--  
-
-**Sergio Rojas-Aguilar:**
-
-- accomplishments 1 : Description 
-
-
-**Michael Davis:** 
-
--
-
-**Carolina Perez:** 
-
--
-
-**Erick Samayoa:** 
-
--
-
-**Andrew MacRossie:** 
-
-- Configured Python, Flask, and NodeJS into environment for future development. 
-
-
 ---
 
 ## Completed Tasks
+
+
+    NOTES FROM TEMPLATE(DELETE LATER)
+
+
+    - Created GitHub repository and added all team members  
+    - Established baseline frontend and backend directory structure  
+    - Set up Trello project board with initial task breakdown  
+    - Defined MVP feature scope  
+    - Drafted initial user stories for availability scheduling and task management  
+
 
 
 **Sergio Rojas-Aguilar:**
@@ -115,12 +111,23 @@ Key accomplishments include:
 
 **Andrew MacRossie:** 
 
+- Configured Python, Flask, and NodeJS into environment for future development. 
 - Set up environment, had first meeting with the team, reviewed tech stack with Sergio
 
 
 ---
 
 ## Planned Tasks for Next Week
+
+
+
+    NOTES FROM TEMPLATE(DELETE LATER)
+
+
+    - Design and implement the initial database schema  
+    - Create basic backend routes for users and groups  
+    - Begin frontend page layout for scheduling and task views  
+    - Refine wireframes based on team feedback and milestone requirements  
 
 
 **Sergio Rojas-Aguilar:**
@@ -150,6 +157,8 @@ Key accomplishments include:
 ---
 
 ## Blockers and Issues
+
+    NOTES FROM TEMPLATE(DELETE LATER)
 
     notes from meeting Delete before submission:
     No major technical blockers were encountered this week.
@@ -185,6 +194,17 @@ Key accomplishments include:
 ---
 
 ## Risks and Mitigation
+
+
+
+    NOTES FROM TEMPLATE(DELETE LATER)
+
+    **Identified Risk:** Feature creep  
+    - *Mitigation:* Strict adherence to MVP scope and milestone requirements
+
+    **Identified Risk:** Frontend/backend integration complexity  
+    - *Mitigation:* Develop and test API endpoints incrementally, starting early
+
 
 
 
@@ -266,7 +286,9 @@ Key accomplishments include:
 ---
 
 ## Notes and Etiquette
-#### This document is to be finished by 11:59 PM MT on Sunday, the night of the relevant Scrum Meeting.
-#### Each team member will be responsible to update their individual contributions.
+
+**This document is to be finished by 11:59 PM MT on Sunday, the night of the relevant Scrum Meeting.**
+
+**Each team member will be responsible to update their individual contributions.**
 This file will be updated weekly as the project progresses.  
 Earlier weekly entries may be retained below or moved to an archive directory if the file grows large.
