@@ -59,7 +59,8 @@
 
 **Michael Davis:** 
 
--
+- Started thinking ahead on how to build classes and methods for the back end of Agile Flow.
+- Got more familiar with what our end product will look like, and where we should draw the line for an MVP.
 
 **Carolina Perez:** 
 
@@ -97,7 +98,8 @@
 
 **Michael Davis:** 
 
--
+- Set Up Environment: Installed Python and Node.js
+- Researched OOP in Python: Watched through an overview video on Python OOP, and did some practice
 
 **Carolina Perez:** 
 
@@ -137,7 +139,7 @@
 
 **Michael Davis:** 
 
--
+- Build DB Relationships: Create database diagram and rough schema for the project, with 4 data models (user, project, sprint, task)
 
 **Carolina Perez:** 
 - Create rough draft of the UI wireframe
@@ -166,7 +168,7 @@
 
 **Michael Davis:** 
 
--
+- The only issue I see potentially coming up is ability to get the tasks done earlier in the week as opposed to in the 24 hours before the meeting.
 
 **Carolina Perez:** 
 
@@ -193,12 +195,10 @@
 - *Identified Risk:* Risk could come if one or more are not able to create an SQL mock and will lag behind in the base knowledge of our projects database.
 - *Mitigation:* The documentation on Jira created by Carolina based on our meeting is extremely clear if anyone is confused on the initial mock schema for this project.
 
-
-
-
 **Michael Davis:** 
 
--
+-- *Identified Risk:* There could be potentially very different interpretations of how our relational database should be built.
+- *Mitigation:* We will all be able to compare our database diagrams and bridge the gap.
 
 **Carolina Perez:** 
 
