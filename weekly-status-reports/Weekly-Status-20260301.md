@@ -10,17 +10,15 @@
 ## Reporting Period
 **Week:** 3  
 **Meeting Held:** Yes   
-**Meeting Date:** March 1,2026  
-**Meeting Duration:** 30 minutes - 1hr  
+**Meeting Date:** March 1, 2026  
+**Meeting Duration:** 30 minutes - 1hour  
 **Meeting Format:** Discord     
 
 ---
 
 ## Overview
 
-
    This document captures the **weekly status** of the Agile Flow project for the specified reporting period. It is intended to provide a **concise snapshot** of progress, plans, and risks, and will be updated weekly throughout the project.
-
 
 
 ---
@@ -29,14 +27,15 @@
 
 
    The team is using a shared **Jira board** to manage tasks and sprint progress. At the time of this report:
-    - Columns include: 
-    - Tasks are assigned to individual team members
+    - Columns include: Completed, In Progress and Assigned/Created tasks 
+    - Tasks are assigned to individual team members and typically created by the scrum master
     - Due dates and priorities are tracked per task
+    - Team interaction is monitored and encouuraged through comments
 
-  Snippets of this weeks jira:
+  Snippets of this week's Jira:
+  
   <img width="2000" height="1200" alt="image" src="https://github.com/user-attachments/assets/a437782e-6d47-4353-9eef-8689cab2383d" />
   <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/1aed2d08-d531-48b8-9c2d-c32f9621c403" />
-
 
 
 ---
@@ -64,11 +63,11 @@
 
 **Carolina Perez:** 
 
--  This week i focused on refamiliarizing myself with OOPs in Python, Class Structures and looking into Render for project deployment, as well as getting everything set up for this week project milestone and meeting since I am the scrum master.  
+-  This week I focused on refamiliarizing myself with OOPs in Python, class structures and looking into Render for project deployment, as well as getting everything set up for this week's project milestone and meeting since I am the scrum master.  
       -   I did suggest that we use the Pydantic package on python to help with the structures of our python files in place of __init__.
       -  Updated the tickets and wrote the meeting plan, and created new tickets for this week.
-      -   Scrum Master for the meeting, helped the team disscuss their progress and come to terms with what we wanted to get done this net sprint.
-      -  Working on UI wireframe based off teams suggestions.
+      -   Scrum Master for the meeting, helped the team discuss their progress and come to terms with what we wanted to get done this next sprint.
+      -  Working on UI wireframe based off the team's suggestions.
 
 **Erick Samayoa:** 
 - Reviewed Python file structures and class creation approaches.
@@ -102,9 +101,9 @@
 
 **Carolina Perez:** 
 
-- Updated Jira up to this weeks sprint 
+- Updated Jira up to this week's sprint 
 - Defined MVP feature scope - projects user, task and sprint 
-- Looked into OOPs and simple API with flask ad well as class structures in python
+- Looked into OOP and simple API with Flask as well as class structures in Python
 - Started looking up structure for the backend.
   
 
@@ -138,7 +137,6 @@
     - Research and use the Python PostgreSQL framework.
     - Add project-focused OOP to test the API on render
 
-
 **Michael Davis:** 
 
 - Build DB Relationships: Create database diagram and rough schema for the project, with 4 data models (user, project, sprint, task)
@@ -154,13 +152,9 @@
 - Create a mock-up of the database schema.
 - Review team database mock-ups to synchronize efforts and optimize the overall schema design.
 
-
-
 **Andrew MacRossie:** 
 
 - Construct an ERD to illustrate necessary tables and relationships within the database. 
-
-
 
 
 ---
@@ -178,7 +172,7 @@
 
 **Carolina Perez:** 
 
-- No blockers with me at this time, ths upcoming week we will come together as a team and discuss our findings 
+- No blockers with me at this time, this upcoming week we will come together as a team and discuss our findings and begin working on the backend component.  
 
 **Erick Samayoa:** 
 
@@ -208,8 +202,8 @@
 
 **Carolina Perez:** 
 
-- *Identified Risk:* Different points of understnading the tech stack.
-- *Mitigation:* Disscussions and communcation as a team will help us help each other grow as developers!
+- *Identified Risk:* Different points of understanding the tech stack.
+- *Mitigation:* Discussions and communication as a team will help us help each other grow as developers!
 
 **Erick Samayoa:** 
 
@@ -226,9 +220,8 @@
 
 ## Team Reflection
 
-
-The Team has gotten better as a team when it comes to discussion. The team has improved on
-   - setting clear expectations for the sprint, with delieverables,
+The Team has gotten better when it comes to discussion. The team has improved on:
+   - setting clear expectations for the sprint, with deliverables,
    - keeping our discussion shorter
    - sharing ideas and staying on topic during the meeting
    - asking questions if understanding is not consistent
@@ -238,7 +231,6 @@ The team could work on:
    - being interactive on the jira board
    - time management
    - accountability
-
 
 
 ---
@@ -251,9 +243,6 @@ The team could work on:
 - Creation of [Figma White Board](https://www.figma.com/board/8n7cFnRBbC0CtSv0sO0taG/User-Stories--Community-?t=LKsH3UYiRODAbSJv-0) template for:
     * User Stories
     * MoSCoW Board
-    * PLannig Poker
-  
-
 
 **Michael Davis:** 
 
