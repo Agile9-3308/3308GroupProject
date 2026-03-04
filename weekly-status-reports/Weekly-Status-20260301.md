@@ -71,8 +71,9 @@
       -  Working on UI wireframe based off teams suggestions.
 
 **Erick Samayoa:** 
-
--
+- Reviewed Python file structures and class creation approaches.
+- Analyzed the team burndown chart and other shared project documentation.
+- Explored initial backend architecture options for future API endpoints.
 
 **Andrew MacRossie:** 
 
@@ -109,7 +110,10 @@
 
 **Erick Samayoa:** 
 
--
+- Configured a local development environment with Python, Flask, NodeJS, etc...
+- Tested a simple Flask API locally to verify routing and JSON response handling.
+- Reviewed Python OOP, Flask API structure, and database design concepts.
+
 
 **Andrew MacRossie:** 
 
@@ -146,7 +150,11 @@
   
 **Erick Samayoa:** 
 
--
+- Explore additional data structures and file organization strategies in Python.
+- Create a mock-up of the database schema.
+- Review team database mock-ups to synchronize efforts and optimize the overall schema design.
+
+
 
 **Andrew MacRossie:** 
 
@@ -174,7 +182,7 @@
 
 **Erick Samayoa:** 
 
--
+- No blockers at this moment. 
 
 **Andrew MacRossie:** 
 
@@ -205,7 +213,8 @@
 
 **Erick Samayoa:** 
 
--
+- Identified Risk: Variability in interpreting database relationships or inconsistent understanding of the tech stack among team members.
+- Mitigation: Encourage team discussions and knowledge sharing during meetings. Rely on established norms and reference materials documented in Jira to maintain consistency.
 
 **Andrew MacRossie:** 
 
@@ -260,7 +269,9 @@ The team could work on:
 
 **Erick Samayoa:** 
 
--
+- Set up and configured personal development environment.
+- Continued research on deployment options and reviewed the team’s planned tech stack.
+- Reviewed Python OOP principles to prepare for backend implementation.
 
 **Andrew MacRossie:** 
 
