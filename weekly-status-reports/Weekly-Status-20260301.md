@@ -45,17 +45,17 @@
 
 **Sergio Rojas-Aguilar:**
 
-- This week, the I focused on test deployment and file structure of a flask Server. Deployment on render and simple class creation for python. Research into good sql database ([neon.com](https://neon.com/)). Type hinting and vscode setting to allow error from IntelliSense.
+- This week, I focused on test deployment and file structure of a Flask server. Deployment on Render and simple class creation for Python. Research into a good SQL database ([neon.com](https://neon.com/)). Type hinting and VS Code settings to allow errors from IntelliSense.
     - https://github.com/Sergrojas29/PythonRenderTest
     - https://pythonrendertest.onrender.com/api/test
     - https://pythonrendertest.onrender.com/ 
 
-- Major research and sample for python classes for OOP. (added some interesting differences).
-    -  python don't have private and public member function.
-    -  Python uses class and more recently in python 3 @Dataclasses as data structs
-   -   Class variables are declared in the constructor _ _init_ _(self). Any other variable is consindered a static class variable. 
-  - static methods need @staticmethod decorator
-    -  class memeber are not inmuttable. can added memebers to Instance on the fly
+- Major research and samples for Python classes for OOP. (added some interesting differences).
+    - Python doesn't have private and public member functions.
+    - Python uses class and, more recently in Python 3, @Dataclasses as data structs.
+    - Class variables are declared in the constructor _init_(self). Any other variable is considered a static class variable. 
+    - Static methods need the @staticmethod decorator.
+    - Class members are not immutable. can add members to the instance on the fly
 
 **Michael Davis:** 
 
@@ -85,16 +85,14 @@
 
 **Sergio Rojas-Aguilar:**
 
-- Comleted Assigned Team Task (jira include more informaiton):
+- Completed Assigned Team Task (Jira includes more information):
     - Environment Setup
     - Research OOP in Python
     - Research Deployment on Render.com
-- Completed Persoanl Task:
-    - Simple API with flask
-    - Deploy to flask using render
-    - Research Class and File Structure in python
-
-
+- Completed Personal Task:
+    - Simple API with Flask
+    - Deploy to Flask using Render
+    - Research Class and File Structure in Python
 
 **Michael Davis:** 
 
