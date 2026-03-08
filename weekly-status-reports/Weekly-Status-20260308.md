@@ -1,177 +1,208 @@
-WEEKLY_STATUS.md
+# WEEKLY_STATUS.md
+## Project Milestone 3: Weekly Status Report
 
-Project Milestone 3: Weekly Status Report
+**Project:** Agile Flow  
+**Team Number:** 9  
+**Team Name:** DevDash 
 
-Project: Agile Flow
-Team Number: 9 Team Name: DevDash
+---
 
-Reporting Period
+## Reporting Period
+**Week:** 3  
+**Meeting Held:** Yes   
+**Meeting Date:** March 8, 2026  
+**Meeting Duration:** 30 minutes - 1hour  
+**Meeting Format:** Discord     
 
-Week:
-Meeting Held: Yes
-Meeting Date: September 22, 2026
-Meeting Duration: 30 minutes - 1hr Meeting Format: Discord
+---
 
-Overview
+## Overview
 
-**FOR SCRUM MASTER:(DELETE LATER)**
-
-NOTES FROM TEMPLATE
-
-This document captures the **weekly status** of the Agile Flow project for the specified reporting period. It is intended to provide a **concise snapshot** of progress, plans, and risks, and will be updated weekly throughout the project.
-
-This weekly status format is designed to:
-- Monitor progress over time
-- Surface risks and bottlenecks early
-- Provide accountability for individual contributions
-- Supplement the project management tool used by the team
-Project Management Snapshot
-
-**FOR SCRUM MASTER:(DELETE LATER)**
-
-The team is using a shared **Jira board** to manage tasks and sprint progress. At the time of this report:
-- Columns include: 
-- Tasks are assigned to individual team members
-- Due dates and priorities are tracked per task
-
-(A visual snapshot of the board may be included in the repository alongside this file.)
-Progress Since Last Week
-
-NOTES FROM TEMPLATE(DELETE LATER)
-
-This week, the team focused on **initial project setup and scope definition**. Major infrastructure and planning milestones were completed to prepare for active development.
-
-Key accomplishments include:
-- Creation of a shared GitHub repository with all members added
-- Establishment of a basic frontend and backend project structure
-- Agreement on the minimum viable product (MVP) feature set
-- Initial wireframe sketches for core pages (scheduling and tasks)
-Sergio Rojas-Aguilar:
-
-This week, the I focused on insert.
-Michael Davis:
-
-Carolina Perez:
-
-Erick Samayoa:
-
-Andrew MacRossie:
-
-Completed Tasks
-
-NOTES FROM TEMPLATE(DELETE LATER)
+   This document captures the **weekly status** of the Agile Flow project for the specified reporting period. It is intended to provide a **concise snapshot** of progress, plans, and risks, and will be updated weekly throughout the project.
 
 
-- Created GitHub repository and added all team members  
-- Established baseline frontend and backend directory structure  
-- Set up Trello project board with initial task breakdown  
-- Defined MVP feature scope  
-- Drafted initial user stories for availability scheduling and task management  
-Sergio Rojas-Aguilar:
+---
 
-Task 1 : Description
-Michael Davis:
-
-Carolina Perez:
-
-Erick Samayoa:
-
-Andrew MacRossie:
-
-Configured Python, Flask, and NodeJS into environment for future development.
-Planned Tasks for Next Week
-
-NOTES FROM TEMPLATE(DELETE LATER)
+## Project Management Snapshot
 
 
-- Design and implement the initial database schema  
-- Create basic backend routes for users and groups  
-- Begin frontend page layout for scheduling and task views  
-- Refine wireframes based on team feedback and milestone requirements  
-Sergio Rojas-Aguilar:
+   The team is using a shared **Jira board** to manage tasks and sprint progress. At the time of this report:
+    - Columns include: Completed, In Progress and Assigned/Created tasks 
+    - Tasks are assigned to individual team members and typically created by the scrum master
+    - Due dates and priorities are tracked per task
+    - Team interaction is monitored and encouuraged through comments
 
-Task 1 : Description
-Michael Davis:
+  Snippets of this week's Jira:
 
-Carolina Perez:
 
-Erick Samayoa:
 
-Andrew MacRossie:
+---
 
-Blockers and Issues
+## Progress Since Last Week
 
-NOTES FROM TEMPLATE(DELETE LATER)
+**Sergio Rojas-Aguilar:**
 
-notes from meeting Delete before submission:
-No major technical blockers were encountered this week.
+- 
 
-One discussion point involved balancing MVP scope versus optional enhancements. The team agreed to:
-- Focus on a **simple availability overlap view**
-- Defer advanced calendar interactions until later milestones (if time allows)
-Sergio Rojas-Aguilar:
+**Michael Davis:** 
 
-Blockers and Issues : Description
-Michael Davis:
+-
 
-Carolina Perez:
+**Carolina Perez:** 
 
-Erick Samayoa:
+-  
 
-Andrew MacRossie:
+**Erick Samayoa:** 
+- 
 
-Risks and Mitigation
+**Andrew MacRossie:** 
 
-NOTES FROM TEMPLATE(DELETE LATER)
+- 
 
-**Identified Risk:** Feature creep  
-- *Mitigation:* Strict adherence to MVP scope and milestone requirements
 
-**Identified Risk:** Frontend/backend integration complexity  
-- *Mitigation:* Develop and test API endpoints incrementally, starting early
-Sergio Rojas-Aguilar:
+---
 
-Identified Risk: Sample Risk
-Mitigation: Smaple Mitigation
-Michael Davis:
+## Completed Tasks
 
-Carolina Perez:
+**Sergio Rojas-Aguilar:**
 
-Erick Samayoa:
+- 
 
-Andrew MacRossie:
+**Michael Davis:** 
 
-Team Reflection
+- 
 
-**FOR SCRUM MASTER:(DELETE LATER)**
+**Carolina Perez:** 
 
-Example Test from template:
-- Strong communication and consistent participation
-- Clear alignment on goals and responsibilities
-- Confidence in the project direction entering the development phase
+- 
+  
 
-The weekly status format was found to be useful for maintaining accountability and focus.
-Individual Contributions This Week
+**Erick Samayoa:** 
 
-NOTES FROM TEMPLATE(DELETE LATER)
-- **Aisha Rahman:** Coordinated meeting agenda, drafted user stories, set up Trello board  
-- **Miguel Alvarez:** Initialized backend project structure and reviewed Flask setup  
-- **Priya Patel:** Outlined initial database entities and relationships  
-- **Jordan Thompson:** Sketched frontend layouts and navigation flow  
-Sergio Rojas-Aguilar:
+- 
 
-Individual Contributions
-Michael Davis:
 
-Carolina Perez:
+**Andrew MacRossie:** 
 
-Erick Samayoa:
+-
 
-Andrew MacRossie:
+---
 
-Notes and Etiquette
+## Planned Tasks for Next Week
 
-This document is to be finished by 11:59 PM MT on Sunday, the night of the relevant Scrum Meeting.
 
-Each team member will be responsible to update their individual contributions. This file will be updated weekly as the project progresses.
-Earlier weekly entries may be retained below or moved to an archive directory if the file grows large.
+**Sergio Rojas-Aguilar:**
+
+- 
+
+**Michael Davis:** 
+
+- 
+
+**Carolina Perez:** 
+- 
+  
+**Erick Samayoa:** 
+
+- 
+
+**Andrew MacRossie:** 
+
+- 
+
+
+---
+
+## Blockers and Issues
+
+**Sergio Rojas-Aguilar:**
+
+- 
+
+
+**Michael Davis:** 
+
+- 
+
+**Carolina Perez:** 
+
+-  
+
+**Erick Samayoa:** 
+
+- 
+
+**Andrew MacRossie:** 
+
+-
+
+
+
+---
+
+## Risks and Mitigation
+
+
+
+**Sergio Rojas-Aguilar:**
+
+- 
+
+**Michael Davis:** 
+
+-
+
+**Carolina Perez:** 
+
+- 
+
+**Erick Samayoa:** 
+
+- 
+
+**Andrew MacRossie:** 
+
+- 
+
+
+---
+
+## Team Reflection
+
+The Team has gotten better when it comes to discussion. The team has improved on:
+   - 
+     
+The team could work on:
+   - 
+
+
+---
+
+## Individual Contributions This Week
+
+**Sergio Rojas-Aguilar:**
+
+- 
+
+**Michael Davis:** 
+
+- 
+
+**Carolina Perez:** 
+
+- 
+
+**Erick Samayoa:** 
+
+- 
+
+**Andrew MacRossie:** 
+
+- 
+
+
+---
+
+## Notes and Etiquette
+
+**This document is to be finished by 11:59 PM MT on Sunday, the night of the relevant Scrum Meeting.**
