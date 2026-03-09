@@ -1,6 +1,6 @@
 # PAGE_TESTING.md
 
-This document defines the **pages** StudySync will implement and what is required to (1) render them correctly and (2) test them consistently.
+This document defines the **pages** AgileFlow will implement and what is required to (1 render them correctly and (2) test them consistently.
 
 At least **5 independent pages** are included below.
 
@@ -23,356 +23,370 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 
 ---
 
-# 1) Landing Page
-
-## Page Title
-Landing Page (Welcome)
+# 1. Landing Page (by Erick Samayoa)
 
 ## Page Description
-Purpose: Introduce StudySync and allow users to log in or create an account. Provide a short feature summary so the purpose is clear before authentication.
+- Purpose: (One-sentence description of basic utility of this page.)
+- (Provide a short feature summary so the purpose is clear before authentication.)
 
-**Mockup (low-fidelity):**
-```
-+------------------------------------------------------+
-| StudySync                                            |
-| "Coordinate study sessions, tasks, and progress."    |
-|------------------------------------------------------|
-| [ Log In ]   [ Sign Up ]                             |
-|------------------------------------------------------|
-| Features                                             |
-|  • Availability overlap                              |
-|  • Shared tasks with owners + due dates              |
-|  • Progress overview per group                       |
-+------------------------------------------------------+
-```
+## Mockup
+(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
 
 ## Parameters Needed for the Page
-- Route params: none
-- Query params: optional `?redirect=/path` (if user was sent here from a protected page)
+- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
 
 ## Data Needed to Render the Page
-- Minimal static content (app name, tagline, feature list)
-- Auth state (to redirect logged-in users)
-- Optional: A/B test or announcement banner content (static config)
+### Static Content
+- (List these contents.)
+### API Fetches
+- (List these or write "none")
+### State Parameters
+- (Auth of current user? Otherwise "none")
 
-## Link Destinations for the Page
-- **Log In** → `/login`
-- **Sign Up** → `/signup`
-- (Optional) Learn more / About → `/about` (if implemented)
+## Links Rendered on the Page
+(This can include navigation links and other links/buttons)
+- Example: **Log In** → `/login`
+- Example: **Sign Up** → `/signup`
 
 ## Tests for Verifying Rendering of the Page
 1. **Renders key UI elements**
-   - App title displays
-   - Log In and Sign Up buttons are visible and clickable
-2. **Redirect behavior for authenticated users**
-   - If user is logged in, navigating to `/` redirects to `/dashboard`
+   - Example: App title displays
+   - Example: Log In and Sign Up buttons are visible and clickable
+2. **Redirect behavior for authenticated users** (if necessary)
+   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
 3. **Redirect query param**
-   - Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
+   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
 
 ---
 
-# 2) Login Page
-
-## Page Title
-Log In
+# 2. Login Page (by Sergio Rojas-Aguilar)
 
 ## Page Description
-Purpose: Authenticate returning users.
+- Purpose: (One-sentence description of basic utility of this page.)
+- (Provide a short feature summary so the purpose is clear before authentication.)
 
-**Mockup (low-fidelity):**
-```
-+-------------------------------------------+
-| StudySync | Log In                        |
-|-------------------------------------------|
-| Email:    [____________________]          |
-| Password: [____________________]          |
-| [ Log In ]                                |
-|-------------------------------------------|
-| Forgot password?   Create account         |
-+-------------------------------------------+
-```
+## Mockup
+(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
 
 ## Parameters Needed for the Page
-- Query params: optional `?redirect=/path` (post-login redirect)
-- Route params: none
+- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
 
 ## Data Needed to Render the Page
-- UI state: email, password, validation errors, loading state
-- API: auth endpoint response (token, user profile summary)
-- Auth state storage: token persistence (e.g., localStorage) and in-memory auth context
+### Static Content
+- (List these contents.)
+### API Fetches
+- (List these or write "none")
+### State Parameters
+- (Auth of current user? Otherwise "none")
 
-## Link Destinations for the Page
-- Submit success → `/dashboard` (or `redirect` target if provided)
-- Create account → `/signup`
-- Forgot password → `/reset-password` (optional)
+## Links Rendered on the Page
+(This can include navigation links and other links/buttons)
+- Example: **Log In** → `/login`
+- Example: **Sign Up** → `/signup`
 
 ## Tests for Verifying Rendering of the Page
-1. **Form elements render**
-   - Email input, password input, Log In button visible
-2. **Validation**
-   - Empty submit shows validation messages
-3. **Auth success flow**
-   - Successful login stores token and navigates to `/dashboard` (or redirect)
-4. **Auth failure flow**
-   - Invalid credentials display error banner/message and remain on page
+1. **Renders key UI elements**
+   - Example: App title displays
+   - Example: Log In and Sign Up buttons are visible and clickable
+2. **Redirect behavior for authenticated users** (if necessary)
+   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
+3. **Redirect query param**
+   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
 
 ---
 
-# 3) Dashboard Page
-
-## Page Title
-Dashboard
+# 3. Create User Account Page (by Sergio Rojas-Aguilar)
 
 ## Page Description
-Purpose: Provide a snapshot of the user’s groups, upcoming sessions, and tasks.
+- Purpose: (One-sentence description of basic utility of this page.)
+- (Provide a short feature summary so the purpose is clear before authentication.)
 
-**Mockup (low-fidelity):**
-```
-+------------------------------------------------------+
-| Top Nav: [Dashboard] [Groups] [Availability] [Tasks] |
-+------------------------------------------------------+
-| My Groups                 | Upcoming Sessions        |
-|---------------------------+--------------------------|
-| • CS Project Team         | Tue 6–7pm (CS Project)   |
-| • Math Study Group        | Thu 5–6pm (Math)         |
-|                           |                          |
-+---------------------------+--------------------------+
-| My Tasks Due                                          |
-|------------------------------------------------------|
-| [ ] Finish UI mockups (Group A) - Fri                |
-| [ ] Review API design (Group B) - Sun                |
-+------------------------------------------------------+
-```
+## Mockup
+(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
 
 ## Parameters Needed for the Page
-- Route params: none
-- Query params (optional):
-  - `?group=GROUP_ID` to pre-filter task list
-  - `?view=compact|full` to toggle layout (optional)
+- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
 
 ## Data Needed to Render the Page
-- Auth state: current user id
-- API data:
-  - `GET /api/groups?memberId=...` → list of groups
-  - `GET /api/sessions/upcoming?memberId=...` → upcoming sessions (optional if sessions are tracked)
-  - `GET /api/tasks?assigneeId=...&status!=complete` → tasks assigned to user
-- UI state:
-  - selected group filter (optional)
+### Static Content
+- (List these contents.)
+### API Fetches
+- (List these or write "none")
+### State Parameters
+- (Auth of current user? Otherwise "none")
 
-## Link Destinations for the Page
-- Group name click → `/groups/:groupId`
-- “View all tasks” → `/tasks`
-- “Update availability” → `/availability`
-- “Create group” → `/groups/new` (optional)
+## Links Rendered on the Page
+(This can include navigation links and other links/buttons)
+- Example: **Log In** → `/login`
+- Example: **Sign Up** → `/signup`
 
 ## Tests for Verifying Rendering of the Page
-1. **Protected route**
-   - Unauthenticated user is redirected to `/login`
-2. **Group list renders**
-   - If API returns groups, they appear in “My Groups”
-3. **Tasks list renders**
-   - Tasks show checkbox + title + due date
-4. **Empty states**
-   - If no groups, show message and CTA (e.g., “Create or join a group”)
-   - If no tasks, show “No tasks due” message
-5. **Navigation links**
-   - Clicking a group navigates to correct `/groups/:groupId`
+1. **Renders key UI elements**
+   - Example: App title displays
+   - Example: Log In and Sign Up buttons are visible and clickable
+2. **Redirect behavior for authenticated users** (if necessary)
+   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
+3. **Redirect query param**
+   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
 
 ---
 
-# 4) Group Page
-
-## Page Title
-Group Page (Collaboration Space)
+# 4. Edit User Account Page (by Sergio Rojas-Aguilar)
 
 ## Page Description
-Purpose: Provide a central view for a single group: membership, shared tasks, and availability overlap.
+- Purpose: (One-sentence description of basic utility of this page.)
+- (Provide a short feature summary so the purpose is clear before authentication.)
 
-**Mockup (low-fidelity):**
-```
-+------------------------------------------------------+
-| Top Nav ...                                          |
-+------------------------------------------------------+
-| Group: CS Project Team   Members: Alice, Ben, ...    |
-|------------------------------------------------------|
-| Overlap (common times)                               |
-|  • Thu 5–6pm                                         |
-|  • Tue 6–7pm                                         |
-|------------------------------------------------------|
-| Tasks                                                |
-| [ ] UI Prototype (Alice) - Fri                       |
-| [ ] DB Schema (Ben) - Sun                            |
-|------------------------------------------------------|
-| [Add Task]   [View Availability]                     |
-+------------------------------------------------------+
-```
+## Mockup
+(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
 
 ## Parameters Needed for the Page
-- Route params:
-  - `groupId` (required) from `/groups/:groupId`
-- Query params (optional):
-  - `?tab=overview|tasks|availability` (if using a tabbed view)
+- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
 
 ## Data Needed to Render the Page
-- Auth state: current user id (to show permissions/actions)
-- API data:
-  - `GET /api/groups/:groupId` → group name, description, members
-  - `GET /api/availability/overlap?groupId=...` → computed overlap slots
-  - `GET /api/tasks?groupId=...` → group tasks
-- UI state:
-  - selected tab (if applicable)
-  - task filter (status, assignee) (optional)
+### Static Content
+- (List these contents.)
+### API Fetches
+- (List these or write "none")
+### State Parameters
+- (Auth of current user? Otherwise "none")
 
-## Link Destinations for the Page
-- Member profile click (optional) → `/users/:userId`
-- Add task → `/groups/:groupId/tasks/new` (or open modal)
-- View tasks → `/tasks?groupId=:groupId`
-- View availability overlap / edit → `/availability?groupId=:groupId`
+## Links Rendered on the Page
+(This can include navigation links and other links/buttons)
+- Example: **Log In** → `/login`
+- Example: **Sign Up** → `/signup`
 
 ## Tests for Verifying Rendering of the Page
-1. **Route param required**
-   - Visiting `/groups/` without `groupId` shows error or redirects
-2. **Group header renders**
-   - Group name + member list visible
-3. **Overlap section renders**
-   - If overlap exists, show list of common time slots
-   - If no overlap, show “No common time slot found” message
-4. **Task list renders**
-   - Tasks show title, assignee, due date
-5. **Actions available only to members**
-   - Non-members cannot access (redirect or “access denied”)
-6. **Links**
-   - “Add Task” navigates to correct route or opens modal
+1. **Renders key UI elements**
+   - Example: App title displays
+   - Example: Log In and Sign Up buttons are visible and clickable
+2. **Redirect behavior for authenticated users** (if necessary)
+   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
+3. **Redirect query param**
+   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
 
 ---
 
-# 5) Availability Input Page
-
-## Page Title
-Availability Input
+# 5. Current User Page (by Mike Davis)
 
 ## Page Description
-Purpose: Allow a user to set weekly availability, and optionally preview overlap with a selected group.
+- Purpose: (One-sentence description of basic utility of this page.)
+- (Provide a short feature summary so the purpose is clear before authentication.)
 
-**Mockup (low-fidelity):**
-```
-+------------------------------------------------------+
-| StudySync | Availability                             |
-+------------------------------------------------------+
-| Week Grid (select time blocks)                       |
-|        Mon   Tue   Wed   Thu   Fri                   |
-| 8–10   [ ]   [X]   [ ]   [X]   [ ]                   |
-|10–12   [ ]   [X]   [ ]   [X]   [ ]                   |
-|12– 2   [ ]   [ ]   [ ]   [X]   [ ]                   |
-|------------------------------------------------------|
-| [ Save ]   [ Clear ]                                 |
-| Overlap Preview (optional): Thu 5–6pm, Tue 6–7pm      |
-+------------------------------------------------------+
-```
+## Mockup
+(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
 
 ## Parameters Needed for the Page
-- Route params: none
-- Query params (optional):
-  - `?groupId=:groupId` to show overlap preview for that group
+- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
 
 ## Data Needed to Render the Page
-- Auth state: current user id
-- API data:
-  - `GET /api/availability?userId=...` → existing availability blocks
-  - `PUT /api/availability` → save updated availability
-  - If `groupId` provided:
-    - `GET /api/availability/overlap?groupId=...` → group overlap preview after user updates (optional live calc)
-- UI state:
-  - selected blocks (set of time tokens)
-  - save status (saving, saved, error)
+### Static Content
+- (List these contents.)
+### API Fetches
+- (List these or write "none")
+### State Parameters
+- (Auth of current user? Otherwise "none")
 
-## Link Destinations for the Page
-- Back to dashboard → `/dashboard`
-- If group context provided → `/groups/:groupId`
+## Links Rendered on the Page
+(This can include navigation links and other links/buttons)
+- Example: **Log In** → `/login`
+- Example: **Sign Up** → `/signup`
 
 ## Tests for Verifying Rendering of the Page
-1. **Grid renders**
-   - Time blocks appear for expected days and times
-2. **Selection behavior**
-   - Clicking a block toggles selection state
-3. **Load existing data**
-   - Pre-existing availability is pre-selected after load
-4. **Save flow**
-   - Clicking Save calls API and shows success message
-5. **Group overlap preview**
-   - With `?groupId=...`, overlap preview appears and updates after save (or after fetch)
-6. **Empty state**
-   - If no blocks selected, Save still works and clears availability on backend (if allowed)
+1. **Renders key UI elements**
+   - Example: App title displays
+   - Example: Log In and Sign Up buttons are visible and clickable
+2. **Redirect behavior for authenticated users** (if necessary)
+   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
+3. **Redirect query param**
+   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
 
 ---
 
-# 6) Task Management Page
-
-## Page Title
-Task Management
+# 6. Other User Page (by Mike Davis)
 
 ## Page Description
-Purpose: Create, assign, and track tasks for a group (or across groups). Show tasks by status and allow updates.
+- Purpose: (One-sentence description of basic utility of this page.)
+- (Provide a short feature summary so the purpose is clear before authentication.)
 
-**Mockup (low-fidelity):**
-```
-+------------------------------------------------------+
-| StudySync | Tasks                                    |
-+------------------------------------------------------+
-| New Task: [________________________]                 |
-| Assign:  [ v ]   Due: [ mm/dd ]   Group: [ v ] [Add] |
-|------------------------------------------------------|
-| To Do                    In Progress        Complete |
-|------------------------------------------------------|
-| • UI Mockups (Dana)       • API Wiring (Carlos)      |
-| • DB Schema (Ben)                                 •  |
-+------------------------------------------------------+
-```
+## Mockup
+(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
 
 ## Parameters Needed for the Page
-- Route params: none
-- Query params (optional):
-  - `?groupId=:groupId` filter tasks to one group
-  - `?assigneeId=:userId` filter tasks by assignee
-  - `?status=todo|inprogress|complete` for focused view
+- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
 
 ## Data Needed to Render the Page
-- Auth state: current user id
-- API data:
-  - `GET /api/tasks?...` → tasks (filtered)
-  - `POST /api/tasks` → create task
-  - `PATCH /api/tasks/:taskId` → update status, assignment, due date
-  - `GET /api/groups?memberId=...` → populate group filter
-  - `GET /api/groups/:groupId/members` → populate assignee dropdown (when group selected)
-- UI state:
-  - new-task form fields
-  - selected filters
-  - drag/drop state (optional if implementing kanban)
+### Static Content
+- (List these contents.)
+### API Fetches
+- (List these or write "none")
+### State Parameters
+- (Auth of current user? Otherwise "none")
 
-## Link Destinations for the Page
-- Task detail (optional) → `/tasks/:taskId`
-- Back to group (if `groupId`) → `/groups/:groupId`
-- Dashboard → `/dashboard`
+## Links Rendered on the Page
+(This can include navigation links and other links/buttons)
+- Example: **Log In** → `/login`
+- Example: **Sign Up** → `/signup`
 
 ## Tests for Verifying Rendering of the Page
-1. **List sections render**
-   - To Do, In Progress, Complete columns visible
-2. **Create task**
-   - Fill form and click Add creates task and appears in To Do
-3. **Update status**
-   - Changing status moves task to correct column
-4. **Filtering**
-   - With `?groupId=...`, only tasks from that group appear
-5. **Assignee dropdown**
-   - When a group is selected, assignee list populates with group members
-6. **Empty states**
-   - If no tasks, show “No tasks yet” message and keep form visible
+1. **Renders key UI elements**
+   - Example: App title displays
+   - Example: Log In and Sign Up buttons are visible and clickable
+2. **Redirect behavior for authenticated users** (if necessary)
+   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
+3. **Redirect query param**
+   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
 
 ---
 
-## Notes for Implementation
-- These pages are intended for **React** with a simple top navigation bar.
-- Tests can be implemented as:
-  - **Manual UI checklist** during development, and/or
-  - Automated tests using **React Testing Library** + mock API responses.
+# 7. Dashboard Page (by Mike Davis)
 
+## Page Description
+- Purpose: (One-sentence description of basic utility of this page.)
+- (Provide a short feature summary so the purpose is clear before authentication.)
+
+## Mockup
+(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+
+## Parameters Needed for the Page
+- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+
+## Data Needed to Render the Page
+### Static Content
+- (List these contents.)
+### API Fetches
+- (List these or write "none")
+### State Parameters
+- (Auth of current user? Otherwise "none")
+
+## Links Rendered on the Page
+(This can include navigation links and other links/buttons)
+- Example: **Log In** → `/login`
+- Example: **Sign Up** → `/signup`
+
+## Tests for Verifying Rendering of the Page
+1. **Renders key UI elements**
+   - Example: App title displays
+   - Example: Log In and Sign Up buttons are visible and clickable
+2. **Redirect behavior for authenticated users** (if necessary)
+   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
+3. **Redirect query param**
+   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
+
+---
+
+# 8. Project Page (by Carolina Perez)
+
+## Page Description
+- Purpose: (One-sentence description of basic utility of this page.)
+- (Provide a short feature summary so the purpose is clear before authentication.)
+
+## Mockup
+(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+
+## Parameters Needed for the Page
+- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+
+## Data Needed to Render the Page
+### Static Content
+- (List these contents.)
+### API Fetches
+- (List these or write "none")
+### State Parameters
+- (Auth of current user? Otherwise "none")
+
+## Links Rendered on the Page
+(This can include navigation links and other links/buttons)
+- Example: **Log In** → `/login`
+- Example: **Sign Up** → `/signup`
+
+## Tests for Verifying Rendering of the Page
+1. **Renders key UI elements**
+   - Example: App title displays
+   - Example: Log In and Sign Up buttons are visible and clickable
+2. **Redirect behavior for authenticated users** (if necessary)
+   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
+3. **Redirect query param**
+   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
+
+---
+
+# 9. Sprint Page (by Carolina Perez)
+
+## Page Description
+- Purpose: (One-sentence description of basic utility of this page.)
+- (Provide a short feature summary so the purpose is clear before authentication.)
+
+## Mockup
+(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+
+## Parameters Needed for the Page
+- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+
+## Data Needed to Render the Page
+### Static Content
+- (List these contents.)
+### API Fetches
+- (List these or write "none")
+### State Parameters
+- (Auth of current user? Otherwise "none")
+
+## Links Rendered on the Page
+(This can include navigation links and other links/buttons)
+- Example: **Log In** → `/login`
+- Example: **Sign Up** → `/signup`
+
+## Tests for Verifying Rendering of the Page
+1. **Renders key UI elements**
+   - Example: App title displays
+   - Example: Log In and Sign Up buttons are visible and clickable
+2. **Redirect behavior for authenticated users** (if necessary)
+   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
+3. **Redirect query param**
+   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
+
+---
+
+# 10. Task Page (by Andrew MacRossie)
+
+## Page Description
+- Purpose: (One-sentence description of basic utility of this page.)
+- (Provide a short feature summary so the purpose is clear before authentication.)
+
+## Mockup
+(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+
+## Parameters Needed for the Page
+- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+
+## Data Needed to Render the Page
+### Static Content
+- (List these contents.)
+### API Fetches
+- (List these or write "none")
+### State Parameters
+- (Auth of current user? Otherwise "none")
+
+## Links Rendered on the Page
+(This can include navigation links and other links/buttons)
+- Example: **Log In** → `/login`
+- Example: **Sign Up** → `/signup`
+
+## Tests for Verifying Rendering of the Page
+1. **Renders key UI elements**
+   - Example: App title displays
+   - Example: Log In and Sign Up buttons are visible and clickable
+2. **Redirect behavior for authenticated users** (if necessary)
+   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
+3. **Redirect query param**
+   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
