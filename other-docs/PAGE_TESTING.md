@@ -285,37 +285,64 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 # 8. Project Page (by Carolina Perez)
 
 ## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
+### Purpose: Overview of a specific project and the sprints,tasks,users and information that are associated with it. 
+- Displaying the burndown chart of a project, as well as divding the sprints into three tiers: Current, Upcoming, Past/Archived based on end date of the sprint.
+- User is able to see other team members and be able to go to their own user page, projects list page, burndown chart editing page and sprints page from this page.
+- User or Viewer should get good sense of the progress of the project and track progress.
+- if NO DATA present, then the user will get an error page and a button to redirect ot the projects page
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+<img width="698" height="395" alt="image" src="https://github.com/user-attachments/assets/5dc55aca-d365-46a2-93f1-847545f83ff7" />
+<img width="698" height="365" alt="image" src="https://github.com/user-attachments/assets/3b530f23-6773-4e17-8ef8-3a030c222b70" />
+
+
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+- Route params: project_id -> projects/project_id 
+- Query params: none
 
 ## Data Needed to Render the Page
 ### Static Content
-- (List these contents.)
+- the page content it self -> the text
+- the boxes with the content
+- user icon
+- page title
+- table layout without the data
+- buttons(back arrow)
+- dropdown arrow
+     - default dropdowns (Current is default to open and the others are defaulted to close)
+- style scheme the group decides  on that will be uniform throughout
 ### API Fetches
-- (List these or write "none")
+- GET /api/projects/project_id (project details) 
+- project name
+- project sprints
+- project members
+- burndown chart and its story points
+- sprint info(end date, created at, points, status, priority)
+- current, upcoming and past info(end date based)
 ### State Parameters
-- (Auth of current user? Otherwise "none")
+- Auth state of the current user 
 
 ## Links Rendered on the Page
 (This can include navigation links and other links/buttons)
-- Example: **Log In** → `/login`
-- Example: **Sign Up** → `/signup`
+-  **Projects Page** → `/projects`
+-  **Sprints Page** → `/sprints`
+-  **User Page** → `/user/user_id`
+-  **Burndown Chart Page** → `projects/project_id/burndown_chart`
 
 ## Tests for Verifying Rendering of the Page
 1. **Renders key UI elements**
    - Example: App title displays
-   - Example: Log In and Sign Up buttons are visible and clickable
+   - Example: Project Name, icons, and boxes are displayed
+   - interactive elements work onClick()
+   - Members Tab appears onClick or onMouseEnter() - whichever we decide
+   - Empty state tests(no sprints allocated to a project)
 2. **Redirect behavior for authenticated users** (if necessary)
-   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
+   - If user is logged in, navigating to `/user` redirects to `/user/user_id` through user button
+   - If user clicks back arrow redirects to `/projects`
+   - if user clicks sprint text they will get redirected to `/sprint_id`
 3. **Redirect query param**
-   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
+   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state) - to do 
 
 ---
 
@@ -326,7 +353,8 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 - (Provide a short feature summary so the purpose is clear before authentication.)
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+
+
 
 ## Parameters Needed for the Page
 - Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
