@@ -292,9 +292,8 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 - if NO DATA present, then the user will get an error page and a button to redirect ot the projects page
 
 ## Mockup
-<img width="698" height="395" alt="image" src="https://github.com/user-attachments/assets/5dc55aca-d365-46a2-93f1-847545f83ff7" />
-<img width="698" height="365" alt="image" src="https://github.com/user-attachments/assets/3b530f23-6773-4e17-8ef8-3a030c222b70" />
-
+<img width="900" height="500"  alt="image" src="https://github.com/user-attachments/assets/5dc55aca-d365-46a2-93f1-847545f83ff7" />
+<img width="900" height="500"  alt="image" src="https://github.com/user-attachments/assets/3b530f23-6773-4e17-8ef8-3a030c222b70" />
 
 
 ## Parameters Needed for the Page
@@ -327,8 +326,8 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 (This can include navigation links and other links/buttons)
 -  **Projects Page** → `/projects`
 -  **Sprints Page** → `/sprints`
--  **User Page** → `/user/user_id`
--  **Burndown Chart Page** → `projects/project_id/burndown_chart`
+-  **User Page** → `/user/:user_id`
+-  **Burndown Chart Page** → `projects/:project_id/burndown_chart`
 
 ## Tests for Verifying Rendering of the Page
 1. **Renders key UI elements**
@@ -342,45 +341,62 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
    - If user clicks back arrow redirects to `/projects`
    - if user clicks sprint text they will get redirected to `/sprint_id`
 3. **Redirect query param**
-   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state) - to do 
+   - N/A
 
 ---
 
 # 9. Sprint Page (by Carolina Perez)
 
 ## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
+- Purpose: his page displays tasks associated with a specific sprint and allows the user to view task details, sort tasks, and edit sprint information such as description, dates, and new tasks
+- The user will be shown details of a specific sprint, along with being able to add and sort tasks, view task details and add sprint details such as description, dates and new tasks
+- If NO DATA then user will be shown an "error - sprint not found" 
 
 ## Mockup
-
+<img width="1540" height="900" alt="image" src="https://github.com/user-attachments/assets/1c646a9d-3223-4e0e-a518-4d0a0803dda1" />
 
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+- Route params: sprint_id, project_id
+- Query params: for the sort by function -> `//projects/:project_id/sprints/:sprint_id?sort=due_date` whatever we are sorting the tasks by.
 
 ## Data Needed to Render the Page
 ### Static Content
-- (List these contents.)
+- table headers(col name) 
+- edit pencil icon
+- sort dropdown
+- add task icon
+- buttons (user and sort by button)
+- text and outline boxes
+- style schema
 ### API Fetches
-- (List these or write "none")
+- GET /api/projects/:project_id/sprints/:sprint_id
+- GET task information such as due date, created at etc
+- sprint info such as sprint number
+- project name related to sprint
 ### State Parameters
-- (Auth of current user? Otherwise "none")
+- Auth of current user
+- selected sort parameter
 
 ## Links Rendered on the Page
 (This can include navigation links and other links/buttons)
-- Example: **Log In** → `/login`
-- Example: **Sign Up** → `/signup`
+- **User Page** → `/user/:user_id`
+- **Project Page** → `/project/:project_id`
+- **Task Page** → `/:task_id`
+- **Add Task Button** → opens task creation modal
 
 ## Tests for Verifying Rendering of the Page
 1. **Renders key UI elements**
-   - Example: App title displays
-   - Example: Log In and Sign Up buttons are visible and clickable
+   - Buttons are visible and clickable
+   - icons are visible and clickable
+   - checkboxes are interactive
+   - format is displayed
 2. **Redirect behavior for authenticated users** (if necessary)
-   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
+   - If user is logged in, navigating to `/user` redirects to their user page
+   - If user clicks projects name they will be redirected to `/projects/project_id` to see the other tasks
+   - If the user clicks onthe task text they will be taken to `/tasks/task_id`  for further information on that task
 3. **Redirect query param**
-   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
+   - Visiting `/sprint_id?sort=due_date` will sort the task in order of Due Date and so on for Priority and Assignee
 
 ---
 
