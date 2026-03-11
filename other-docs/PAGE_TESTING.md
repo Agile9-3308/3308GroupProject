@@ -456,34 +456,72 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 # 10. Task Page (by Andrew MacRossie)
 
 ## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
+- Purpose: This page displays the full details of a specific task within a sprint, allowing users to view and edit task metadata including priority, due date, project, sprint, and assignee, while also allowing users to read and post comments on the task.
+- Feature Summary: The Task Page gives team members a focused, single-task view within the broader agile workflow. Once a user is logged in, they can interact with all task fields inline, update status, and add comments. The page reflects the tasks position within the burndown chart context, helping teams track progress against sprint goals. 
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+<img width="1029" height="761" alt="Screenshot 2026-03-11 at 3 39 29 PM" src="https://github.com/user-attachments/assets/16711af3-ad7a-4eaa-aac0-e3bf545b0702" />
+
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+- Route params: project_id/sprint_id/task_id 
+- Query params: ?redirect
 
 ## Data Needed to Render the Page
 ### Static Content
-- (List these contents.)
+- Priority, Due Date, Project, Sprint, Assignee
+- Edit (an icon to edit needed fields)
+- Comment section header and text input placeholder
+- Status badge options (To Do, In Progress, Done)
+- Submit/Save and Cancel buttons
+- Empty state message if no comments exist yet
+- Error messge: "Task not found" for invalid task_id
+- "Back to Sprint" navigation label
+
 ### API Fetches
-- (List these or write "none")
+- GET /api/projects/:project_id — fetch project name and metadata
+- GET /api/projects/:project_id/sprints/:sprint_id — fetch sprint number and dates
+- GET /api/projects/:project_id/sprints/:sprint_id/tasks/:task_id — fetch full task detail:
+- GET /api/tasks/:task_id/comments — fetch all comments in chronological order
+- PATCH /api/tasks/:task_id — update editable fields (priority, due date, assignee, status)
+- POST /api/tasks/:task_id/comments — submit a new comment
+
 ### State Parameters
-- (Auth of current user? Otherwise "none")
+- Auth of current user (user_id, display name, role, avatar)
+- Edit mode toggle state per field (controls inline editor visibility)
+- Comment input field state (controlled text input)
+- Loading/error state for async fetches
 
 ## Links Rendered on the Page
 (This can include navigation links and other links/buttons)
-- Example: **Log In** → `/login`
-- Example: **Sign Up** → `/signup`
+- Project Page → /projects/:project_id
+- Sprint Page (breadcrumb back) → /projects/:project_id/sprints/:sprint_id
+- Assignee User Page → /users/:user_id
+- Edit Task Fields → inline edit — no route change, state-driven toggle
+- Add Comment Button → POST /api/tasks/:task_id/comments (no navigation)
+- Delete Task Button → DELETE /api/tasks/:task_id → redirects to Sprint Page on success
+- Burndown Chart → /projects/:project_id/burndown
 
 ## Tests for Verifying Rendering of the Page
 1. **Renders key UI elements**
-   - Example: App title displays
-   - Example: Log In and Sign Up buttons are visible and clickable
+   - Task title is visible at the top of the page
+   - All five metadata fields render with their labels and values: Priority, Due Date, Project, Sprint, Assignee
+   - Edit (pencil) icon is visible next to each editable field and is clickable
+   - Status badge displays the correct current status with appropriate color
+   - Comment section renders below task details
+   - Comment input box and submit button are visible and interactive
+   - "Back to Sprint" breadcrumb link is visible in the page header
+   - Error state: if task_id is invalid, "Task not found" message displays instead of task content
+  
 2. **Redirect behavior for authenticated users** (if necessary)
-   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
+   - If user is NOT logged in, navigating to /projects/:project_id/sprints/:sprint_id/tasks/:task_id redirects to /login
+   - If user IS logged in, the full task detail page renders correctly
+   - Clicking the project name breadcrumb redirects to /projects/:project_id
+   - Clicking the sprint name redirects to /projects/:project_id/sprints/:sprint_id
+   - Clicking the assignee's name or avatar navigates to /users/:user_id
+   - After deleting a task, the user is redirected to /projects/:project_id/sprints/:sprint_id
+  
 3. **Redirect query param**
-   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
+   - Visiting the task page with ?redirect=/projects/42/sprints/7 and clicking "Back to Sprint" preserves and follows the redirect path
+   - Visiting /login?redirect=/projects/42/sprints/7/tasks/99 after authentication completes redirects the user to the original task page
+   - Query param is stripped from the URL after the redirect resolves (no stale ?redirect in address bar)
