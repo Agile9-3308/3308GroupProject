@@ -63,89 +63,131 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 # 2. Login Page (by Sergio Rojas-Aguilar)
 
 ## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
+- Purpose: Allows existing users to log in to the application using their credentials.
+
+- Functionality: Authenticates the user and establishes a session before redirecting them to the main dashboard.
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+
+<img width="1540" height="900" alt="image" src="./Images/SRA_LOGIN_WireFrame-01.jpg" />
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+- Route params: /login
+
+- Query params: Optional redirect parameter (e.g. /login?redirect=/dashboard)
 
 ## Data Needed to Render the Page
 ### Static Content
-- (List these contents.)
+- Application title / logo
+
+- Login form
+
+   - Email or Username input
+
+   - Password input
+
+- Log In button
+
+- Sign Up link
+
 ### API Fetches
-- (List these or write "none")
+
+- **POST** /api/auth/login
+
+   - Authenticates the user credentials
+   - Returns session token or authentication status
+
 ### State Parameters
-- (Auth of current user? Otherwise "none")
+
+- Authentication state
+- Login form input state
+- Login error state (invalid credentials, server error)
 
 ## Links Rendered on the Page
-(This can include navigation links and other links/buttons)
-- Example: **Log In** → `/login`
-- Example: **Sign Up** → `/signup`
+
+- **Sign Up** → `*/signup`
 
 ## Tests for Verifying Rendering of the Page
 1. **Renders key UI elements**
-   - Example: App title displays
-   - Example: Log In and Sign Up buttons are visible and clickable
-2. **Redirect behavior for authenticated users** (if necessary)
-   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
-3. **Redirect query param**
-   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
+
+- Application title or logo is visible
+- Email/Username and Password input fields render
+- Log In button is visible and clickable
+- Sign Up link is visible
+
+2. **Form interaction**
+- User can type into input fields
+- Login button submits form
+
+3. **Authentication behavior**
+- Valid credentials redirect user to /dashboard
+- Invalid credentials show an error message
+
+4. **Redirect behavior for authenticated users**
+- If a user is already logged in, navigating to /login redirects to /dashboard
+
 
 ---
 
 # 3. Create User Account Page (by Sergio Rojas-Aguilar)
 
 ## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
+- Purpose: Allows new users to create an account for the application.
+- Collects required registration information, validates input, and creates a new user account.
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+<img width="1540" height="900" alt="image" src="./Images/SRA_SIGNUP_WireFrame-02.jpg" />
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+- Route params: /signup
+- Query params: None
 
 ## Data Needed to Render the Page
 ### Static Content
-- (List these contents.)
+**Application title / logo**
+- Registration form fields:
+   - Username
+   - Email
+   - Password
+   - Confirm Password
+- Create Account button
 ### API Fetches
-- (List these or write "none")
+- POST: /api/users
+   - Create NEW User
 ### State Parameters
-- (Auth of current user? Otherwise "none")
-
-## Links Rendered on the Page
-(This can include navigation links and other links/buttons)
-- Example: **Log In** → `/login`
-- Example: **Sign Up** → `/signup`
+- Form input state
+- Form validation state
+- Account creation status (success / failure)
+- Error messages
 
 ## Tests for Verifying Rendering of the Page
 1. **Renders key UI elements**
-   - Example: App title displays
-   - Example: Log In and Sign Up buttons are visible and clickable
+   - Application title is visible
+   - All required input fields render
+   - Create Account button is visible
 2. **Redirect behavior for authenticated users** (if necessary)
-   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
-3. **Redirect query param**
-   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
-
+   - Invalid inputs display validation errors
+   - Password confirmation must match 
+3. **Successful account creation**
+   - Submitting valid form data creates a new user
+   - User is redirected to /login or /dashboard
+4. **Access behavior**
+   - Page is typically accessed from the login page
+   - Already authenticated users may be redirected to /dashboard
 ---
 
 # 4. Edit User Account Page (by Sergio Rojas-Aguilar)
 
 ## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
+- Purpose: Allows authenticated users to update their account information.
+- Functionality: Users can modify their profile details such as username, email, or password.
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+<img width="1540" height="900" alt="image" src="./Images/SRA_EDIT_ACCOUNT_WireFrame-03.jpg" />
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+- Route params: /account/edit
+- Query params: None
 
 ## Data Needed to Render the Page
 ### Static Content
@@ -153,22 +195,33 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 ### API Fetches
 - (List these or write "none")
 ### State Parameters
-- (Auth of current user? Otherwise "none")
+- Application title
+- Editable user account form
+   - Username
+   - Email
+   - Password (optional change)
+   - Confirm Password
+- Save Changes button
 
 ## Links Rendered on the Page
-(This can include navigation links and other links/buttons)
-- Example: **Log In** → `/login`
-- Example: **Sign Up** → `/signup`
+**GET:** /api/users/me
+   - Retrieves the current user's account information
+
+**PUT:** /api/users/me
+   - Updates the user account information
 
 ## Tests for Verifying Rendering of the Page
 1. **Renders key UI elements**
-   - Example: App title displays
-   - Example: Log In and Sign Up buttons are visible and clickable
+   - User account fields populate with current data
+   - Save Changes button is visible
 2. **Redirect behavior for authenticated users** (if necessary)
-   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
-3. **Redirect query param**
-   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
-
+   - User can modify editable fields
+   - Validation occurs on submit
+3. **Update behavior**
+   - Valid changes update the user account
+   - Success message appears after update
+4. **Authentication requirement**
+   - If the user is not authenticated, redirect to /login
 ---
 
 # 5. Current User Page (by Mike Davis)
