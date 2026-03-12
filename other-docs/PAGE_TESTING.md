@@ -33,7 +33,7 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 (This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Route params: (List any route parameters necessary for navigating to this page. If not necessary, list "none".)
 - Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
 
 ## Data Needed to Render the Page
@@ -70,7 +70,7 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 (This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Route params: (List any route parameters necessary for navigating to this page. If not necessary, list "none".)
 - Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
 
 ## Data Needed to Render the Page
@@ -107,7 +107,7 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 (This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Route params: (List any route parameters necessary for navigating to this page. If not necessary, list "none".)
 - Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
 
 ## Data Needed to Render the Page
@@ -144,7 +144,7 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 (This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Route params: (List any route parameters necessary for navigating to this page. If not necessary, list "none".)
 - Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
 
 ## Data Needed to Render the Page
@@ -174,15 +174,15 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 # 5. Current User Page (by Mike Davis)
 
 ## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
+- Purpose: Lay out information about the session's current user
+- This page provides user information about the current user including things like username, profile picture, teams/tasks they're assigned to, and other things. There will also be top-of-page navigation links to other pages, and buttons in the main body of the page that navigate to edit account
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+<img src="./images/mike/current-user-page-mockup.png"/>
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+- Route params: /users/:id
+- Query params: none
 
 ## Data Needed to Render the Page
 ### Static Content
@@ -211,15 +211,15 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 # 6. Other User Page (by Mike Davis)
 
 ## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
+- Purpose: Lay out information about another user
+- This page provides user information about another user including things like username, profile picture, teams they're assigned to, and other things. There will also be top-of-page navigation links to other pages, and buttons in the main body of the page that allow you to invite them to your team
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+<img src="./images/mike/other-user-page-mockup.png">
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+- Route params: /users/:id
+- Query params: none
 
 ## Data Needed to Render the Page
 ### Static Content
@@ -252,10 +252,10 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 - (Provide a short feature summary so the purpose is clear before authentication.)
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+<img src="./images/mike/dashboard-page-mockup.png" />
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Route params: (List any route parameters necessary for navigating to this page. If not necessary, list "none".)
 - Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
 
 ## Data Needed to Render the Page
@@ -292,7 +292,7 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 (This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Route params: (List any route parameters necessary for navigating to this page. If not necessary, list "none".)
 - Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
 
 ## Data Needed to Render the Page
@@ -329,7 +329,7 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 (This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Route params: (List any route parameters necessary for navigating to this page. If not necessary, list "none".)
 - Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
 
 ## Data Needed to Render the Page
@@ -366,7 +366,7 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 (This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
+- Route params: (List any route parameters necessary for navigating to this page. If not necessary, list "none".)
 - Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
 
 ## Data Needed to Render the Page
