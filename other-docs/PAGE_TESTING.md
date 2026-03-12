@@ -31,7 +31,7 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 - **Feature Summary:** AgileFlow is a web-based agile project tracking platform that helps teams organize development work using tasks, sprints, and progress visualizations. Users can manage task boards, monitor sprint progress, and track project velocity through burndown charts in a simple, accessible interface designed for students and development teams.
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+<img width="1540" height="900" alt="image" src="./Images/ES_LandingPage_WireFrame.JPG" />
 
 Example layout reference ASCII EXAMPLE:
 
