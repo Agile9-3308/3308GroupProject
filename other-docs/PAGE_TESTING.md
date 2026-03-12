@@ -26,40 +26,111 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 # 1. Landing Page (by Erick Samayoa)
 
 ## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
+- **Purpose:** Introduce AgileFlow (by DevDash) and provide a clear overview of the platform before authentication. This page explains the core value of the application and directs new users to log in or create an account.
+
+- **Feature Summary:** AgileFlow is a web-based agile project tracking platform that helps teams organize development work using tasks, sprints, and progress visualizations. Users can manage task boards, monitor sprint progress, and track project velocity through burndown charts in a simple, accessible interface designed for students and development teams.
 
 ## Mockup
 (This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
 
-## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+Example layout reference ASCII EXAMPLE:
 
-## Data Needed to Render the Page
-### Static Content
-- (List these contents.)
-### API Fetches
-- (List these or write "none")
-### State Parameters
-- (Auth of current user? Otherwise "none")
-
-## Links Rendered on the Page
-(This can include navigation links and other links/buttons)
-- Example: **Log In** → `/login`
-- Example: **Sign Up** → `/signup`
-
-## Tests for Verifying Rendering of the Page
-1. **Renders key UI elements**
-   - Example: App title displays
-   - Example: Log In and Sign Up buttons are visible and clickable
-2. **Redirect behavior for authenticated users** (if necessary)
-   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
-3. **Redirect query param**
-   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
+------------------------------------------------------------------
+| AgileFlow - Agile Project Tracking for Students & Dev Teams    |
+| Plan tasks • Track sprints • Visualize project progress        |
+|----------------------------------------------------------------|
+|             [ Log In ]      [ Create Account ]                 |
+|----------------------------------------------------------------|
+|                     Platform Overview                          |
+|----------------------------------------------------------------|
+|  TASK BOARD       |  SPRINT MANAGEMENT  |  BURNDOWN CHART      |
+|-------------------|---------------------|----------------------|
+| Create task cards | Organize work       | Visualize progress   |
+| Assign members    | across sprint       | Track completion     |
+| Set priorities    | cycles              | against timeline     |
+|                   |                     |                      |
+| [View Tasks]      | [View Sprints]      | [View Charts]        |
+|----------------------------------------------------------------|
+|                 Example Project Progress                       |
+|----------------------------------------------------------------|
+|                 (Mini Burndown Chart Preview)                  |
+|                 Sprint 4 - Story Points Remaining              |
+|                       *                                        |
+|                     *   *                                      |
+|                   *       *                                    |
+|----------------------------------------------------------------|
+|        Free • Open Source • Built for Agile Learning           |
+|                     [ Learn More ]                             |
+------------------------------------------------------------------
 
 ---
 
+## Parameters Needed for the Page
+- **Route params:** none
+- **Query params:** Optional redirect parameter.
+   -Example: /
+   /?redirect=/projects/123
+
+This allows the system to send the user back to the page they originally attempted to access after authentication.
+
+## Data Needed to Render the Page
+### Static Content
+- Application title: **AgileFlow**
+- Tagline / product description
+- Hero section with **Log In** and **Create Account** buttons
+- Feature overview section including: Task Board, Sprint Management, Burndown Charts
+- Example burndown chart preview (static visual)
+- Footer messaging (e.g., “Free • Open Source • Built for Agile Learning”)
+- Learn More button or link
+  
+### API Fetches
+- None required for the landing page.  
+This page primarily displays static content before authentication.  
+*(Optional future improvement: marketing content or feature statistics fetched from an API.)*
+
+### State Parameters
+- Authentication state of the current user
+- Determines whether the user should:
+  - remain on the landing page, or  
+  - automatically redirect to the dashboard
+
+## Links Rendered on the Page
+- Log In → `/login`
+- Create Account → `/signup`
+- Optional: Learn More → `/about`
+- Optional: Dashboard → `/dashboard` (if already authenticated)
+- Optional navigation bar: Home → `/`, GitHub Repository → external link
+
+## Tests for Verifying Rendering of the Page
+1. **Renders key UI elements**
+   - Application title **AgileFlow** is visible
+   - Tagline describing the platform displays correctly
+   - Log In and Create Account buttons are visible
+   - Feature overview section (Task Board, Sprint Management, Burndown Chart) renders
+   - Example burndown chart preview appears
+   - Learn More button appears in the footer
+
+   - Button and link functionality:
+      - Log In button navigates to `/login`
+      - Create Account button navigates to `/signup`
+      - Learn More button navigates to `/about` (if implemented)
+        
+2. **Redirect behavior for authenticated users** (if necessary)
+   - If a user is already logged in and navigates to `/`, they are automatically redirected to `/dashboard`
+     
+3. **Redirect query param**
+   - If a user attempts to visit a protected page such as `/projects/123` and is redirected to `/` with `?redirect=/projects/123`,  
+  after logging in successfully, the system should redirect them back to `/projects/123`
+
+### Optional Additions
+- To match the React frontend structure, suggested build for landing page routes:
+/ → LandingPage
+/login → LoginPage
+/signup → SignupPage
+/dashboard → DashboardPage
+/projects/:id → ProjectPage
+
+---
 # 2. Login Page (by Sergio Rojas-Aguilar)
 
 ## Page Description
