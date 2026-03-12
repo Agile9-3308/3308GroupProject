@@ -272,7 +272,7 @@ This page primarily displays static content before authentication.
 - This page provides user information about the current user including things like username, profile picture, teams/tasks they're assigned to, and other things. There will also be top-of-page navigation links to other pages, and buttons in the main body of the page that navigate to edit account
 
 ## Mockup
-<img src="./images/mike/current-user-page-mockup.png" width="50%"/>
+<img src="./Images/MD-current-user-page-mockup.png" width="50%"/>
 
 ## Parameters Needed for the Page
 - Route params: /users/:id
@@ -317,7 +317,7 @@ This page primarily displays static content before authentication.
 - This page provides user information about another user including things like username, profile picture, teams they're assigned to, and other things. There will also be top-of-page navigation links to other pages, as well as a button in the main body of the page to invite them to one or multiple of the current user's teams
 
 ## Mockup
-<img src="./images/mike/other-user-page-mockup.png" width="50%"/>
+<img src="./Images/MD-other-user-page-mockup.png" width="50%"/>
 
 ## Parameters Needed for the Page
 - Route params: /users/:id
@@ -361,7 +361,7 @@ This page primarily displays static content before authentication.
 - This page renders the current user's multiple teams, with information summaries about each team's up-to-date name, members, sprints, tasks, and burndown chart. The information in each team section will be fetched from the database. If there is no current user, this will be a mockup of a dashboard a user could create if they signed up to the website.
 
 ## Mockup
-<img src="./images/mike/dashboard-page-mockup.png" width="50%"/>
+<img src="./Images/MD-dashboard-page-mockup.png" width="50%"/>
 
 ## Parameters Needed for the Page
 - Route params: none
