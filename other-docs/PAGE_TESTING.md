@@ -33,36 +33,6 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 ## Mockup
 <img width="1540" height="900" alt="image" src="./Images/ES_LandingPage_WireFrame.JPG" />
 
-Example layout reference ASCII EXAMPLE:
-
-------------------------------------------------------------------
-| AgileFlow - Agile Project Tracking for Students & Dev Teams    |
-| Plan tasks • Track sprints • Visualize project progress        |
-|----------------------------------------------------------------|
-|             [ Log In ]      [ Create Account ]                 |
-|----------------------------------------------------------------|
-|                     Platform Overview                          |
-|----------------------------------------------------------------|
-|  TASK BOARD       |  SPRINT MANAGEMENT  |  BURNDOWN CHART      |
-|-------------------|---------------------|----------------------|
-| Create task cards | Organize work       | Visualize progress   |
-| Assign members    | across sprint       | Track completion     |
-| Set priorities    | cycles              | against timeline     |
-|                   |                     |                      |
-| [View Tasks]      | [View Sprints]      | [View Charts]        |
-|----------------------------------------------------------------|
-|                 Example Project Progress                       |
-|----------------------------------------------------------------|
-|                 (Mini Burndown Chart Preview)                  |
-|                 Sprint 4 - Story Points Remaining              |
-|                       *                                        |
-|                     *   *                                      |
-|                   *       *                                    |
-|----------------------------------------------------------------|
-|        Free • Open Source • Built for Agile Learning           |
-|                     [ Learn More ]                             |
-------------------------------------------------------------------
-
 ---
 
 ## Parameters Needed for the Page
