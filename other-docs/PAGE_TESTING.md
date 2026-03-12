@@ -287,6 +287,12 @@ This page primarily displays static content before authentication.
 ### API Fetches
 - Current user object data fields such as username, when joined, profile picture. This enables the rendering of user profile information.
 - Join table data through user object's foreign keys. This information enables the rendering of teams and tasks.
+**GET** /api/users/me
+   - Fetches current user's account information.
+**GET** /api/users/me/teams
+   - Fetches current user's teams.
+**GET** /api/users/me/tasks
+   - Fetches current user's tasks.
 ### State Parameters
 - Authorization of whether this is the current user, the success of which will show more in-depth private information such as tasks and the edit account button
 
@@ -330,8 +336,12 @@ This page primarily displays static content before authentication.
 - Section headings
 - CSS styling information
 ### API Fetches
-- Other user object data fields such as username, when joined, profile picture. This enables the rendering of user profile information.
-- Join table data through user object's foreign keys. This information enables the rendering of teams shared with current user.
+**GET** /api/users/:id
+   - Fetches other user's account information.
+**GET** /api/users/:id/teams
+   - Fetches other user's teams.
+**POST** /api/users/:id/invites
+   - Posts invite to other user's data object or creates invitation using a join table between users.
 ### State Parameters
 - Authorization of whether this is the current user, the failure of which will limit the information on the page to less-private information.
 
@@ -376,7 +386,14 @@ This page primarily displays static content before authentication.
 - CSS styling information
 - Mock dashboard if no current user
 ### API Fetches
-- Join table(s) data for teams, sprints, tasks, team member info, burndown chart; all using a chain of foreign keys starting with the current user.
+**GET** /api/users/me/teams
+   - Fetches current user's teams.
+**GET** /api/teams/:id/members
+   - Fetches team members for each team.
+**GET** /api/teams/:id/sprints
+   - Fetches sprints for each team.
+**GET** /api/teams/:id/burndown
+   - Fetches burndown chart for each team.
 ### State Parameters
 - Authorization of whether there is a current user logged in, the failure of which will show a mock dashboard whose data is stored statically in the webpage directory.
 
