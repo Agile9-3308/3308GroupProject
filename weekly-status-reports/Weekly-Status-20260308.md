@@ -42,7 +42,11 @@
 
 **Sergio Rojas-Aguilar:**
 
-- 
+- This week, I focused on SQL schema Layout
+   * Create a SQL diagram
+   * Researched SQLAlchemy
+   * Create Python ORM using SQLAlchemy
+
 
 **Michael Davis:** 
 
@@ -67,7 +71,14 @@
 
 **Sergio Rojas-Aguilar:**
 
-- 
+
+- Completed Assigned Team Task (Jira includes more information):
+    - DB Schema
+    - Research Python File Struct
+    - Research Data Structure
+- Completed Personal Task:
+    - Research ORM for python PostgreSQL
+    - Create Class ORM for python
 
 **Michael Davis:** 
 
@@ -94,7 +105,8 @@
 
 **Sergio Rojas-Aguilar:**
 
-- 
+- Assigned Team Task (Jira includes more information):
+   - Wireframe for App
 
 **Michael Davis:** 
 
@@ -118,7 +130,7 @@
 
 **Sergio Rojas-Aguilar:**
 
-- 
+- Blockers and Issues : At the moment I don't see any blockers or issues.
 
 
 **Michael Davis:** 
@@ -147,7 +159,8 @@
 
 **Sergio Rojas-Aguilar:**
 
-- 
+- *Identified Risk:* Risk could come Exam due on firday
+- *Mitigation:* Study and allote some time for planned tasks
 
 **Michael Davis:** 
 
@@ -183,7 +196,9 @@ The team could work on:
 
 **Sergio Rojas-Aguilar:**
 
-- 
+- Initial Jira creation tasks for initial week as scum master
+   - Creation of SQL Diagram ORM
+   - https://github.com/Sergrojas29/PythonRenderTest/blob/main/tests/sqlTest.ipynb
 
 **Michael Davis:** 
 
