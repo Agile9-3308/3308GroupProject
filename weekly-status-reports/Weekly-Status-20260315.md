@@ -50,7 +50,9 @@
 
 **Carolina Perez:** 
 
--  
+-  Started to look into next weeks project milestone due.
+-  backend structure layout
+-  continued flask/sqlalchemy any additional programs needed practice 
 
 **Erick Samayoa:** 
 
@@ -75,7 +77,8 @@
 
 **Carolina Perez:** 
 
-- 
+- project milestone work
+- backend structure review/ planning
   
 
 **Erick Samayoa:** 
@@ -101,7 +104,7 @@
 - 
 
 **Carolina Perez:** 
-- 
+- N/A - MEETING HASNT HAPPENED YET 
   
 **Erick Samayoa:** 
 
@@ -127,7 +130,7 @@
 
 **Carolina Perez:** 
 
--  
+-  spring break: team may not be in communication as much as normal 
 
 **Erick Samayoa:** 
 
@@ -155,7 +158,7 @@
 
 **Carolina Perez:** 
 
-- 
+- none at the moment
 
 **Erick Samayoa:** 
 
@@ -191,7 +194,7 @@ The team could work on:
 
 **Carolina Perez:** 
 
-- 
+- project milestone work 
 
 **Erick Samayoa:** 
 
