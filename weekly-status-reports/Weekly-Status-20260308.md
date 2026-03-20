@@ -50,7 +50,9 @@
 
 **Carolina Perez:** 
 
--  
+-  Completed the Workflow for the project milestone due this week. Worked on the Sprint and the task page mockup, along with their API requests, and different interactivity involved
+-  Looked up SQL alchemy
+-  Begin forming idead for the backend structure  
 
 **Erick Samayoa:** 
 
@@ -75,8 +77,9 @@
 
 **Carolina Perez:** 
 
-- 
-  
+- workflows
+- practice launching flask (front and backend)
+- SQL practice/ reading up on SQL alchemy 
 
 **Erick Samayoa:** 
 
@@ -101,7 +104,9 @@
 - 
 
 **Carolina Perez:** 
-- 
+- continue designing backend structure
+- looking into flask and sql alchemy some more
+- upcoming project milestone due after spring break 
   
 **Erick Samayoa:** 
 
@@ -127,7 +132,7 @@
 
 **Carolina Perez:** 
 
--  
+-  none at the moment, just remembering to fill these out
 
 **Erick Samayoa:** 
 
@@ -155,7 +160,8 @@
 
 **Carolina Perez:** 
 
-- 
+- Forgetting tasks needed to be done over the break
+- looking up render i havent used it before - previous experience with heroku 
 
 **Erick Samayoa:** 
 
@@ -191,7 +197,10 @@ The team could work on:
 
 **Carolina Perez:** 
 
-- 
+- sprint page workflow
+- tasks page workflow
+- flask launching
+- backend structure
 
 **Erick Samayoa:** 
 
