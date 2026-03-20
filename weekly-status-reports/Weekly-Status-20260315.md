@@ -42,11 +42,7 @@
 
 **Sergio Rojas-Aguilar:**
 
-- This week, I focused on SQL schema Layout
-   * Create a SQL diagram
-   * Researched SQLAlchemy
-   * Create Python ORM using SQLAlchemy
-
+- 
 
 **Michael Davis:** 
 
@@ -54,9 +50,7 @@
 
 **Carolina Perez:** 
 
--  Completed the Workflow for the project milestone due this week. Worked on the Sprint and the task page mockup, along with their API requests, and different interactivity involved
--  Looked up SQL alchemy
--  Begin forming idead for the backend structure  
+-  
 
 **Erick Samayoa:** 
 
@@ -73,14 +67,7 @@
 
 **Sergio Rojas-Aguilar:**
 
-
-- Completed Assigned Team Task (Jira includes more information):
-    - DB Schema
-    - Research Python File Struct
-    - Research Data Structure
-- Completed Personal Task:
-    - Research ORM for python PostgreSQL
-    - Create Class ORM for python
+- 
 
 **Michael Davis:** 
 
@@ -88,9 +75,8 @@
 
 **Carolina Perez:** 
 
-- workflows
-- practice launching flask (front and backend)
-- SQL practice/ reading up on SQL alchemy 
+- 
+  
 
 **Erick Samayoa:** 
 
@@ -108,17 +94,14 @@
 
 **Sergio Rojas-Aguilar:**
 
-- Assigned Team Task (Jira includes more information):
-   - Wireframe for App
+- 
 
 **Michael Davis:** 
 
 - 
 
 **Carolina Perez:** 
-- continue designing backend structure
-- looking into flask and sql alchemy some more
-- upcoming project milestone due after spring break 
+- 
   
 **Erick Samayoa:** 
 
@@ -135,7 +118,7 @@
 
 **Sergio Rojas-Aguilar:**
 
-- Blockers and Issues : At the moment I don't see any blockers or issues.
+- 
 
 
 **Michael Davis:** 
@@ -144,7 +127,7 @@
 
 **Carolina Perez:** 
 
--  none at the moment, just remembering to fill these out
+-  
 
 **Erick Samayoa:** 
 
@@ -164,8 +147,7 @@
 
 **Sergio Rojas-Aguilar:**
 
-- *Identified Risk:* Risk could come Exam due on firday
-- *Mitigation:* Study and allote some time for planned tasks
+- 
 
 **Michael Davis:** 
 
@@ -173,8 +155,7 @@
 
 **Carolina Perez:** 
 
-- Forgetting tasks needed to be done over the break
-- looking up render i havent used it before - previous experience with heroku 
+- 
 
 **Erick Samayoa:** 
 
@@ -202,9 +183,7 @@ The team could work on:
 
 **Sergio Rojas-Aguilar:**
 
-- Initial Jira creation tasks for initial week as scum master
-   - Creation of SQL Diagram ORM
-   - https://github.com/Sergrojas29/PythonRenderTest/blob/main/tests/sqlTest.ipynb
+- 
 
 **Michael Davis:** 
 
@@ -212,10 +191,7 @@ The team could work on:
 
 **Carolina Perez:** 
 
-- sprint page workflow
-- tasks page workflow
-- flask launching
-- backend structure
+- 
 
 **Erick Samayoa:** 
 

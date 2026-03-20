@@ -26,126 +26,209 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 # 1. Landing Page (by Erick Samayoa)
 
 ## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
+- **Purpose:** Introduce AgileFlow (by DevDash) and provide a clear overview of the platform before authentication. This page explains the core value of the application and directs new users to log in or create an account.
+
+- **Feature Summary:** AgileFlow is a web-based agile project tracking platform that helps teams organize development work using tasks, sprints, and progress visualizations. Users can manage task boards, monitor sprint progress, and track project velocity through burndown charts in a simple, accessible interface designed for students and development teams.
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
-
-## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
-
-## Data Needed to Render the Page
-### Static Content
-- (List these contents.)
-### API Fetches
-- (List these or write "none")
-### State Parameters
-- (Auth of current user? Otherwise "none")
-
-## Links Rendered on the Page
-(This can include navigation links and other links/buttons)
-- Example: **Log In** → `/login`
-- Example: **Sign Up** → `/signup`
-
-## Tests for Verifying Rendering of the Page
-1. **Renders key UI elements**
-   - Example: App title displays
-   - Example: Log In and Sign Up buttons are visible and clickable
-2. **Redirect behavior for authenticated users** (if necessary)
-   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
-3. **Redirect query param**
-   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
+<img width="1540" height="900" alt="image" src="./Images/ES_LandingPage_WireFrame.JPG" />
 
 ---
 
-# 2. Login Page (by Sergio Rojas-Aguilar)
-
-## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
-
-## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
-
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+- **Route params:** none
+- **Query params:** Optional redirect parameter.
+   -Example: /
+   /?redirect=/projects/123
+
+This allows the system to send the user back to the page they originally attempted to access after authentication.
 
 ## Data Needed to Render the Page
 ### Static Content
-- (List these contents.)
+- Application title: **AgileFlow**
+- Tagline / product description
+- Hero section with **Log In** and **Create Account** buttons
+- Feature overview section including: Task Board, Sprint Management, Burndown Charts
+- Example burndown chart preview (static visual)
+- Footer messaging (e.g., “Free • Open Source • Built for Agile Learning”)
+- Learn More button or link
+  
 ### API Fetches
-- (List these or write "none")
+- None required for the landing page.  
+This page primarily displays static content before authentication.  
+*(Optional future improvement: marketing content or feature statistics fetched from an API.)*
+
 ### State Parameters
-- (Auth of current user? Otherwise "none")
+- Authentication state of the current user
+- Determines whether the user should:
+  - remain on the landing page, or  
+  - automatically redirect to the dashboard
 
 ## Links Rendered on the Page
-(This can include navigation links and other links/buttons)
-- Example: **Log In** → `/login`
-- Example: **Sign Up** → `/signup`
+- Log In → `/login`
+- Create Account → `/signup`
+- Optional: Learn More → `/about`
+- Optional: Dashboard → `/dashboard` (if already authenticated)
+- Optional navigation bar: Home → `/`, GitHub Repository → external link
 
 ## Tests for Verifying Rendering of the Page
 1. **Renders key UI elements**
-   - Example: App title displays
-   - Example: Log In and Sign Up buttons are visible and clickable
+   - Application title **AgileFlow** is visible
+   - Tagline describing the platform displays correctly
+   - Log In and Create Account buttons are visible
+   - Feature overview section (Task Board, Sprint Management, Burndown Chart) renders
+   - Example burndown chart preview appears
+   - Learn More button appears in the footer
+
+   - Button and link functionality:
+      - Log In button navigates to `/login`
+      - Create Account button navigates to `/signup`
+      - Learn More button navigates to `/about` (if implemented)
+        
 2. **Redirect behavior for authenticated users** (if necessary)
-   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
+   - If a user is already logged in and navigates to `/`, they are automatically redirected to `/dashboard`
+     
 3. **Redirect query param**
-   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
+   - If a user attempts to visit a protected page such as `/projects/123` and is redirected to `/` with `?redirect=/projects/123`,  
+  after logging in successfully, the system should redirect them back to `/projects/123`
+
+### Optional Additions
+- To match the React frontend structure, suggested build for landing page routes:
+/ → LandingPage
+/login → LoginPage
+/signup → SignupPage
+/dashboard → DashboardPage
+/projects/:id → ProjectPage
+
+---
+# 2. Login Page (by Sergio Rojas-Aguilar)
+
+## Page Description
+- Purpose: Allows existing users to log in to the application using their credentials.
+
+- Functionality: Authenticates the user and establishes a session before redirecting them to the main dashboard.
+
+## Mockup
+
+<img width="1540" height="900" alt="image" src="./Images/SRA_LOGIN_WireFrame-01.jpg" />
+
+## Parameters Needed for the Page
+- Route params: /login
+
+- Query params: Optional redirect parameter (e.g. /login?redirect=/dashboard)
+
+## Data Needed to Render the Page
+### Static Content
+- Application title / logo
+
+- Login form
+
+   - Email or Username input
+
+   - Password input
+
+- Log In button
+
+- Sign Up link
+
+### API Fetches
+
+- **POST** /api/auth/login
+
+   - Authenticates the user credentials
+   - Returns session token or authentication status
+
+### State Parameters
+
+- Authentication state
+- Login form input state
+- Login error state (invalid credentials, server error)
+
+## Links Rendered on the Page
+
+- **Sign Up** → `*/signup`
+
+## Tests for Verifying Rendering of the Page
+1. **Renders key UI elements**
+
+- Application title or logo is visible
+- Email/Username and Password input fields render
+- Log In button is visible and clickable
+- Sign Up link is visible
+
+2. **Form interaction**
+- User can type into input fields
+- Login button submits form
+
+3. **Authentication behavior**
+- Valid credentials redirect user to /dashboard
+- Invalid credentials show an error message
+
+4. **Redirect behavior for authenticated users**
+- If a user is already logged in, navigating to /login redirects to /dashboard
+
 
 ---
 
 # 3. Create User Account Page (by Sergio Rojas-Aguilar)
 
 ## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
+- Purpose: Allows new users to create an account for the application.
+- Collects required registration information, validates input, and creates a new user account.
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+<img width="1540" height="900" alt="image" src="./Images/SRA_SIGNUP_WireFrame-02.jpg" />
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+- Route params: /signup
+- Query params: None
 
 ## Data Needed to Render the Page
 ### Static Content
-- (List these contents.)
+**Application title / logo**
+- Registration form fields:
+   - Username
+   - Email
+   - Password
+   - Confirm Password
+- Create Account button
 ### API Fetches
-- (List these or write "none")
+- POST: /api/users
+   - Create NEW User
 ### State Parameters
-- (Auth of current user? Otherwise "none")
-
-## Links Rendered on the Page
-(This can include navigation links and other links/buttons)
-- Example: **Log In** → `/login`
-- Example: **Sign Up** → `/signup`
+- Form input state
+- Form validation state
+- Account creation status (success / failure)
+- Error messages
 
 ## Tests for Verifying Rendering of the Page
 1. **Renders key UI elements**
-   - Example: App title displays
-   - Example: Log In and Sign Up buttons are visible and clickable
+   - Application title is visible
+   - All required input fields render
+   - Create Account button is visible
 2. **Redirect behavior for authenticated users** (if necessary)
-   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
-3. **Redirect query param**
-   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
-
+   - Invalid inputs display validation errors
+   - Password confirmation must match 
+3. **Successful account creation**
+   - Submitting valid form data creates a new user
+   - User is redirected to /login or /dashboard
+4. **Access behavior**
+   - Page is typically accessed from the login page
+   - Already authenticated users may be redirected to /dashboard
 ---
 
 # 4. Edit User Account Page (by Sergio Rojas-Aguilar)
 
 ## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
+- Purpose: Allows authenticated users to update their account information.
+- Functionality: Users can modify their profile details such as username, email, or password.
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+<img width="1540" height="900" alt="image" src="./Images/SRA_EDIT_ACCOUNT_WireFrame-03.jpg" />
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+- Route params: /account/edit
+- Query params: None
 
 ## Data Needed to Render the Page
 ### Static Content
@@ -153,132 +236,186 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 ### API Fetches
 - (List these or write "none")
 ### State Parameters
-- (Auth of current user? Otherwise "none")
+- Application title
+- Editable user account form
+   - Username
+   - Email
+   - Password (optional change)
+   - Confirm Password
+- Save Changes button
 
 ## Links Rendered on the Page
-(This can include navigation links and other links/buttons)
-- Example: **Log In** → `/login`
-- Example: **Sign Up** → `/signup`
+**GET:** /api/users/me
+   - Retrieves the current user's account information
+
+**PUT:** /api/users/me
+   - Updates the user account information
 
 ## Tests for Verifying Rendering of the Page
 1. **Renders key UI elements**
-   - Example: App title displays
-   - Example: Log In and Sign Up buttons are visible and clickable
+   - User account fields populate with current data
+   - Save Changes button is visible
 2. **Redirect behavior for authenticated users** (if necessary)
-   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
-3. **Redirect query param**
-   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
-
+   - User can modify editable fields
+   - Validation occurs on submit
+3. **Update behavior**
+   - Valid changes update the user account
+   - Success message appears after update
+4. **Authentication requirement**
+   - If the user is not authenticated, redirect to /login
 ---
 
 # 5. Current User Page (by Mike Davis)
 
 ## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
+- Purpose: Lay out information about the session's current user
+- This page provides user information about the current user including things like username, profile picture, teams/tasks they're assigned to, and other things. There will also be top-of-page navigation links to other pages, and buttons in the main body of the page that navigate to edit account
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+<img src="./Images/MD-current-user-page-mockup.png" width="50%"/>
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+- Route params: /users/:id
+- Query params: none
 
 ## Data Needed to Render the Page
 ### Static Content
-- (List these contents.)
+- DevDash logo
+- Navigation bar (mostly the same on each page)
+- Section headings
+- CSS styling information
 ### API Fetches
-- (List these or write "none")
+- Current user object data fields such as username, when joined, profile picture. This enables the rendering of user profile information.
+- Join table data through user object's foreign keys. This information enables the rendering of teams and tasks.
+**GET** /api/users/me
+   - Fetches current user's account information.
+**GET** /api/users/me/teams
+   - Fetches current user's teams.
+**GET** /api/users/me/tasks
+   - Fetches current user's tasks.
 ### State Parameters
-- (Auth of current user? Otherwise "none")
+- Authorization of whether this is the current user, the success of which will show more in-depth private information such as tasks and the edit account button
 
 ## Links Rendered on the Page
 (This can include navigation links and other links/buttons)
-- Example: **Log In** → `/login`
-- Example: **Sign Up** → `/signup`
+- **Home** → `/`
+- **About** → `/about`
+- **Account** → `/account`
+- **Edit Account** → `/account/edit`
+- **Team** → `/teams/:id`
+- **Task** → `/tasks/:id`
 
 ## Tests for Verifying Rendering of the Page
 1. **Renders key UI elements**
-   - Example: App title displays
-   - Example: Log In and Sign Up buttons are visible and clickable
-2. **Redirect behavior for authenticated users** (if necessary)
-   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
-3. **Redirect query param**
-   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
+   - App logo displays
+   - Navigation links display and are clickable
+   - Profile picture displays
+   - 'Edit Account' button displays and is clickable
+   - Links to Teams and Tasks display and are clickable
+   - Clicking on "Account" in nav bar doesn't reload page, since that is the current page
 
 ---
 
 # 6. Other User Page (by Mike Davis)
 
 ## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
+- Purpose: Lay out information about a user beside the session's current user
+- This page provides user information about another user including things like username, profile picture, teams they're assigned to, and other things. There will also be top-of-page navigation links to other pages, as well as a button in the main body of the page to invite them to one or multiple of the current user's teams
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+<img src="./Images/MD-other-user-page-mockup.png" width="50%"/>
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+- Route params: /users/:id
+- Query params: none
 
 ## Data Needed to Render the Page
 ### Static Content
-- (List these contents.)
+- DevDash logo
+- Navigation bar (mostly the same on each page)
+- Section headings
+- CSS styling information
 ### API Fetches
-- (List these or write "none")
+**GET** /api/users/:id
+   - Fetches other user's account information.
+**GET** /api/users/:id/teams
+   - Fetches other user's teams.
+**POST** /api/users/:id/invites
+   - Posts invite to other user's data object or creates invitation using a join table between users.
 ### State Parameters
-- (Auth of current user? Otherwise "none")
+- Authorization of whether this is the current user, the failure of which will limit the information on the page to less-private information.
 
 ## Links Rendered on the Page
 (This can include navigation links and other links/buttons)
-- Example: **Log In** → `/login`
-- Example: **Sign Up** → `/signup`
+- **Home** → `/`
+- **About** → `/about`
+- **Account** → `/account`
+- **Team** → `/teams/:id`
+- **Task** → `/tasks/:id`
 
 ## Tests for Verifying Rendering of the Page
 1. **Renders key UI elements**
-   - Example: App title displays
-   - Example: Log In and Sign Up buttons are visible and clickable
-2. **Redirect behavior for authenticated users** (if necessary)
-   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
-3. **Redirect query param**
-   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
+   - App logo displays
+   - Navigation links display and are clickable
+   - Profile picture displays
+   - 'Invite to Team' button displays and is clickable
+   - Clicking 'Invite to Team' will reveal another section or a modal window with options of which teams to invite to
+   - Links to Teams display and are clickable
 
 ---
 
 # 7. Dashboard Page (by Mike Davis)
 
 ## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
+- Purpose: Lay out the teams the current user is on, with team summary information and burndown chart.
+- This page renders the current user's multiple teams, with information summaries about each team's up-to-date name, members, sprints, tasks, and burndown chart. The information in each team section will be fetched from the database. If there is no current user, this will be a mockup of a dashboard a user could create if they signed up to the website.
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+<img src="./Images/MD-dashboard-page-mockup.png" width="50%"/>
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+- Route params: none
+- Query params: none
 
 ## Data Needed to Render the Page
 ### Static Content
-- (List these contents.)
+- DevDash logo
+- Navigation bar (mostly the same on each page)
+- Section headings
+- Dividers
+- CSS styling information
+- Mock dashboard if no current user
 ### API Fetches
-- (List these or write "none")
+**GET** /api/users/me/teams
+   - Fetches current user's teams.
+**GET** /api/teams/:id/members
+   - Fetches team members for each team.
+**GET** /api/teams/:id/sprints
+   - Fetches sprints for each team.
+**GET** /api/teams/:id/burndown
+   - Fetches burndown chart for each team.
 ### State Parameters
-- (Auth of current user? Otherwise "none")
+- Authorization of whether there is a current user logged in, the failure of which will show a mock dashboard whose data is stored statically in the webpage directory.
 
 ## Links Rendered on the Page
 (This can include navigation links and other links/buttons)
-- Example: **Log In** → `/login`
-- Example: **Sign Up** → `/signup`
+- **Home** → `/`
+- **About** → `/about`
+- **Account** → `/account`
+- **Team** → `/teams/:id`
+- **Sprint** → `/sprints/:id`
+- **Task** → `/tasks/:id`
 
 ## Tests for Verifying Rendering of the Page
 1. **Renders key UI elements**
-   - Example: App title displays
-   - Example: Log In and Sign Up buttons are visible and clickable
-2. **Redirect behavior for authenticated users** (if necessary)
-   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
-3. **Redirect query param**
-   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
+   - App logo displays
+   - Navigation links display and are clickable
+   - Team members' profile pictures display
+   - Links to Teams display and are clickable
+   - Links to Sprints display and are clickable
+   - Links to Tasks display and are clickable
+   - Shows burndown chart
+   - Shows mock dashboard data when there is no current user
 
 ---
 
@@ -403,34 +540,72 @@ Each page includes a **low-fidelity mockup** (ASCII wireframe). Teams may replac
 # 10. Task Page (by Andrew MacRossie)
 
 ## Page Description
-- Purpose: (One-sentence description of basic utility of this page.)
-- (Provide a short feature summary so the purpose is clear before authentication.)
+- Purpose: This page displays the full details of a specific task within a sprint, allowing users to view and edit task metadata including priority, due date, project, sprint, and assignee, while also allowing users to read and post comments on the task.
+- Feature Summary: The Task Page gives team members a focused, single-task view within the broader agile workflow. Once a user is logged in, they can interact with all task fields inline, update status, and add comments. The page reflects the tasks position within the burndown chart context, helping teams track progress against sprint goals. 
 
 ## Mockup
-(This should be a wireframe drawing of the page. Just do it on paper and take a picture to place here.)
+<img width="1029" height="761" alt="Screenshot 2026-03-11 at 3 39 29 PM" src="https://github.com/user-attachments/assets/16711af3-ad7a-4eaa-aac0-e3bf545b0702" />
+
 
 ## Parameters Needed for the Page
-- Route params: (List any route parameters necessary for naivgating to this page. If not necessary, list "none".)
-- Query params: (List necessary query parameters that should be included in URL. If not necessary, list "none".)
+- Route params: project_id/sprint_id/task_id 
+- Query params: ?redirect
 
 ## Data Needed to Render the Page
 ### Static Content
-- (List these contents.)
+- Priority, Due Date, Project, Sprint, Assignee
+- Edit (an icon to edit needed fields)
+- Comment section header and text input placeholder
+- Status badge options (To Do, In Progress, Done)
+- Submit/Save and Cancel buttons
+- Empty state message if no comments exist yet
+- Error messge: "Task not found" for invalid task_id
+- "Back to Sprint" navigation label
+
 ### API Fetches
-- (List these or write "none")
+- GET /api/projects/:project_id — fetch project name and metadata
+- GET /api/projects/:project_id/sprints/:sprint_id — fetch sprint number and dates
+- GET /api/projects/:project_id/sprints/:sprint_id/tasks/:task_id — fetch full task detail:
+- GET /api/tasks/:task_id/comments — fetch all comments in chronological order
+- PATCH /api/tasks/:task_id — update editable fields (priority, due date, assignee, status)
+- POST /api/tasks/:task_id/comments — submit a new comment
+
 ### State Parameters
-- (Auth of current user? Otherwise "none")
+- Auth of current user (user_id, display name, role, avatar)
+- Edit mode toggle state per field (controls inline editor visibility)
+- Comment input field state (controlled text input)
+- Loading/error state for async fetches
 
 ## Links Rendered on the Page
 (This can include navigation links and other links/buttons)
-- Example: **Log In** → `/login`
-- Example: **Sign Up** → `/signup`
+- Project Page → /projects/:project_id
+- Sprint Page (breadcrumb back) → /projects/:project_id/sprints/:sprint_id
+- Assignee User Page → /users/:user_id
+- Edit Task Fields → inline edit — no route change, state-driven toggle
+- Add Comment Button → POST /api/tasks/:task_id/comments (no navigation)
+- Delete Task Button → DELETE /api/tasks/:task_id → redirects to Sprint Page on success
+- Burndown Chart → /projects/:project_id/burndown
 
 ## Tests for Verifying Rendering of the Page
 1. **Renders key UI elements**
-   - Example: App title displays
-   - Example: Log In and Sign Up buttons are visible and clickable
+   - Task title is visible at the top of the page
+   - All five metadata fields render with their labels and values: Priority, Due Date, Project, Sprint, Assignee
+   - Edit (pencil) icon is visible next to each editable field and is clickable
+   - Status badge displays the correct current status with appropriate color
+   - Comment section renders below task details
+   - Comment input box and submit button are visible and interactive
+   - "Back to Sprint" breadcrumb link is visible in the page header
+   - Error state: if task_id is invalid, "Task not found" message displays instead of task content
+  
 2. **Redirect behavior for authenticated users** (if necessary)
-   - Example: If user is logged in, navigating to `/` redirects to `/dashboard`
+   - If user is NOT logged in, navigating to /projects/:project_id/sprints/:sprint_id/tasks/:task_id redirects to /login
+   - If user IS logged in, the full task detail page renders correctly
+   - Clicking the project name breadcrumb redirects to /projects/:project_id
+   - Clicking the sprint name redirects to /projects/:project_id/sprints/:sprint_id
+   - Clicking the assignee's name or avatar navigates to /users/:user_id
+   - After deleting a task, the user is redirected to /projects/:project_id/sprints/:sprint_id
+  
 3. **Redirect query param**
-   - Example: Visiting `/?redirect=/groups/123` and clicking Log In should preserve redirect intent (either via query or state)
+   - Visiting the task page with ?redirect=/projects/42/sprints/7 and clicking "Back to Sprint" preserves and follows the redirect path
+   - Visiting /login?redirect=/projects/42/sprints/7/tasks/99 after authentication completes redirects the user to the original task page
+   - Query param is stripped from the URL after the redirect resolves (no stale ?redirect in address bar)
