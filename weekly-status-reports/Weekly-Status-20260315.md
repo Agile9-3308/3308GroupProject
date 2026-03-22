@@ -42,7 +42,7 @@
 
 **Sergio Rojas-Aguilar:**
 
-- 
+- Frontend wireframe for the team to be able to visualize and plan
 
 **Michael Davis:** 
 
@@ -69,7 +69,10 @@
 
 **Sergio Rojas-Aguilar:**
 
-- 
+- Created UI wireframe structure, state parameters, API routes for three core frontend routes:
+   - Login Page
+   - Create Account Page
+   - Edit User Account Page
 
 **Michael Davis:** 
 
@@ -100,7 +103,7 @@
 
 **Sergio Rojas-Aguilar:**
 
-- 
+- Create SQL scheme and design tests 
 
 **Michael Davis:** 
 
@@ -126,7 +129,7 @@
 
 **Sergio Rojas-Aguilar:**
 
-- 
+- Blockers and Issues : At the moment I don't see any blockers or issues. 
 
 
 **Michael Davis:** 
@@ -155,7 +158,8 @@
 
 **Sergio Rojas-Aguilar:**
 
-- 
+- Identified Risk: Risk Forgeting or missing work
+- Mitigation: Keep jira up to date to allow monitoring 
 
 **Michael Davis:** 
 
@@ -191,7 +195,10 @@ The team could work on:
 
 **Sergio Rojas-Aguilar:**
 
-- 
+- Wire frame layout and assigned routes for:
+   - Login Page
+   - Create Account Page
+   - Edit User Account Page
 
 **Michael Davis:** 
 
