@@ -34,6 +34,9 @@
 
   Snippets of this week's Jira:
 
+  <img width="825" height="714" alt="Screenshot 2026-03-22 at 12 23 52 PM" src="https://github.com/user-attachments/assets/2190610d-e49b-41d1-a7af-1880ad53aea7" />
+
+
 
 
 ---
@@ -60,7 +63,8 @@
 
 **Andrew MacRossie:** 
 
-- 
+- Created frontend wireframe drawing of the Task page
+- Backend structure layout
 
 
 ---
@@ -94,7 +98,7 @@
 
 **Andrew MacRossie:** 
 
--
+- UI wireframe for the Tasks page, as well as state parameters and API routes
 
 ---
 
@@ -120,7 +124,7 @@
 
 **Andrew MacRossie:** 
 
-- 
+- SQL testing page
 
 
 ---
@@ -146,7 +150,7 @@
 
 **Andrew MacRossie:** 
 
--
+- No blockers
 
 
 
@@ -175,7 +179,7 @@
 
 **Andrew MacRossie:** 
 
-- 
+- None at this time
 
 
 ---
@@ -216,7 +220,7 @@ The team could work on:
 
 **Andrew MacRossie:** 
 
-- 
+- Wireframe drawing and API routes for Task page
 
 
 ---
