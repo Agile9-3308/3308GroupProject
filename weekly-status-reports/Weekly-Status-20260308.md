@@ -64,7 +64,8 @@
 
 **Andrew MacRossie:** 
 
-- 
+- Researched SQL alchemy
+- Reviewed ERD structure to prepare for database design
 
 
 ---
@@ -99,7 +100,9 @@
 
 **Andrew MacRossie:** 
 
--
+- Created ERD in MySQLWorkbench along with SQL script
+- Researched Python file struct
+- Created class ORM for Python
 
 ---
 
@@ -152,7 +155,7 @@
 
 **Andrew MacRossie:** 
 
--
+- No blockers at this time
 
 
 
@@ -182,7 +185,8 @@
 
 **Andrew MacRossie:** 
 
-- 
+- Risk: time management 
+- Mitigation: be better with time management
 
 
 ---
@@ -223,7 +227,7 @@ The team could work on:
 
 **Andrew MacRossie:** 
 
-- 
+- Creation of ERD and SQL diagram
 
 
 ---
