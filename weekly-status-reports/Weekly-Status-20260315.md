@@ -49,8 +49,7 @@
 
 **Michael Davis:** 
 
-- Started thinking ahead on how to build classes and methods for the back end of Agile Flow.
-- Got more familiar with what our end product will look like, and where we should draw the line for an MVP.
+- Got famili
 
 **Carolina Perez:** 
 
@@ -81,8 +80,7 @@
 
 **Michael Davis:** 
 
-- Set Up Environment: Installed Python and Node.js
-- Researched OOP in Python: Watched through an overview video on Python OOP, and did some practice
+- 
 
 **Carolina Perez:** 
 
