@@ -10,7 +10,7 @@
 ## Reporting Period
 **Week:** 3  
 **Meeting Held:** Yes   
-**Meeting Date:** March 8, 2026  
+**Meeting Date:** March 15, 2026  
 **Meeting Duration:** 30 minutes - 1hour  
 **Meeting Format:** Discord     
 
@@ -50,7 +50,7 @@
 
 **Carolina Perez:** 
 
--  Started to look into next weeks project milestone due.
+-  Weekly update 
 -  backend structure layout
 -  continued flask/sqlalchemy any additional programs needed practice 
 
@@ -77,7 +77,10 @@
 
 **Carolina Perez:** 
 
-- project milestone work
+- Project SQL table file
+- Sprint sql table file
+- Project workflow page
+- Sprints workflow page 
 - backend structure review/ planning
   
 
@@ -104,7 +107,9 @@
 - 
 
 **Carolina Perez:** 
-- N/A - MEETING HASNT HAPPENED YET 
+- Begin working on SQL Testing page
+- Project testing
+- sprints testing
   
 **Erick Samayoa:** 
 
@@ -194,7 +199,9 @@ The team could work on:
 
 **Carolina Perez:** 
 
-- project milestone work 
+- Workflow layout for sprints 
+- Workflow layout page for projects 
+- Began looking at the next upcoming project milestone
 
 **Erick Samayoa:** 
 
