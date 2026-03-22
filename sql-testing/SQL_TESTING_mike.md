@@ -1,13 +1,13 @@
 # SQL_TESTING.md
 ## Project Milestone 5: SQL Design
-**Project:** StudySync  
+**Project:** AgileFlow  
 **Purpose:** Database design and testing specification for developers
 
 ---
 
 ## Overview
 
-This document describes the **database schema**, **table relationships**, and **data access methods** for the StudySync application. It is intended as a **developer-facing design document** that clearly defines how data is stored, accessed, and validated.
+This document describes the **database schema**, **table relationships**, and **data access methods** for the AgileFlow application. It is intended as a **developer-facing design document** that clearly defines how data is stored, accessed, and validated.
 
 This document answers the following questions:
 - What tables exist in the database?
@@ -25,10 +25,10 @@ The backend uses **PostgreSQL** accessed through **SQLAlchemy** via a FastAPI se
 
 At minimum, the system requires the following tables:
 - `users`
-- `groups`
-- `group_members`
+- `projects`
+- `project_members`
+- `sprints`
 - `tasks`
-- `availability`
 
 Each table is described below.
 
@@ -37,25 +37,26 @@ Each table is described below.
 ## 1) Table: users
 
 ### Table Description
-Stores user account and profile information for all StudySync users.
+Stores user account and profile information for all AgileFlow users.
 
 ### Fields
 | Field Name | Description | Constraints |
-|----------|------------|-------------|
+|------------|-------------|-------------|
 | id | Unique user identifier | Primary key |
-| email | User email address | Unique, NOT NULL |
+| username | Name shown in UI | NOT NULL |
 | password_hash | Hashed password | NOT NULL |
-| display_name | Name shown in UI | NOT NULL |
+| email | User email address | Unique, NOT NULL |
+| profile_picture | User picture | None |
+| bio | User description | None |
 | created_at | Account creation timestamp | NOT NULL, default NOW() |
+| created_at | Account creation timestamp | NOT NULL, default created_at |
 
 ### Relationships
-- One-to-many with `groups` (as owner)
-- Many-to-many with `groups` through `group_members`
+- One-to-many with `projects` (as admin)
+- Many-to-many with `projects`
 - One-to-many with `tasks`
-- One-to-many with `availability`
 
 ### Table Tests
-
 **Use Case Name:** Create user record  
 **Description:** Verify a new user can be stored  
 **Pre-conditions:** Database running  
@@ -69,123 +70,127 @@ Stores user account and profile information for all StudySync users.
 
 ---
 
-## 2) Table: groups
+## 2) Table: projects
 
 ### Table Description
-Represents a study group created by users.
+Represents a project group created by a user.
 
 ### Fields
 | Field Name | Description | Constraints |
-|----------|------------|-------------|
-| id | Unique group identifier | Primary key |
-| name | Group display name | NOT NULL |
-| owner_id | User who created group | Foreign key → users.id |
+|------------|-------------|-------------|
+| id | Unique project identifier | Primary key |
+| name | Project display name | NOT NULL |
+| description | User description | None |
+| owner_id | User who created project | Foreign key → users.id |
 | created_at | Creation timestamp | NOT NULL |
 
 ### Relationships
 - Many-to-one with `users`
-- Many-to-many with `users` via `group_members`
-- One-to-many with `tasks`
-- One-to-many with `availability`
+- Many-to-many with `users` via `project_members`
+- One-to-many with `sprints`
 
 ### Table Tests
-
-**Use Case Name:** Create group  
-**Description:** Verify group creation  
-**Pre-conditions:** Owner user exists  
+**Use Case Name:** Create project  
+**Description:** Verify project creation  
+**Pre-conditions:** Database running; Owner user exists  
 **Test Steps:**
-1. Insert group with valid owner_id  
-**Expected Result:** Group row created  
-**Actual Result:** Group returned  
+1. Insert valid project row
+2. Query by owner_id
+**Expected Result:** Project row created  
+**Actual Result:** Project returned  
 **Status:** Pass  
 
 ---
 
-## 3) Table: group_members
+## 3) Table: project_members
 
 ### Table Description
-Join table mapping users to groups.
+Join table mapping users to projects.
 
 ### Fields
 | Field Name | Description | Constraints |
-|----------|------------|-------------|
+|------------|-------------|-------------|
 | user_id | Member user | Foreign key → users.id |
-| group_id | Group joined | Foreign key → groups.id |
+| project_id | Project joined | Foreign key → projects.id |
 | role | Member role (member/admin) | Default 'member' |
 
 ### Relationships
-- Composite primary key (`user_id`, `group_id`)
-- Links users and groups
+- One-to-one with `users`
+- One-to-one with `projects`
 
 ### Table Tests
-
-**Use Case Name:** Add user to group  
-**Description:** Verify membership creation  
+**Use Case Name:** Add user to project  
+**Description:** Verify membership creation
+**Pre-conditions:** Database running; User exists; Project exists
 **Test Steps:**
-1. Insert (user_id, group_id)  
+1. Insert (user_id, project_id)
+2. Query by user_id, project_id
 **Expected Result:** Membership exists  
 **Status:** Pass  
 
 ---
 
-## 4) Table: tasks
+## 4) Table: sprints
 
 ### Table Description
-Tracks tasks assigned within study groups.
+Tracks project sprints within projects.
 
 ### Fields
 | Field Name | Description | Constraints |
-|----------|------------|-------------|
-| id | Task identifier | Primary key |
-| group_id | Group owning task | Foreign key |
-| assignee_id | Assigned user | Foreign key |
-| title | Task description | NOT NULL |
-| status | Task state | CHECK (todo, in_progress, complete) |
-| due_date | Due date | Nullable |
+|------------|-------------|-------------|
+| id | Sprint identifier | Primary key |
+| project_id | Project owning sprint | Foreign key |
+| name | Sprint name | NOT NULL |
+| description | Sprint description | NOT NULL |
+| start_date | Sprint start date | NOT NULL |
+| end_date | Sprint end date | NOT NULL |
 
 ### Relationships
-- Many-to-one with `groups`
-- Many-to-one with `users`
+- Many-to-one with `projects`
+- One-to-many with `tasks`
 
 ### Table Tests
 
-**Use Case Name:** Create task  
-**Description:** Verify task persistence  
+**Use Case Name:** Create sprint  
+**Description:** Verify sprint persistence
+**Pre-conditions:** Database running; Project exists
 **Test Steps:**
-1. Insert valid task  
-2. Query by group_id  
+1. Insert valid sprint
+2. Query by project_id
 **Expected Result:** Task appears  
 **Status:** Pass  
 
 ---
 
-## 5) Table: availability
+## 5) Table: tasks
 
 ### Table Description
-Stores weekly availability time blocks per user and group.
+Tracks tasks assigned within study projects.
 
 ### Fields
 | Field Name | Description | Constraints |
-|----------|------------|-------------|
-| id | Availability record | Primary key |
-| user_id | Owner user | Foreign key |
-| group_id | Associated group | Foreign key |
-| day_of_week | Day label | NOT NULL |
-| start_time | Start time | NOT NULL |
-| end_time | End time | NOT NULL |
+|------------|-------------|-------------|
+| id | Task identifier | Primary key |
+| name | Task name | NOT NULL |
+| description | Task descripion | NOT NULL |
+| status | Task state | CHECK (todo, in_progress, complete) |
+| due_date | Due date | Nullable |
+| sprint_id | Sprint owning task | Foreign key |
+| assignee_id | Assigned user | Foreign key |
 
 ### Relationships
-- Many-to-one with users
-- Many-to-one with groups
+- Many-to-one with `sprints`
+- One-to-one with `users`
 
 ### Table Tests
 
-**Use Case Name:** Store availability  
-**Description:** Verify availability persistence  
+**Use Case Name:** Create task  
+**Description:** Verify task persistence
+**Pre-conditions:** Database running; Sprint exists
 **Test Steps:**
-1. Insert availability row  
-2. Query by user_id  
-**Expected Result:** Row returned  
+1. Insert valid task
+2. Query by sprint_idm user_id
+**Expected Result:** Task appears  
 **Status:** Pass  
 
 ---
@@ -218,10 +223,10 @@ Fetches a user by email for authentication.
 
 ---
 
-## Access Method: get_groups_for_user
+## Access Method: get_projects_for_user
 
 ### Description
-Returns all groups a user belongs to.
+Returns all projects a user belongs to.
 
 ### Parameters
 - user_id (int)
@@ -230,7 +235,7 @@ Returns all groups a user belongs to.
 - List of group objects
 
 ### Tests
-1. User with memberships returns groups
+1. User with memberships returns projects
 2. User with none returns empty list
 
 ---
@@ -241,7 +246,7 @@ Returns all groups a user belongs to.
 Returns tasks associated with a group.
 
 ### Parameters
-- group_id (int)
+- project_id (int)
 
 ### Return Values
 - List of tasks
@@ -258,7 +263,7 @@ Returns tasks associated with a group.
 Computes overlapping availability for a group.
 
 ### Parameters
-- group_id (int)
+- project_id (int)
 
 ### Return Values
 - List of overlapping time windows
@@ -274,8 +279,8 @@ Computes overlapping availability for a group.
 | Page | Tables Accessed |
 |----|----------------|
 | Login | users |
-| Dashboard | users, groups, tasks |
-| Group Page | groups, group_members, tasks, availability |
+| Dashboard | users, projects, tasks |
+| Group Page | projects, group_members, tasks, availability |
 | Availability Page | availability |
 | Task Page | tasks, users |
 
@@ -288,7 +293,7 @@ Computes overlapping availability for a group.
 **Pre-conditions:** User logged in  
 **Test Steps:**
 1. Load dashboard
-2. Fetch groups and tasks  
+2. Fetch projects and tasks  
 **Expected Result:** Correct data displayed  
 **Post-conditions:** None  
 

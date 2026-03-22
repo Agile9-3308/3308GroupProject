@@ -197,7 +197,7 @@
 
 **Michael Davis:** 
 
--- *Identified Risk:* There could be potentially very different interpretations of how our relational database should be built.
+- *Identified Risk:* There could be potentially very different interpretations of how our relational database should be built.
 - *Mitigation:* We will all be able to compare our database diagrams and bridge the gap.
 
 **Carolina Perez:** 
