@@ -194,10 +194,10 @@
 ## Team Reflection
 
 The Team has gotten better when it comes to discussion. The team has improved on:
-   - 
+   - Tasks are very clearly distributed and the team is doing a good job of completing individual tasks and bringing them together to create a cohesive whole
      
 The team could work on:
-   - 
+   - It sometimes feels that we are scrambling to initiate the next steps. Might be useful to have some groundwork prepared for the following sprint by the end of the current sprint.
 
 
 ---
@@ -233,5 +233,7 @@ The team could work on:
 ---
 
 ## Notes and Etiquette
+
+- The team works together effectively and is reaching its goals well. 
 
 **This document is to be finished by 11:59 PM MT on Sunday, the night of the relevant Scrum Meeting.**
