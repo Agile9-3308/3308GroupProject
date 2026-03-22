@@ -34,6 +34,9 @@
 
   Snippets of this week's Jira:
 
+  <img width="837" height="745" alt="Screenshot 2026-03-22 at 12 25 35 PM" src="https://github.com/user-attachments/assets/e4a4c410-a12c-49a8-a22c-654120d304b6" />
+
+
 
 
 ---
