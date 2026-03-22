@@ -1,300 +1,56 @@
 # SQL_TESTING.md
 ## Project Milestone 5: SQL Design
-**Project:** StudySync  
+**Project:** Agile Project Management Application  
 **Purpose:** Database design and testing specification for developers
 
 ---
 
-## Overview
-
-This document describes the **database schema**, **table relationships**, and **data access methods** for the StudySync application. It is intended as a **developer-facing design document** that clearly defines how data is stored, accessed, and validated.
-
-This document answers the following questions:
-- What tables exist in the database?
-- What fields and constraints do those tables contain?
-- How are tables related?
-- What data access methods are required?
-- Which pages depend on which data?
-- How do we test both the schema and the access routines?
-
-The backend uses **PostgreSQL** accessed through **SQLAlchemy** via a FastAPI service layer.
-
----
-
-# Database Tables
-
-At minimum, the system requires the following tables:
-- `users`
-- `groups`
-- `group_members`
-- `tasks`
-- `availability`
-
-Each table is described below.
-
----
-
-## 1) Table: users
+## Table: Tasks
 
 ### Table Description
-Stores user account and profile information for all StudySync users.
+Stores individual work items belonging to a sprint and assigned to a user. Tasks are the atomic units of work tracked in the system and carry a priority level, time range, name, and work item description.
 
 ### Fields
+
 | Field Name | Description | Constraints |
-|----------|------------|-------------|
-| id | Unique user identifier | Primary key |
-| email | User email address | Unique, NOT NULL |
-| password_hash | Hashed password | NOT NULL |
-| display_name | Name shown in UI | NOT NULL |
-| created_at | Account creation timestamp | NOT NULL, default NOW() |
+|---|---|---|
+| TaskID | Unique task identifier | Primary Key (composite), NOT NULL |
+| TaskName | Human-readable task name | NOT NULL |
+| TaskStartDate | Expected start date and time | NOT NULL |
+| TaskEndDate | Expected completion date and time | NOT NULL |
+| TaskItems | Description or checklist of work items | NOT NULL |
+| Sprints_SprintID | Sprint this task belongs to | Foreign Key → Sprints(SprintID), NOT NULL |
+| AssignedUserID | User assigned to complete the task | Foreign Key → Users(UserID), NOT NULL |
+| Priority | Numeric priority level (e.g., 1 = Highest) | NOT NULL |
 
 ### Relationships
-- One-to-many with `groups` (as owner)
-- Many-to-many with `groups` through `group_members`
-- One-to-many with `tasks`
-- One-to-many with `availability`
+- Many-to-one with `Sprints`
+- Many-to-one with `Users`
+- Composite primary key on (`TaskID`, `Sprints_SprintID`, `AssignedUserID`)
 
 ### Table Tests
 
-**Use Case Name:** Create user record  
-**Description:** Verify a new user can be stored  
-**Pre-conditions:** Database running  
+**Use Case Name:** Create task with valid references  
+**Description:** Verify a task is successfully created when both foreign keys are valid  
+**Pre-conditions:** Sprint with SprintID = 1 and User with UserID = 1 exist  
 **Test Steps:**
-1. Insert valid user row
-2. Query by email  
-**Expected Result:** User row exists  
-**Actual Result:** User returned by query  
+1. Insert a valid task row
+2. Query by TaskID
+
+**Expected Result:** Task row returned with all expected values  
 **Status:** Pass  
-**Post-conditions:** User persisted  
+**Post-conditions:** Task stored and linked to SprintID = 1 and UserID = 1
 
 ---
 
-## 2) Table: groups
-
-### Table Description
-Represents a study group created by users.
-
-### Fields
-| Field Name | Description | Constraints |
-|----------|------------|-------------|
-| id | Unique group identifier | Primary key |
-| name | Group display name | NOT NULL |
-| owner_id | User who created group | Foreign key → users.id |
-| created_at | Creation timestamp | NOT NULL |
-
-### Relationships
-- Many-to-one with `users`
-- Many-to-many with `users` via `group_members`
-- One-to-many with `tasks`
-- One-to-many with `availability`
-
-### Table Tests
-
-**Use Case Name:** Create group  
-**Description:** Verify group creation  
-**Pre-conditions:** Owner user exists  
+**Use Case Name:** Retrieve tasks ordered by priority  
+**Description:** Verify tasks within a sprint are returned in ascending priority order  
+**Pre-conditions:** Multiple tasks with varying Priority values exist for SprintID = 1  
 **Test Steps:**
-1. Insert group with valid owner_id  
-**Expected Result:** Group row created  
-**Actual Result:** Group returned  
+1. Query all tasks for SprintID = 1 with ORDER BY Priority ASC
+
+**Expected Result:** Tasks returned sorted from lowest to highest Priority value  
 **Status:** Pass  
+**Post-conditions:** No data is modified
 
----
-
-## 3) Table: group_members
-
-### Table Description
-Join table mapping users to groups.
-
-### Fields
-| Field Name | Description | Constraints |
-|----------|------------|-------------|
-| user_id | Member user | Foreign key → users.id |
-| group_id | Group joined | Foreign key → groups.id |
-| role | Member role (member/admin) | Default 'member' |
-
-### Relationships
-- Composite primary key (`user_id`, `group_id`)
-- Links users and groups
-
-### Table Tests
-
-**Use Case Name:** Add user to group  
-**Description:** Verify membership creation  
-**Test Steps:**
-1. Insert (user_id, group_id)  
-**Expected Result:** Membership exists  
-**Status:** Pass  
-
----
-
-## 4) Table: tasks
-
-### Table Description
-Tracks tasks assigned within study groups.
-
-### Fields
-| Field Name | Description | Constraints |
-|----------|------------|-------------|
-| id | Task identifier | Primary key |
-| group_id | Group owning task | Foreign key |
-| assignee_id | Assigned user | Foreign key |
-| title | Task description | NOT NULL |
-| status | Task state | CHECK (todo, in_progress, complete) |
-| due_date | Due date | Nullable |
-
-### Relationships
-- Many-to-one with `groups`
-- Many-to-one with `users`
-
-### Table Tests
-
-**Use Case Name:** Create task  
-**Description:** Verify task persistence  
-**Test Steps:**
-1. Insert valid task  
-2. Query by group_id  
-**Expected Result:** Task appears  
-**Status:** Pass  
-
----
-
-## 5) Table: availability
-
-### Table Description
-Stores weekly availability time blocks per user and group.
-
-### Fields
-| Field Name | Description | Constraints |
-|----------|------------|-------------|
-| id | Availability record | Primary key |
-| user_id | Owner user | Foreign key |
-| group_id | Associated group | Foreign key |
-| day_of_week | Day label | NOT NULL |
-| start_time | Start time | NOT NULL |
-| end_time | End time | NOT NULL |
-
-### Relationships
-- Many-to-one with users
-- Many-to-one with groups
-
-### Table Tests
-
-**Use Case Name:** Store availability  
-**Description:** Verify availability persistence  
-**Test Steps:**
-1. Insert availability row  
-2. Query by user_id  
-**Expected Result:** Row returned  
-**Status:** Pass  
-
----
-
-# Data Access Methods
-
-Each table has at least one access method.
-
----
-
-## Access Method: get_user_by_email
-
-### Description
-Fetches a user by email for authentication.
-
-### Parameters
-- email (string)
-
-### Return Values
-- User record or null
-
-### Tests
-
-**Use Case Name:** Verify valid login  
-**Pre-conditions:** User exists  
-**Test Steps:**
-1. Call method with known email  
-**Expected Result:** User object returned  
-**Post-conditions:** None  
-
----
-
-## Access Method: get_groups_for_user
-
-### Description
-Returns all groups a user belongs to.
-
-### Parameters
-- user_id (int)
-
-### Return Values
-- List of group objects
-
-### Tests
-1. User with memberships returns groups
-2. User with none returns empty list
-
----
-
-## Access Method: get_tasks_for_group
-
-### Description
-Returns tasks associated with a group.
-
-### Parameters
-- group_id (int)
-
-### Return Values
-- List of tasks
-
-### Tests
-1. Tasks returned for valid group
-2. Empty list for group with no tasks
-
----
-
-## Access Method: get_availability_overlap
-
-### Description
-Computes overlapping availability for a group.
-
-### Parameters
-- group_id (int)
-
-### Return Values
-- List of overlapping time windows
-
-### Tests
-1. Overlapping windows returned for common availability
-2. Empty list when no overlap exists
-
----
-
-# Page-to-Database Mapping
-
-| Page | Tables Accessed |
-|----|----------------|
-| Login | users |
-| Dashboard | users, groups, tasks |
-| Group Page | groups, group_members, tasks, availability |
-| Availability Page | availability |
-| Task Page | tasks, users |
-
----
-
-# Page Data Access Tests
-
-**Use Case Name:** Dashboard loads user data  
-**Description:** Verify dashboard queries correct tables  
-**Pre-conditions:** User logged in  
-**Test Steps:**
-1. Load dashboard
-2. Fetch groups and tasks  
-**Expected Result:** Correct data displayed  
-**Post-conditions:** None  
-
----
-
-## Notes
-- Constraints enforced at DB and ORM levels
-- All access methods wrapped in service layer
-- Tests executable via integration test suite
+___
