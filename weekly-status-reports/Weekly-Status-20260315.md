@@ -10,7 +10,7 @@
 ## Reporting Period
 **Week:** 3  
 **Meeting Held:** Yes   
-**Meeting Date:** March 8, 2026  
+**Meeting Date:** March 15, 2026  
 **Meeting Duration:** 30 minutes - 1hour  
 **Meeting Format:** Discord     
 
@@ -50,7 +50,9 @@
 
 **Carolina Perez:** 
 
--  
+-  Weekly update 
+-  backend structure layout
+-  continued flask/sqlalchemy any additional programs needed practice 
 
 **Erick Samayoa:** 
 
@@ -75,7 +77,11 @@
 
 **Carolina Perez:** 
 
-- 
+- Project SQL table file
+- Sprint sql table file
+- Project workflow page
+- Sprints workflow page 
+- backend structure review/ planning
   
 
 **Erick Samayoa:** 
@@ -101,7 +107,9 @@
 - 
 
 **Carolina Perez:** 
-- 
+- Begin working on SQL Testing page
+- Project testing
+- sprints testing
   
 **Erick Samayoa:** 
 
@@ -127,7 +135,7 @@
 
 **Carolina Perez:** 
 
--  
+-  spring break: team may not be in communication as much as normal 
 
 **Erick Samayoa:** 
 
@@ -155,7 +163,7 @@
 
 **Carolina Perez:** 
 
-- 
+- none at the moment
 
 **Erick Samayoa:** 
 
@@ -191,7 +199,9 @@ The team could work on:
 
 **Carolina Perez:** 
 
-- 
+- Workflow layout for sprints 
+- Workflow layout page for projects 
+- Began looking at the next upcoming project milestone
 
 **Erick Samayoa:** 
 
