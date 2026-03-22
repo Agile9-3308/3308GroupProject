@@ -50,8 +50,7 @@
 
 **Michael Davis:** 
 
-- Started thinking ahead on how to build classes and methods for the back end of Agile Flow.
-- Got more familiar with what our end product will look like, and where we should draw the line for an MVP.
+- Overall, feeling less uncertain about the layout of our project and how our repository will look as well.
 
 **Carolina Perez:** 
 
@@ -85,8 +84,9 @@
 
 **Michael Davis:** 
 
-- Set Up Environment: Installed Python and Node.js
-- Researched OOP in Python: Watched through an overview video on Python OOP, and did some practice
+- Developed a visual idea of the database table structure and relationships.
+- Got more familiar with Python data structures, and how they will relate to our project.
+- Looked up how file structures work in Python, including module imports.
 
 **Carolina Perez:** 
 
@@ -115,7 +115,8 @@
 
 **Michael Davis:** 
 
-- Build DB Relationships: Create database diagram and rough schema for the project, with 4 data models (user, project, sprint, task)
+- Create wireframe for front end views of AgileFlow.
+- Build a test flask application to better understand how it works.
 
 **Carolina Perez:** 
 - continue designing backend structure
@@ -142,7 +143,7 @@
 
 **Michael Davis:** 
 
-- The only issue I see potentially coming up is ability to get the tasks done earlier in the week as opposed to in the 24 hours before the meeting.
+- No blockers or issues foreseen.
 
 **Carolina Perez:** 
 
@@ -171,8 +172,8 @@
 
 **Michael Davis:** 
 
-- *Identified Risk:* There could be potentially very different interpretations of how our relational database should be built.
-- *Mitigation:* We will all be able to compare our database diagrams and bridge the gap.
+- *Identified Risk:* There could be different approaches to how people create their wireframes (drawn vs. digital), which may require some adjustments.
+- *Mitigation:* There should be plenty of written information to bridge the gap in interpretation between the different styles.
 
 **Carolina Perez:** 
 
@@ -211,9 +212,8 @@ The team could work on:
 
 **Michael Davis:** 
 
-- Added Sprint 1 and 2 tasks to Jira;
-- Set up personal environment for project development
-- Researched Python OOP
+- Reached out to team during the week to ensure we were staying on task
+- Got my own tasks done, recording my progress in Jira.
 
 **Carolina Perez:** 
 
