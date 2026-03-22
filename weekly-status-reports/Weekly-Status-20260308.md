@@ -109,7 +109,7 @@
 **Sergio Rojas-Aguilar:**
 
 - Assigned Team Task (Jira includes more information):
-   - Wireframe for App
+   - Create Wireframe for App for assigned pages
 
 **Michael Davis:** 
 
