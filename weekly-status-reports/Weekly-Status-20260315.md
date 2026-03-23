@@ -138,7 +138,7 @@
 
 **Michael Davis:** 
 
-- The only issue I see potentially coming up is ability to get the tasks done earlier in the week as opposed to in the 24 hours before the meeting.
+- The main blocker I see is everyone being on spring break and wanting to take time to decompress.
 
 **Carolina Perez:** 
 

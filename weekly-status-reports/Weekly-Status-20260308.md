@@ -53,7 +53,8 @@
 
 **Michael Davis:** 
 
-- Got famili
+- Got familiar with how we will build our relational DB tables, creating a schema and diagram
+- Feeling more solid on Python file structure and data structures we might use
 
 **Carolina Perez:** 
 
@@ -88,7 +89,8 @@
 
 **Michael Davis:** 
 
-- 
+- Built a schema and database diagram
+- Did some practice building more complex Python apps from scratch
 
 **Carolina Perez:** 
 
@@ -119,7 +121,9 @@
 
 **Michael Davis:** 
 
-- 
+- Create a wireframe for my assigned pages
+- Start learning Flask by creating a test application
+- Start looking into SQLAlchemy
 
 **Carolina Perez:** 
 - continue designing backend structure
@@ -146,7 +150,7 @@
 
 **Michael Davis:** 
 
-- 
+- Time management with other classes going on, as well as the 3308 exam happening this week.
 
 **Carolina Perez:** 
 
@@ -175,7 +179,8 @@
 
 **Michael Davis:** 
 
--
+- *Identified Risk:* There is a 3308 exam this week, as well as assignments due in the class and other classes.
+- *Mitigation:* Build study guide early in the week and do light review for the rest of the week, to allow for project time.
 
 **Carolina Perez:** 
 
@@ -215,7 +220,8 @@ The team could work on:
 
 **Michael Davis:** 
 
-- 
+- Building db schema
+- Doing research on tools we will use in project
 
 **Carolina Perez:** 
 
