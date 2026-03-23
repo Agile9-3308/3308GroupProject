@@ -49,7 +49,8 @@
 
 **Michael Davis:** 
 
-- Got famili
+- Developed an idea of what our front end will look like.
+- Got more familiar with Flask
 
 **Carolina Perez:** 
 
@@ -80,7 +81,8 @@
 
 **Michael Davis:** 
 
-- 
+- Developed wireframes and routes for front end pages.
+- Started building a test Flask API.
 
 **Carolina Perez:** 
 
@@ -111,7 +113,8 @@
 
 **Michael Davis:** 
 
-- Build DB Relationships: Create database diagram and rough schema for the project, with 4 data models (user, project, sprint, task)
+- Continue working on the Flask test app.
+- Catch up on weekly updates.
 
 **Carolina Perez:** 
 - Begin working on SQL Testing page
@@ -167,8 +170,8 @@
 
 **Michael Davis:** 
 
-- *Identified Risk:* There could be potentially very different interpretations of how our relational database should be built.
-- *Mitigation:* We will all be able to compare our database diagrams and bridge the gap.
+- *Identified Risk:* Nobody will want to work on the project this week.
+- *Mitigation:* We can stay in touch on the Discord and keep each other focused.
 
 **Carolina Perez:** 
 
@@ -207,9 +210,8 @@ The team could work on:
 
 **Michael Davis:** 
 
-- Added Sprint 1 and 2 tasks to Jira;
-- Set up personal environment for project development
-- Researched Python OOP
+- Built out wireframes and routes.
+- Started flask test app.
 
 **Carolina Perez:** 
 
@@ -231,3 +233,7 @@ The team could work on:
 ## Notes and Etiquette
 
 **This document is to be finished by 11:59 PM MT on Sunday, the night of the relevant Scrum Meeting.**
+
+**Each team member will be responsible to update their individual contributions.**
+This file will be updated weekly as the project progresses.  
+Earlier weekly entries may be retained below or moved to an archive directory if the file grows large.

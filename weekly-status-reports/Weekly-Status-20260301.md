@@ -26,16 +26,16 @@
 ## Project Management Snapshot
 
 
-   The team is using a shared **Jira board** to manage tasks and sprint progress. At the time of this report:
-    - Columns include: Completed, In Progress and Assigned/Created tasks 
-    - Tasks are assigned to individual team members and typically created by the scrum master
-    - Due dates and priorities are tracked per task
-    - Team interaction is monitored and encouuraged through comments
+The team is using a shared **Jira board** to manage tasks and sprint progress. At the time of this report:
+   - Columns include: Completed, In Progress and Assigned/Created tasks 
+   - Tasks are assigned to individual team members and typically created by the scrum master
+   - Due dates and priorities are tracked per task
+   - Team interaction is monitored and encouuraged through comments
 
-  Snippets of this week's Jira:
+Snippets of this week's Jira:
   
-  <img width="2000" height="1200" alt="image" src="https://github.com/user-attachments/assets/a437782e-6d47-4353-9eef-8689cab2383d" />
-  <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/1aed2d08-d531-48b8-9c2d-c32f9621c403" />
+<img width="2000" height="1200" alt="image" src="https://github.com/user-attachments/assets/a437782e-6d47-4353-9eef-8689cab2383d" />
+<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/1aed2d08-d531-48b8-9c2d-c32f9621c403" />
 
 
 ---
