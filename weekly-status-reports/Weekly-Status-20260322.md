@@ -68,7 +68,7 @@ Snippets of this week's Jira:
 
 **Michael Davis:** 
 
-- 
+- Got further along in the Flask test app, and feeling better overall about building a Flask API.
 
 **Carolina Perez:** 
 
@@ -87,24 +87,24 @@ Snippets of this week's Jira:
 
 ## Completed Tasks
 
-    NOTES FROM TEMPLATE(DELETE LATER)
+NOTES FROM TEMPLATE(DELETE LATER)
 
 
-    - Created GitHub repository and added all team members  
-    - Established baseline frontend and backend directory structure  
-    - Set up Trello project board with initial task breakdown  
-    - Defined MVP feature scope  
-    - Drafted initial user stories for availability scheduling and task management  
+- Created GitHub repository and added all team members  
+- Established baseline frontend and backend directory structure  
+- Set up Trello project board with initial task breakdown  
+- Defined MVP feature scope  
+- Drafted initial user stories for availability scheduling and task management  
 
 
 **Sergio Rojas-Aguilar:**
 
 - Task 1 : Description 
 
-
 **Michael Davis:** 
 
--
+- Finished Flask test app.
+- Built out SQL Testing doc for all models.
 
 **Carolina Perez:** 
 
@@ -145,7 +145,8 @@ Snippets of this week's Jira:
 
 **Michael Davis:** 
 
--
+- Create front end for Agile Flow, using React.
+- Build a login and create account page, testing API routes along the way.
 
 **Carolina Perez:** 
 
@@ -183,7 +184,7 @@ Snippets of this week's Jira:
 
 **Michael Davis:** 
 
--
+- The main blocker will be getting back into the swing of school after the break, and the time management associated with that.
 
 **Carolina Perez:** 
 
@@ -217,12 +218,10 @@ Snippets of this week's Jira:
 - *Identified Risk:* Sample Risk
 - *Mitigation:* Smaple Mitigation
 
-
-
-
 **Michael Davis:** 
 
--
+- *Identified Risk:* Not getting enough time with front end team to fully execute the front end.
+- *Mitigation:* Stay on task and do pair programming during meetup, and be willing to work on project individually.
 
 **Carolina Perez:** 
 
@@ -268,7 +267,8 @@ Snippets of this week's Jira:
 
 **Michael Davis:** 
 
-- 
+- Boosted understanding of Flask.
+- Created SQL Testing Document.
 
 **Carolina Perez:** 
 
