@@ -1,5 +1,5 @@
 ## Project Milestone 5: SQL Design
-**Project:** Agile Backend  
+**Project:** DevDash  
 **Purpose:** Database design and testing specification for developers   
 **Deployed Test** GitHub BACKEND link : [UNIT TESTING ORM CODE](https://github.com/Sergrojas29/Agile-Backend/tree/python/tests)
 
