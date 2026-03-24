@@ -60,7 +60,9 @@
 
 **Erick Samayoa:** 
 
-- 
+- Reviewed frontend wireframe designs and potential improvements
+- Continued learning Flask and SQLAlchemy integration
+- Created Frontend wireframe drawing
 
 **Andrew MacRossie:** 
 
@@ -95,7 +97,9 @@
 
 **Erick Samayoa:** 
 
-- 
+- Flask API examples and practiced basic routing
+- Reviewed backend structure for project and sprint workflow pages
+- Drafted initial Python classes for ORM and database tables
 
 
 **Andrew MacRossie:** 
@@ -123,7 +127,8 @@
   
 **Erick Samayoa:** 
 
-- 
+- Continue refining Flask routes and testing integration with backend
+- SQL Testing
 
 **Andrew MacRossie:** 
 
@@ -149,7 +154,7 @@
 
 **Erick Samayoa:** 
 
-- 
+- No critical blockers. 
 
 **Andrew MacRossie:** 
 
@@ -179,7 +184,8 @@
 
 **Erick Samayoa:** 
 
-- 
+- Identified Risk: Limited time during spring break may slow progress
+- Mitigation: Scheduled short focused session for frontend work to make progress. 
 
 **Andrew MacRossie:** 
 
@@ -221,7 +227,9 @@ The team could work on:
 
 **Erick Samayoa:** 
 
-- 
+- Reviewed wireframes and API route plans
+- Flask test app
+- Wireframe drawing   
 
 **Andrew MacRossie:** 
 
