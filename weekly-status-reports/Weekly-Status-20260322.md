@@ -43,8 +43,7 @@ The team is using a shared **Jira board** to manage tasks and sprint progress. A
 
 Snippets of this week's Jira:
   
-<img width="2000" height="1200" alt="image" src="https://github.com/user-attachments/assets/a437782e-6d47-4353-9eef-8689cab2383d" />
-<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/1aed2d08-d531-48b8-9c2d-c32f9621c403" />
+
 
 ---
 
