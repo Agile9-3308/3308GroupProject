@@ -1,4 +1,3 @@
-# SQL_TESTING.md
 ## Project Milestone 5: SQL Design
 **Project:** Agile Backend  
 **Purpose:** Database design and testing specification for developers   
