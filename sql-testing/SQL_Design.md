@@ -2,7 +2,7 @@
 ## Project Milestone 5: SQL Design
 **Project:** Agile Backend  
 **Purpose:** Database design and testing specification for developers   
-**Deployed Test** GitHub link : [UNIT TESTING ORM CODE](https://github.com/Sergrojas29/Agile-Backend/tree/python/tests)
+**Deployed Test** GitHub BACKEND link : [UNIT TESTING ORM CODE](https://github.com/Sergrojas29/Agile-Backend/tree/python/tests)
 
 ---
 
@@ -169,78 +169,96 @@ Tracks individual Agile tasks/tickets within sprints or backlogs.
 
 Each table has core access methods managed via Flask routes and SQLAlchemy sessions.
 
-## Create Routes : [UNIT TESTING ORM CODE](https://github.com/Sergrojas29/Agile-Backend/tree/python/app/routes)
+## Create Routes : [ROUTES CODE](https://github.com/Sergrojas29/Agile-Backend/tree/python/app/routes)
 
----
+## Access Method: RESTful GET (All & Single)
+**Description:** Fetches all records or a specific record by UUID.  
+**Endpoints:**
+-   `GET /users`
+-   `GET /users/<id>`
+-   `GET /projects`
+-   `GET /projects/<id>`
+-   `GET /sprints`
+-   `GET /sprints/<id>`
+-   `GET /tasks`
+-   `GET /tasks/<id>`   
+**Return:** JSON List or JSON Object (Status 200), or Error (Status 404).
 
-## Access Method: GET all users
+## Access Method: RESTful POST (Create)
+**Description:** Parses `request.json` payloads, constructs the ORM object, adds to session, commits, and calls `db.refresh()` to fetch system-generated defaults.  
+**Endpoints:**
+-   `POST /users`
+-   `POST /projects`
+-   `POST /sprints`
+-   `POST /tasks`  
+**Return:** JSON representation of created object (Status 201).
 
-### Description
-Fetches all users from the database and serializes them for API consumption.
+## Access Method: RESTful PUT (Update)
+**Description:** Fetches an existing entity by UUID. Uses `.get("key", current_value)` to conditionally update fields, defaulting to the original values if no input is provided.  
+**Endpoints:**
+-   `PUT /users/<id>`
+-   `PUT /projects/<id>`
+-   `PUT /sprints/<id>`
+-   `PUT /tasks/<id>`  
+**Return:** JSON representation of updated object (Status 200), or Error (Status 404).
 
-### Parameters
-- */users (GET Request)
+## Access Method: RESTful DELETE
+**Description:** Fetches entity by UUID, runs `db.delete()`, and commits the transaction to remove the record.  
+**Endpoints:**
+-   `DELETE /users/<id>`
+-   `DELETE /projects/<id>`
+-   `DELETE /sprints/<id>`
+-   `DELETE /tasks/<id>`  
+**Return:** JSON success message (Status 200), or Error (Status 404).
 
-### Return Values
-- List of Users `JSON` objects.
-
-### Tests
-
-**Use Case Name:** Fetch all users via API  
-**Pre-conditions:** Database contains seeded users.  
-**Test Steps:**
-1. Execute `GET /users/`  
-**Expected Result:** Returns HTTP 200 with JSON payload mapping `User` model attributes (UUID cast to string, DateTime formatted to ISO string).  
-**Post-conditions:** None  
-
----
-
-## Access Method: bulk_seed_database
-
-### Description
-Internal developer tool to instantly populate testing data.
-
-### Parameters
-- GET request(`api/db_create`) (`cls` class FilloutDataBase: / createTestDataBase())
-
-### Return Values
-- Return confrimation text
-
-### Tests
-1. Execute script.
-2. Verify exact row counts (5 Users, 4 Projects, 4 Sprints, 10 Tasks).
+## Access Method: Database Seeding & Reset
+**Description:** Drops, rebuilds, and populates the database using the internal utility scripts.  
+**Endpoints:**
+-   `GET /api/db_create`
+-   `GET /api/db_drop`  
+**Return:** String confirmation message.
 
 ---
 
 # Page-to-Database Mapping
 
-| Page/Endpoint | Tables Accessed |
-|----|----------------|
-| GET `/users/` | users |
-| POST `/users/` | users |
-| GET `/project/` | projects |
-| POST `/project/` | projects |
-| GET `/sprint/` | sprints |
-| POST `/sprint/` | sprints |
-| GET `/task/` | tasks |
-| POST `/task/` | tasks |
-| Projects Dashboard | projects, users (for owner mapping) |
-| Sprint Board | sprints, projects |
-| Task Backlog | tasks |
-| Active Sprint View | tasks, sprints, users |
+| API Endpoint Namespace | Tables Accessed | Purpose |
+|----|----------------|----------------|
+| `/api/` | all tables | Schema reset and data population |
+| `/users` | `users` | User management and profiles |
+| `/projects` | `projects` | High-level project boards |
+| `/sprints` | `sprints` | Iteration tracking |
+| `/tasks` | `tasks` | Ticket manipulation (backlog & active) |
 
 ---
 
 # Page Data Access Tests
 
-**Use Case Name:** Dashboard loads active sprint tasks  
-**Description:** Verify relational queries fetch tasks for a specific sprint.  
-**Pre-conditions:** Seed data is loaded.  
+**Use Case Name:** Update a specific Task (`PUT /tasks/<uuid>`)  
+**Description:** Verify that PUT endpoints correctly preserve existing fields while updating specified fields.  
+**Pre-conditions:** Task exists in the database.  
 **Test Steps:**
-1. Query a specific Sprint.
-2. Access `sprint.tasks` relationship array.  
-**Expected Result:** Only tasks with matching `sprint_id` are returned.  
-**Post-conditions:** None  
+1. Send `PUT /tasks/<valid_uuid>` with JSON payload `{"value": 8}`.  
+2. Observe the returned JSON object.  
+**Expected Result:** The `value` field is updated to 8, but the original `title`, `description`, and `due_at` fields remain unchanged. Returns 200 OK.  
+**Status:** Pass  
+
+**Use Case Name:** Handle non-existent IDs gracefully (`GET /projects/<uuid>`)  
+**Description:** Verify the API properly catches invalid lookups instead of crashing the server.  
+**Pre-conditions:** Database is running.  
+**Test Steps:**
+1. Send `GET /projects/<random_generated_uuid>`.  
+**Expected Result:** Application checks `if not project:`, catches the NoneType, and returns `{"error": "project is not found"}` with a 404 HTTP status code.  
+**Status:** Pass  
+
+**Use Case Name:** Initialize Database via API (`GET /api/db_create`)  
+**Description:** Ensure the testing reset endpoints successfully scaffold tables.  
+**Pre-conditions:** Database connection configured.  
+**Test Steps:**
+1. Send `GET /api/db_create`.
+2. Send `GET /users` to verify population.  
+**Expected Result:** `/db_create` returns "Data Base Created". The subsequent `GET /users` returns the populated test accounts in JSON format.  
+**Status:** Pass  
 
 ---
 
@@ -248,4 +266,4 @@ Internal developer tool to instantly populate testing data.
 - Constraints enforced strictly at PostgreSQL level (`nullable=False`, unique constraints).
 - Relational mapping uses SQLAlchemy `Mapped` and `mapped_column` with `| None` for optional fields.
 - UUIDs are utilized for all primary keys to prevent ID enumeration.
-- Tests executable via `python -m unittest discover`.
+- All routes wrap database interactions in `try...finally` blocks calling `db.close()` to prevent connection pooling leaks.
