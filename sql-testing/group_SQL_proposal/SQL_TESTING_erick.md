@@ -42,7 +42,7 @@ Stores user account and profile information for all StudySync users.
 ### Fields
 | Field Name | Description | Constraints |
 |----------|------------|-------------|
-| id | Unique user identifier | Primary key |
+| id | Unique user identifier | Primary key, UUID, default uuid_generate_v4() |
 | email | User email address | Unique, NOT NULL |
 | password_hash | Hashed password | NOT NULL |
 | display_name | Name shown in UI | NOT NULL |
@@ -77,9 +77,9 @@ Represents a study group created by users.
 ### Fields
 | Field Name | Description | Constraints |
 |----------|------------|-------------|
-| id | Unique group identifier | Primary key |
+| id | Unique group identifier | Primary key, UUID, default uuid_generate_v4() |
 | name | Group display name | NOT NULL |
-| owner_id | User who created group | Foreign key → users.id |
+| owner_id | User who created group | Foreign key → users.id, NOT NULL |
 | created_at | Creation timestamp | NOT NULL |
 
 ### Relationships
@@ -97,7 +97,8 @@ Represents a study group created by users.
 1. Insert group with valid owner_id  
 **Expected Result:** Group row created  
 **Actual Result:** Group returned  
-**Status:** Pass  
+**Status:** Pass
+**Post-conditions:** Group persisted  
 
 ---
 
@@ -109,8 +110,8 @@ Join table mapping users to groups.
 ### Fields
 | Field Name | Description | Constraints |
 |----------|------------|-------------|
-| user_id | Member user | Foreign key → users.id |
-| group_id | Group joined | Foreign key → groups.id |
+| user_id | Member user | Foreign key → users.id, NOT NULL |
+| group_id | Group joined | Foreign key → groups.id, NOT NULL |
 | role | Member role (member/admin) | Default 'member' |
 
 ### Relationships
@@ -121,9 +122,10 @@ Join table mapping users to groups.
 
 **Use Case Name:** Add user to group  
 **Description:** Verify membership creation  
+**Pre-conditions:** User and group exist
 **Test Steps:**
 1. Insert (user_id, group_id)  
-**Expected Result:** Membership exists  
+**Expected Result:** Membership exists 
 **Status:** Pass  
 
 ---
@@ -136,11 +138,11 @@ Tracks tasks assigned within study groups.
 ### Fields
 | Field Name | Description | Constraints |
 |----------|------------|-------------|
-| id | Task identifier | Primary key |
-| group_id | Group owning task | Foreign key |
-| assignee_id | Assigned user | Foreign key |
+| id | Task identifier | Primary key, UUID, default uuid_generate_v4() |
+| group_id | Group owning task | Foreign key → groups.id, NOT NULL |
+| assignee_id | Assigned user | Foreign key → users.id, Nullable |
 | title | Task description | NOT NULL |
-| status | Task state | CHECK (todo, in_progress, complete) |
+| status | Task state | CHECK (status IN ('todo','in_progress','complete')) |
 | due_date | Due date | Nullable |
 
 ### Relationships
@@ -151,10 +153,12 @@ Tracks tasks assigned within study groups.
 
 **Use Case Name:** Create task  
 **Description:** Verify task persistence  
+**Pre-Conditions:** Group exists
 **Test Steps:**
 1. Insert valid task  
 2. Query by group_id  
-**Expected Result:** Task appears  
+**Expected Result:** Task appears with correct fields
+**Actual Result:** Task returned 
 **Status:** Pass  
 
 ---
@@ -167,9 +171,9 @@ Stores weekly availability time blocks per user and group.
 ### Fields
 | Field Name | Description | Constraints |
 |----------|------------|-------------|
-| id | Availability record | Primary key |
-| user_id | Owner user | Foreign key |
-| group_id | Associated group | Foreign key |
+| id | Availability record | Primary key, UUID, default uuid_generate_v4() |
+| user_id | Owner user | Foreign key → users.id, NOT NULL |
+| group_id | Associated group | Foreign key → groups.id, NOT NULL |
 | day_of_week | Day label | NOT NULL |
 | start_time | Start time | NOT NULL |
 | end_time | End time | NOT NULL |
