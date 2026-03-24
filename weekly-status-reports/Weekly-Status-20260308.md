@@ -64,7 +64,10 @@
 
 **Erick Samayoa:** 
 
-- 
+- Spent time familiarizing with SQLAlchemy and ORM concepts
+- Reviewed database schema and ERD diagrams
+- Began drafting Python classes for ORM mapping
+- Participated in discussion on backend structure and workflow
 
 **Andrew MacRossie:** 
 
@@ -100,7 +103,9 @@
 
 **Erick Samayoa:** 
 
-- 
+- Reviewed SQLAlchemy documentation and ORM implementation examples
+- Started implementing Python classes corresponding to DB tables
+- Discussed backend design decisions with team
 
 
 **Andrew MacRossie:** 
@@ -132,7 +137,8 @@
   
 **Erick Samayoa:** 
 
-- 
+- Continue learning Flask basics and setting up test routes
+- Finalize initial Python ORM classes for project tables
 
 **Andrew MacRossie:** 
 
@@ -158,7 +164,7 @@
 
 **Erick Samayoa:** 
 
-- 
+- No significant blockers this week, minor learning curve with SQLAlchemy.
 
 **Andrew MacRossie:** 
 
@@ -189,7 +195,8 @@
 
 **Erick Samayoa:** 
 
-- 
+- Identified Risk: familiarity with Flask and integrating ORM
+- Mitigation: Dedicate extra time for practice tutorials
 
 **Andrew MacRossie:** 
 
@@ -232,7 +239,10 @@ The team could work on:
 
 **Erick Samayoa:** 
 
-- 
+- Reviewed SQLAlchemy, ORM concepts, and other tools to be used in project
+- Created ERD and SQL diagram
+- initial Python ORM implementation
+- Built db schema
 
 **Andrew MacRossie:** 
 
