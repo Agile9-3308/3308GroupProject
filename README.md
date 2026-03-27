@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 # Milestone 1: Project Proposal
@@ -109,3 +110,5 @@ The team will use Jira to track tasks, sprint progress, and blockers. Tasks will
 
 ### Database
 - **SQLite for development**, with the option to migrate to **PostgreSQL**
+=======
+
