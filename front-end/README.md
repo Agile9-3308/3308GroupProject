@@ -39,19 +39,19 @@ These instructions will help any team member sync the frontend branch and get th
 ---
 
 ## Project Structure
-agile-flow/front-end/
-├── public/ # Static files
-├── src/
-│ ├── api/ # API helpers
-│ ├── assets/ # Images and icons
-│ ├── components/ # React components (Navbar, etc.)
-│ ├── pages/ # Page components (Landing, Dashboard, etc.)
-│ ├── App.jsx # Main React component
-│ ├── index.css # Tailwind + global styles
-│ └── main.jsx # ReactDOM entry point
-├── package.json # Project dependencies and scripts
-├── tailwind.config.js # TailwindCSS configuration
-├── postcss.config.js # PostCSS configuration
+agile-flow/front-end/ \
+├── public/ # Static files \
+├── src/ \
+│ ├── api/ # API helpers \
+│ ├── assets/ # Images and icons \
+│ ├── components/ # React components (Navbar, etc.) \
+│ ├── pages/ # Page components (Landing, Dashboard, etc.) \
+│ ├── App.jsx # Main React component \
+│ ├── index.css # Tailwind + global styles \
+│ └── main.jsx # ReactDOM entry point \
+├── package.json # Project dependencies and scripts \
+├── tailwind.config.js # TailwindCSS configuration \
+├── postcss.config.js # PostCSS configuration \
 └── vite.config.js # Vite config
 
 
