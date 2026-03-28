@@ -64,26 +64,30 @@ agile-flow/front-end/ \
 ```bash
 git clone git@github.com:Agile9-3308/3308GroupProject.git
 cd 3308GroupProject
+```
 
 2. Switch to the frontend branch:
 ```bash
 git checkout esFrontendMockUp
+```
 
 3. Install dependencies:
 ```bash
 cd front-end
 npm install
+```
 
 4. Start the development server:
 ```bash
 npm run dev
+```
 
 5. Open the browser at the URL shown in the terminal (http://localhost:5173).
 
 You should see Agile Flow Running with the placeholder pages.
 
 
-Recommended Workflow For other developers syncing this branch:
+### Recommended Workflow For other developers syncing this branch:
 1. Pull the latest changes from remote:
 git checkout esFrontendMockUp
 git pull origin esFrontendMockUp
