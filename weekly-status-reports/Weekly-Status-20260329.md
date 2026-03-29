@@ -81,7 +81,7 @@ Snippets of this week's Jira:
 
 **Andrew MacRossie:** 
 
-- 
+- Met with Mike and received guidance and instruction on branch structure, running npm, working with tailwind, and working with React
 
 
 ---
@@ -117,7 +117,7 @@ Snippets of this week's Jira:
 
 **Andrew MacRossie:** 
 
-- Configured Python, Flask, and NodeJS into environment for future development. 
+- Completed the Signup page and a prototype for the Dashboard page using chart.js. 
 
 
 
@@ -158,7 +158,7 @@ Snippets of this week's Jira:
 
 **Andrew MacRossie:** 
 
-- 
+- Connect to API for chart and signup/signin functionality, deploy to Render
 
 
 
@@ -196,7 +196,7 @@ Snippets of this week's Jira:
 
 **Andrew MacRossie:** 
 
-- 
+- Lack of development experience and time management are obstacles but are not insurmountable
 
 
 ---
@@ -235,7 +235,7 @@ Snippets of this week's Jira:
 
 **Andrew MacRossie:** 
 
--
+- Any risks I may be facing can be mitigated with communication with other team members and reaching out for help and clarification
 
 
 ---
@@ -281,7 +281,7 @@ Snippets of this week's Jira:
 
 **Andrew MacRossie:** 
 
-- 
+- Created the initial prototype for the dashboard page and created a functional signup page
 
 
 ---
