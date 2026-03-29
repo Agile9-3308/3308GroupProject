@@ -14,7 +14,7 @@ function App() {
       <Navbar />
 
       <div className="p-10">
-        <h1 className="text-4xl text-blue-500 font-bold">
+        <h1 className="text-xl text-blue-500 font-bold">
           Agile Flow Running
         </h1>
 
