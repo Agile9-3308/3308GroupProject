@@ -30,10 +30,10 @@ function Login() {
       <h2 className="text-2xl font-bold">Login</h2>
 
       <form onSubmit={handleSubmit} >
-        <label for="username">Username:</label><br/>
+        <label htmlFor="username">Username:</label><br/>
         <input type="text" placeholder="Please Enter Username..." id="username" name="username" value={formData.username} onChange={handleChange} /><br/>
 
-        <label for="password">Password:</label><br/>
+        <label htmlFor="password">Password:</label><br/>
         <input type="password" placeholder="Please Enter Password..." id="password" name="password" value={formData.password} onChange={handleChange} /><br/>
 
         <button type="submit" className="bg-green-300 rounded-md px-2">Submit</button>
