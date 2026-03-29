@@ -18,20 +18,15 @@
 
 ## Overview
 
-    **FOR SCRUM MASTER:(DELETE LATER)**
-    
-    NOTES FROM TEMPLATE
 
-    This document captures the **weekly status** of the Agile Flow project for the specified reporting period. It is intended to provide a **concise snapshot** of progress, plans, and risks, and will be updated weekly throughout the project.
+This document captures the **weekly status** of the Agile Flow project for the specified reporting period. It is intended to provide a **concise snapshot** of progress, plans, and risks, and will be updated weekly throughout the project.
 
-    This weekly status format is designed to:
-    - Monitor progress over time
-    - Surface risks and bottlenecks early
-    - Provide accountability for individual contributions
-    - Supplement the project management tool used by the team
+This weekly status format is designed to:
+- Monitor progress over time
+- Surface risks and bottlenecks early
+- Provide accountability for individual contributions
+- Supplement the project management tool used by the team
 
-
----
 
 ## Project Management Snapshot
 
@@ -42,7 +37,8 @@ The team is using a shared **Jira board** to manage tasks and sprint progress. A
    - Team interaction is monitored and encouuraged through comments
 
 Snippets of this week's Jira:
-  
+  <img width="1342" height="615" alt="Screenshot 2026-03-29 113204" src="https://github.com/user-attachments/assets/fed2c5fb-d43d-4d56-81da-860cfebd9895" />
+
 
 
 ---
@@ -62,7 +58,11 @@ Snippets of this week's Jira:
 
 **Sergio Rojas-Aguilar:**
 
-- This week, the I focused on **insert**. 
+- This week, the I focused on Completing basic unit testing for the postgreSQL design
+- With the help of Carolina, we deployed a backend on render
+- Connected the database to the render postgreSQL database
+- wrote out the documentation for the models
+  
 
 
 **Michael Davis:** 
@@ -98,7 +98,10 @@ NOTES FROM TEMPLATE(DELETE LATER)
 
 **Sergio Rojas-Aguilar:**
 
-- Task 1 : Description 
+- Backend model unit testing
+- Documentation
+- Dummy data routes for testing
+  
 
 **Michael Davis:** 
 
@@ -139,7 +142,10 @@ NOTES FROM TEMPLATE(DELETE LATER)
 
 **Sergio Rojas-Aguilar:**
 
-- Task 1 : Description 
+- Add a joined table for all the ANY to ANY relationships that are needed
+- Added some util functions like password decrypting and encrypting
+- Some user validations
+   
 
 
 **Michael Davis:** 
@@ -178,7 +184,7 @@ NOTES FROM TEMPLATE(DELETE LATER)
 
 **Sergio Rojas-Aguilar:**
 
-- Blockers and Issues : Description 
+- Blockers and Issues : Getting to the end of the time alloted for the semseter can get into time constraints and other projects and finals
 
 
 **Michael Davis:** 
@@ -214,8 +220,8 @@ NOTES FROM TEMPLATE(DELETE LATER)
 
 **Sergio Rojas-Aguilar:**
 
-- *Identified Risk:* Sample Risk
-- *Mitigation:* Smaple Mitigation
+- *Identified Risk:* Not enought data for frontend testing 
+- *Mitigation:* Create more dummy data to give the frontend more data for testing
 
 **Michael Davis:** 
 
@@ -261,7 +267,8 @@ NOTES FROM TEMPLATE(DELETE LATER)
 
 **Sergio Rojas-Aguilar:**
 
-- Individual Contributions
+-  Deplyed the Agile Backend and connected the SQL database to allow frontend testing
+-  
 
 
 **Michael Davis:** 
