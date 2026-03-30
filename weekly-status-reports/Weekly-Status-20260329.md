@@ -11,7 +11,7 @@
 **Week:**   
 **Meeting Held:** Yes  
 **Meeting Date:** March 29, 2026  
-**Meeting Duration:** 30 minutes - 1hr
+**Meeting Duration:** 1hr, with 30m breakouts for FE and BE teams
 **Meeting Format:** Discord  
 
 ---
@@ -69,15 +69,15 @@ Snippets of this week's Jira:
 
 **Michael Davis:** 
 
--
+- 
 
 **Carolina Perez:** 
 
--
+- 
 
 **Erick Samayoa:** 
 
--
+- 
 
 **Andrew MacRossie:** 
 
@@ -105,15 +105,15 @@ Snippets of this week's Jira:
 
 **Michael Davis:** 
 
--
+- 
 
 **Carolina Perez:** 
 
--
+- 
 
 **Erick Samayoa:** 
 
--
+- 
 
 **Andrew MacRossie:** 
 
@@ -146,15 +146,15 @@ Snippets of this week's Jira:
 
 **Michael Davis:** 
 
--
+- 
 
 **Carolina Perez:** 
 
--
+- 
 
 **Erick Samayoa:** 
 
--
+- 
 
 **Andrew MacRossie:** 
 
@@ -184,15 +184,15 @@ Snippets of this week's Jira:
 
 **Michael Davis:** 
 
--
+- 
 
 **Carolina Perez:** 
 
--
+- 
 
 **Erick Samayoa:** 
 
--
+- 
 
 **Andrew MacRossie:** 
 
@@ -218,20 +218,17 @@ Snippets of this week's Jira:
 - *Identified Risk:* Sample Risk
 - *Mitigation:* Smaple Mitigation
 
-
-
-
 **Michael Davis:** 
 
--
+- 
 
 **Carolina Perez:** 
 
--
+- 
 
 **Erick Samayoa:** 
 
--
+- 
 
 **Andrew MacRossie:** 
 
@@ -266,18 +263,17 @@ Snippets of this week's Jira:
 
 - Individual Contributions
 
-
 **Michael Davis:** 
 
 - 
 
 **Carolina Perez:** 
 
--
+- 
 
 **Erick Samayoa:** 
 
--
+- 
 
 **Andrew MacRossie:** 
 
