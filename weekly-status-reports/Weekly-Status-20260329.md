@@ -17,11 +17,7 @@
 ---
 
 ## Overview
-
-    **FOR SCRUM MASTER:(DELETE LATER)**
     
-    NOTES FROM TEMPLATE
-
     This document captures the **weekly status** of the Agile Flow project for the specified reporting period. It is intended to provide a **concise snapshot** of progress, plans, and risks, and will be updated weekly throughout the project.
 
     This weekly status format is designed to:
@@ -43,24 +39,19 @@ The team is using a shared **Jira board** to manage tasks and sprint progress. A
    - Team interaction is monitored and encouuraged through comments
 
 Snippets of this week's Jira:
-  
-<img width="2000" height="1200" alt="image" src="https://github.com/user-attachments/assets/a437782e-6d47-4353-9eef-8689cab2383d" />
-<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/1aed2d08-d531-48b8-9c2d-c32f9621c403" />
+<img alt="image" src="./images/jira-snippet-20260329.png" />
 
 ---
 
 ## Progress Since Last Week
 
 
-    NOTES FROM TEMPLATE(DELETE LATER)
-
-    This week, the team focused on **initial project setup and scope definition**. Major infrastructure and planning milestones were completed to prepare for active development.
+    This week, the team broke out into front end and back end teams to focus on **building the foundation of the API, and creating the first pages on the front end with navigation**.
 
     Key accomplishments include:
-    - Creation of a shared GitHub repository with all members added
-    - Establishment of a basic frontend and backend project structure
-    - Agreement on the minimum viable product (MVP) feature set
-    - Initial wireframe sketches for core pages (scheduling and tasks)
+    - Development and deployment of first run at API.
+    - Creation of front end README, page structure, and navigation.
+    - Creation of login and account creation pages.
 
 **Sergio Rojas-Aguilar:**
 
@@ -69,7 +60,8 @@ Snippets of this week's Jira:
 
 **Michael Davis:** 
 
-- 
+- This week, I focused on making sure all front end team members were familiar with our tech stack and how to develop within it.
+- In particular, I hosted a walkthrough with one team member, during which we created two pages for the front end.
 
 **Carolina Perez:** 
 
@@ -88,16 +80,6 @@ Snippets of this week's Jira:
 
 ## Completed Tasks
 
-    NOTES FROM TEMPLATE(DELETE LATER)
-
-
-    - Created GitHub repository and added all team members  
-    - Established baseline frontend and backend directory structure  
-    - Set up Trello project board with initial task breakdown  
-    - Defined MVP feature scope  
-    - Drafted initial user stories for availability scheduling and task management  
-
-
 **Sergio Rojas-Aguilar:**
 
 - Task 1 : Description 
@@ -105,7 +87,7 @@ Snippets of this week's Jira:
 
 **Michael Davis:** 
 
-- 
+- Creation of login and account creation pages, priming them for fetches to the API.
 
 **Carolina Perez:** 
 
@@ -127,26 +109,14 @@ Snippets of this week's Jira:
 
 ## Planned Tasks for Next Week
 
-
-
-    NOTES FROM TEMPLATE(DELETE LATER)
-
-
-    - Design and implement the initial database schema  
-    - Create basic backend routes for users and groups  
-    - Begin frontend page layout for scheduling and task views  
-    - Refine wireframes based on team feedback and milestone requirements  
-
-
-
 **Sergio Rojas-Aguilar:**
 
 - Task 1 : Description 
 
-
 **Michael Davis:** 
 
-- 
+- I am tasked with deploying the front end to Render, so that we can have a functioning full stack application.
+- I am also leading two different meetings the day before the next scrum, in which we will refine the front end so it functions properly.
 
 **Carolina Perez:** 
 
@@ -184,7 +154,7 @@ Snippets of this week's Jira:
 
 **Michael Davis:** 
 
-- 
+- The main blocker will be that I have an exam in my other class on Friday. This will require most of my focus for two or three days of the week.
 
 **Carolina Perez:** 
 
@@ -220,7 +190,8 @@ Snippets of this week's Jira:
 
 **Michael Davis:** 
 
-- 
+- *Identified Risk:* Not finishing all the tasks due to focus on other class.
+- *Mitigation:* Proper delegation of tasks, with backloaded schedule of group meetings.
 
 **Carolina Perez:** 
 
@@ -239,25 +210,13 @@ Snippets of this week's Jira:
 
 ## Team Reflection
 
-    **FOR SCRUM MASTER:(DELETE LATER)**
-
-    Example Test from template:
-    - Strong communication and consistent participation
-    - Clear alignment on goals and responsibilities
-    - Confidence in the project direction entering the development phase
-
-    The weekly status format was found to be useful for maintaining accountability and focus.
+- The team did well with breaking out into front end and back end teams, and everyone brought satisfactory progress reporting to the scrum meeting.
+- The team in a good position to reach our MVP by the end of the project.
+- The team is also bringing the final report into view as we finalize our app.
 
 ---
 
 ## Individual Contributions This Week
-
-    NOTES FROM TEMPLATE(DELETE LATER)
-    - **Aisha Rahman:** Coordinated meeting agenda, drafted user stories, set up Trello board  
-    - **Miguel Alvarez:** Initialized backend project structure and reviewed Flask setup  
-    - **Priya Patel:** Outlined initial database entities and relationships  
-    - **Jordan Thompson:** Sketched frontend layouts and navigation flow  
-
 
 **Sergio Rojas-Aguilar:**
 
@@ -265,7 +224,7 @@ Snippets of this week's Jira:
 
 **Michael Davis:** 
 
-- 
+- Built login page, which served as a template for Andrew to build the account creation page under my guidance.
 
 **Carolina Perez:** 
 
