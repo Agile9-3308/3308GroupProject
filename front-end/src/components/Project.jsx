@@ -1,4 +1,4 @@
-// src/pages/Project.jsx
+// src/components/Project.jsx
 import { useState } from "react";
 
 const STATUS_COLORS = {
