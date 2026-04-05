@@ -1,58 +1,100 @@
-// src/components/Project.jsx
-import { useState } from "react";
+import { useState, useContext } from "react";
 
-const STATUS_COLORS = {
-  "On track": "bg-green-100 text-green-700",
-  Behind: "bg-yellow-100 text-yellow-700",
-  "At risk": "bg-red-100 text-red-700",
-};
+import { GlobalContext } from "../App";
 
-function getStatus(tasks) {
-  if (!tasks.length) return "On track";
-  const pct = tasks.filter((t) => t.done).length / tasks.length;
-  if (pct >= 0.6) return "On track";
-  if (pct >= 0.3) return "Behind";
-  return "At risk";
-}
-
-const dummyProjects = [
-  {
-    id: 1,
-    name: "Auth & Login Flow",
-    members: ["Andrew", "Mike", "Eric"],
-    sprintDays: 14,
-    tasks: [
-      { id: 1, label: "OAuth integration", done: true },
-      { id: 2, label: "Session management", done: true },
-      { id: 3, label: "Password reset flow", done: false },
-    ],
-  },
-  {
-    id: 2,
-    name: "Dashboard UI",
-    members: ["Andrew", "Mike", "Eric"],
-    sprintDays: 10,
-    tasks: [
-      { id: 1, label: "Chart component", done: true },
-      { id: 2, label: "Responsive layout", done: false },
-      { id: 3, label: "Dark mode", done: false },
-    ],
-  },
-];
-
-function ProjectCard({ project, onToggleTask, onDeleteProject, onAddTask, onDeleteTask }) {
+function ProjectCard({ project }) {
   const [expanded, setExpanded] = useState(true);
   const [newTaskInput, setNewTaskInput] = useState("");
   const [confirmDelete, setConfirmDelete] = useState(false);
+
+  const { api } = useContext(GlobalContext)
 
   const done = project.tasks.filter((t) => t.done).length;
   const pct = project.tasks.length ? Math.round((done / project.tasks.length) * 100) : 0;
   const status = getStatus(project.tasks);
 
+  const STATUS_COLORS = {
+    "On track": "bg-green-100 text-green-700",
+    Behind: "bg-yellow-100 text-yellow-700",
+    "At risk": "bg-red-100 text-red-700",
+  };
+
+  const toggleTask = (projectId, taskId) => {
+    setProjects((prev) =>
+      prev.map((p) =>
+        p.id !== projectId
+          ? p
+          : { ...p, tasks: p.tasks.map((t) => (t.id === taskId ? { ...t, done: !t.done } : t)) }
+      )
+    );
+  }
+
+  const deleteProject = (projectId) => {
+    setProjects((prev) => prev.filter((p) => p.id !== projectId));
+  }
+
+  const addTask = (projectId, label) => {
+    setProjects((prev) =>
+      prev.map((p) =>
+        p.id !== projectId
+          ? p
+          : { ...p, tasks: [...p.tasks, { id: Date.now(), label, done: false }] }
+      )
+    );
+  }
+
+  const deleteTask = (projectId, taskId) => {
+    setProjects((prev) =>
+      prev.map((p) =>
+        p.id !== projectId
+          ? p
+          : { ...p, tasks: p.tasks.filter((t) => t.id !== taskId) }
+      )
+    );
+  }
+
+  function getStatus(tasks) {
+    if (!tasks.length) return "On track";
+    const pct = tasks.filter((t) => t.done).length / tasks.length;
+    if (pct >= 0.6) return "On track";
+    if (pct >= 0.3) return "Behind";
+    return "At risk";
+  }
+
   const handleAddTask = () => {
     const trimmed = newTaskInput.trim();
     if (!trimmed) return;
-    onAddTask(project.id, trimmed);
+    addTask(project.id, trimmed);
+
+    fetch(`${api}/projects/${id}/tasks`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((res) => {
+          console.log(res)
+          setErrors([])
+          setSuccess(res.success)
+        });
+        setFormData(newForm)
+        console.log(success)
+        console.log("contact successful")
+      } else {
+        (r.status === 500) ? (
+          setErrors(["Database unreachable."])
+        ) : (
+          r.json().then((res) => {
+            setSuccess([])
+            setErrors(res.errors)
+          })
+        )
+        console.log(errors)
+        console.log("contact unsuccessful")
+      }
+    });
     setNewTaskInput("");
   };
 
@@ -73,7 +115,7 @@ function ProjectCard({ project, onToggleTask, onDeleteProject, onAddTask, onDele
           {confirmDelete ? (
             <div className="flex items-center gap-1">
               <button
-                onClick={() => onDeleteProject(project.id)}
+                onClick={() => deleteProject(project.id)}
                 className="text-xs px-2 py-0.5 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
               >
                 Confirm
@@ -125,7 +167,7 @@ function ProjectCard({ project, onToggleTask, onDeleteProject, onAddTask, onDele
                         ? "bg-indigo-500 border-indigo-500"
                         : "border-gray-300 hover:border-indigo-400"
                     }`}
-                    onClick={() => onToggleTask(project.id, task.id)}
+                    onClick={() => toggleTask(project.id, task.id)}
                   >
                     {task.done && (
                       <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 10 10">
@@ -143,12 +185,12 @@ function ProjectCard({ project, onToggleTask, onDeleteProject, onAddTask, onDele
                     className={`text-sm flex-1 cursor-pointer ${
                       task.done ? "line-through text-gray-400" : "text-gray-700"
                     }`}
-                    onClick={() => onToggleTask(project.id, task.id)}
+                    onClick={() => toggleTask(project.id, task.id)}
                   >
                     {task.label}
                   </span>
                   <button
-                    onClick={() => onDeleteTask(project.id, task.id)}
+                    onClick={() => deleteTask(project.id, task.id)}
                     className="text-gray-200 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100 text-base leading-none flex-shrink-0"
                     title="Delete task"
                   >
@@ -182,53 +224,4 @@ function ProjectCard({ project, onToggleTask, onDeleteProject, onAddTask, onDele
   );
 }
 
-function Project({ initialProjects = dummyProjects }) {
-  const [projects, setProjects] = useState(initialProjects);
-
-  const toggleTask = (projectId, taskId) =>
-    setProjects((prev) =>
-      prev.map((p) =>
-        p.id !== projectId
-          ? p
-          : { ...p, tasks: p.tasks.map((t) => (t.id === taskId ? { ...t, done: !t.done } : t)) }
-      )
-    );
-
-  const deleteProject = (projectId) =>
-    setProjects((prev) => prev.filter((p) => p.id !== projectId));
-
-  const addTask = (projectId, label) =>
-    setProjects((prev) =>
-      prev.map((p) =>
-        p.id !== projectId
-          ? p
-          : { ...p, tasks: [...p.tasks, { id: Date.now(), label, done: false }] }
-      )
-    );
-
-  const deleteTask = (projectId, taskId) =>
-    setProjects((prev) =>
-      prev.map((p) =>
-        p.id !== projectId
-          ? p
-          : { ...p, tasks: p.tasks.filter((t) => t.id !== taskId) }
-      )
-    );
-
-  return (
-    <div className="space-y-4">
-      {projects.map((p) => (
-        <ProjectCard
-          key={p.id}
-          project={p}
-          onToggleTask={toggleTask}
-          onDeleteProject={deleteProject}
-          onAddTask={addTask}
-          onDeleteTask={deleteTask}
-        />
-      ))}
-    </div>
-  );
-}
-
-export default Project;
+export default ProjectCard
