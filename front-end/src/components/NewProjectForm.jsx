@@ -1,6 +1,6 @@
 import { useState, useContext } from "react"
 
-function NewProjectForm({ onAdd }) {
+function NewProjectForm({ handleAddProject }) {
   const [name, setName] = useState("");
   const [members, setMembers] = useState("");
   const [sprintDays, setSprintDays] = useState(14);
@@ -18,7 +18,7 @@ function NewProjectForm({ onAdd }) {
 
   const handleSubmit = () => {
     if (!name.trim()) return;
-    onAdd({
+    handleAddProject({
       id: Date.now(),
       name: name.trim(),
       members: members.split(",").map((m) => m.trim()).filter(Boolean),

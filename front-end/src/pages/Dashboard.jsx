@@ -8,9 +8,35 @@ import Projects from "../components/Projects";
 Chart.register(...registerables);
 
 function Dashboard() {
+
+  const dummyProjects = [
+    {
+      id: 1,
+      name: "Auth & Login Flow",
+      members: ["Andrew", "Mike", "Eric"],
+      sprintDays: 14,
+      tasks: [
+        { id: 1, label: "OAuth integration", done: true },
+        { id: 2, label: "Session management", done: true },
+        { id: 3, label: "Password reset flow", done: false },
+      ],
+    },
+    {
+      id: 2,
+      name: "Dashboard UI",
+      members: ["Andrew", "Mike", "Eric"],
+      sprintDays: 10,
+      tasks: [
+        { id: 1, label: "Chart component", done: true },
+        { id: 2, label: "Responsive layout", done: false },
+        { id: 3, label: "Dark mode", done: false },
+      ],
+    },
+  ];
+
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
-  const [newProjects, setNewProjects] = useState([]);
+  const [projects, setProjects] = useState(dummyProjects);
 
   useEffect(() => {
     if (chartInstance.current) chartInstance.current.destroy();
@@ -49,7 +75,7 @@ function Dashboard() {
     return () => chartInstance.current?.destroy();
   }, []);
 
-  const handleAddProject = (project) => setNewProjects((prev) => [...prev, project]);
+  const handleAddProject = (newProject) => setProjects([...projects, newProject]);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -70,10 +96,10 @@ function Dashboard() {
         {/* Right: Projects */}
         <div className="flex-[2] p-6 overflow-y-auto space-y-4">
           <h2 className="text-lg font-semibold text-gray-700">Projects</h2>
-          <NewProjectForm onAdd={handleAddProject} />
+          <NewProjectForm handleAddProject={handleAddProject} />
           {/* Renders dummy projects by default, then appends any newly created ones */}
-          <Projects />
-          {newProjects.length > 0 && <Projects initialProjects={newProjects} />}
+          <Projects projects={projects} setProjects={setProjects} />
+          {/* {newProjects.length > 0 && <Projects initialProjects={newProjects} />} */}
         </div>
       </div>
     </div>

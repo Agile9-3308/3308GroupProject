@@ -1,8 +1,8 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import { GlobalContext } from "../App";
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, setProjects }) {
   const [expanded, setExpanded] = useState(true);
   const [newTaskInput, setNewTaskInput] = useState("");
   const [confirmDelete, setConfirmDelete] = useState(false);
@@ -19,34 +19,54 @@ function ProjectCard({ project }) {
     "At risk": "bg-red-100 text-red-700",
   };
 
-  const toggleTask = (projectId, taskId) => {
+  // {
+  //   id: 1,
+  //   name: "Auth & Login Flow",
+  //   members: ["Andrew", "Mike", "Eric"],
+  //   sprintDays: 14,
+  //   tasks: [
+  //     { id: 1, label: "OAuth integration", done: true },
+  //     { id: 2, label: "Session management", done: true },
+  //     { id: 3, label: "Password reset flow", done: false },
+  //   ],
+  // },
+
+  // const [cardProject, setCardProject] = useState(project)
+
+  // const toggleTask = (taskId) => {
+  //   cardProject.tasks[taskId - 1].done = !(cardProject.tasks[taskId - 1].done)
+  //   setCardProject(cardProject)
+  //   console.log(cardProject.tasks[taskId - 1].done)
+  // }
+
+  const toggleTask = (taskId) => {
     setProjects((prev) =>
       prev.map((p) =>
-        p.id !== projectId
+        p.id !== project.id
           ? p
           : { ...p, tasks: p.tasks.map((t) => (t.id === taskId ? { ...t, done: !t.done } : t)) }
       )
     );
   }
 
-  const deleteProject = (projectId) => {
-    setProjects((prev) => prev.filter((p) => p.id !== projectId));
+  const deleteProject = () => {
+    setProjects((prev) => prev.filter((p) => p.id !== project.id));
   }
 
-  const addTask = (projectId, label) => {
+  const addTask = (label) => {
     setProjects((prev) =>
       prev.map((p) =>
-        p.id !== projectId
+        p.id !== project.id
           ? p
           : { ...p, tasks: [...p.tasks, { id: Date.now(), label, done: false }] }
       )
     );
   }
 
-  const deleteTask = (projectId, taskId) => {
+  const deleteTask = (taskId) => {
     setProjects((prev) =>
       prev.map((p) =>
-        p.id !== projectId
+        p.id !== project.id
           ? p
           : { ...p, tasks: p.tasks.filter((t) => t.id !== taskId) }
       )
@@ -64,7 +84,7 @@ function ProjectCard({ project }) {
   const handleAddTask = () => {
     const trimmed = newTaskInput.trim();
     if (!trimmed) return;
-    addTask(project.id, trimmed);
+    addTask(trimmed);
 
     fetch(`${api}/projects/${id}/tasks`, {
       method: "POST",
@@ -115,7 +135,7 @@ function ProjectCard({ project }) {
           {confirmDelete ? (
             <div className="flex items-center gap-1">
               <button
-                onClick={() => deleteProject(project.id)}
+                onClick={() => deleteProject()}
                 className="text-xs px-2 py-0.5 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
               >
                 Confirm
@@ -167,7 +187,7 @@ function ProjectCard({ project }) {
                         ? "bg-indigo-500 border-indigo-500"
                         : "border-gray-300 hover:border-indigo-400"
                     }`}
-                    onClick={() => toggleTask(project.id, task.id)}
+                    onClick={() => toggleTask(task.id)}
                   >
                     {task.done && (
                       <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 10 10">
@@ -185,12 +205,12 @@ function ProjectCard({ project }) {
                     className={`text-sm flex-1 cursor-pointer ${
                       task.done ? "line-through text-gray-400" : "text-gray-700"
                     }`}
-                    onClick={() => toggleTask(project.id, task.id)}
+                    onClick={() => toggleTask(task.id)}
                   >
                     {task.label}
                   </span>
                   <button
-                    onClick={() => deleteTask(project.id, task.id)}
+                    onClick={() => deleteTask(task.id)}
                     className="text-gray-200 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100 text-base leading-none flex-shrink-0"
                     title="Delete task"
                   >
