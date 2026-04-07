@@ -16,62 +16,94 @@ function Signup() {
   function handleChange(e) {
     const key = e.target.name
     let value = e.target.value
-    if (key === "isAdmin") {
-      if (value === "true") {
-        value = true
-      } else (
-        value = false
-      )
-    }
-    setFormData({...formData, [key]: value})
-    console.log(formData)
-  }
-
-  function showFormData(e) {
-    e.preventDefault
-    console.log(formData)
+    if (key === "isAdmin") value = value === "true"
+    setFormData({ ...formData, [key]: value })
   }
 
   function handleSubmit(e) {
-    e.preventDefault
+    e.preventDefault()
     console.log(formData)
   }
 
+  const fields = [
+    { label: "Name",     id: "name",     type: "text",     placeholder: "Enter your name..." },
+    { label: "Role",     id: "role",     type: "text",     placeholder: "Enter your role..." },
+    { label: "Email",    id: "email",    type: "email",    placeholder: "Enter your email..." },
+    { label: "Username", id: "username", type: "text",     placeholder: "Enter your username..." },
+    { label: "Password", id: "password", type: "password", placeholder: "Enter your password..." },
+  ]
+
   return (
-    <div id="signup-form" className="p-10">
-      <h2 className="text-2xl font-bold">Sign Up</h2>
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-10">
+      <div className="w-full max-w-sm">
 
-      <form onSubmit={handleSubmit} >
+        {/* Header */}
+        <div className="bg-white border-b border-gray-200 px-8 py-4 flex items-center gap-3 rounded-t-xl">
+          <h1 className="text-xl font-bold text-gray-800">Sprint Dashboard</h1>
+          <span className="text-xs bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full font-medium">
+            Sign Up
+          </span>
+        </div>
 
-        <label htmlFor="name">Name:</label><br/>
-        <input type="text" placeholder="Please Enter Name..." id="name" name="name" value={formData.name} onChange={handleChange} /><br/>
+        {/* Card */}
+        <div className="border border-gray-200 rounded-b-xl p-6 bg-white shadow-sm space-y-4">
+          <h2 className="text-lg font-semibold text-gray-700">Create an account</h2>
 
-        <label htmlFor="role">Role:</label><br/>
-        <input type="text" placeholder="Please Enter Role..." id="role" name="role" value={formData.role} onChange={handleChange} /><br/>
+          <div className="space-y-3">
+            {fields.map(({ label, id, type, placeholder }) => (
+              <div key={id} className="space-y-1">
+                <label htmlFor={id} className="text-sm font-medium text-gray-700">
+                  {label}
+                </label>
+                <input
+                  type={type}
+                  placeholder={placeholder}
+                  id={id}
+                  name={id}
+                  value={formData[id]}
+                  onChange={handleChange}
+                  className="w-full border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-400"
+                />
+              </div>
+            ))}
 
-        <label htmlFor="is-admin">Is Admin:</label><br/>
-        <select type="checkbox" id="is-admin" name="isAdmin" value={formData.isAdmin} onChange={handleChange} >
-          <option value="true">Yes</option>
-          <option value="false">No</option>
-        </select><br/>
+            {/* isAdmin select — styled to match */}
+            <div className="space-y-1">
+              <label htmlFor="is-admin" className="text-sm font-medium text-gray-700">
+                Admin access
+              </label>
+              <select
+                id="is-admin"
+                name="isAdmin"
+                value={formData.isAdmin}
+                onChange={handleChange}
+                className="w-full border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-400 bg-white text-gray-700"
+              >
+                <option value="false">No</option>
+                <option value="true">Yes</option>
+              </select>
+            </div>
+          </div>
 
-        <label htmlFor="email">Email:</label><br/>
-        <input type="email" placeholder="Please Enter Email..." id="email" name="email" value={formData.email} onChange={handleChange} /><br/>
+          <button
+            type="submit"
+            onClick={handleSubmit}
+            className="w-full py-2 bg-indigo-500 text-white text-sm font-medium rounded-lg hover:bg-indigo-600 transition-colors"
+          >
+            Create account
+          </button>
 
-        <label htmlFor="username">Username:</label><br/>
-        <input type="text" placeholder="Please Enter Username..." id="username" name="username" value={formData.username} onChange={handleChange} /><br/>
+          <p className="text-xs text-center text-gray-400">
+            Already have an account?{" "}
+            <a href="/login" className="text-indigo-500 hover:underline">
+              Sign in
+            </a>
+          </p>
+        </div>
 
-        <label htmlFor="password">Password:</label><br/>
-        <input type="password" placeholder="Please Enter Password..." id="password" name="password" value={formData.password} onChange={handleChange} /><br/>
-
-
-        <button type="submit" className="bg-green-300 rounded-md px-2">Submit</button>
-      </form>
-
-      <br/>
-      <button onClick={showFormData} className="bg-slate-300 rounded-md px-2">console.log(formData)</button>
+      </div>
     </div>
-  );
+  )
 }
 
-export default Signup;
+export default Signup
