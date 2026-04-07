@@ -1,7 +1,9 @@
 import { createContext } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+
 import Navbar from "./components/Navbar";
+import ApiTest from "./components/ApiTest";
 
 import Landing from "./pages/Landing";
 import Dashboard from "./pages/Dashboard";
@@ -22,6 +24,11 @@ function App() {
           <h1 className="text-xl text-blue-500 font-bold">
             Agile Flow Running
           </h1>
+
+          {/* =========================
+              API Test Section
+          ========================= */}
+          <ApiTest /> 
 
           <Routes>
             <Route path="/" element={<Landing />} />
