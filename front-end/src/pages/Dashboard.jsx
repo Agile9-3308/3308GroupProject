@@ -38,6 +38,7 @@ function Dashboard() {
   const chartInstance = useRef(null);
   const [projects, setProjects] = useState(dummyProjects);
 
+  // Chart useEffect
   useEffect(() => {
     if (chartInstance.current) chartInstance.current.destroy();
     chartInstance.current = new Chart(chartRef.current, {
@@ -76,6 +77,10 @@ function Dashboard() {
   }, []);
 
   const handleAddProject = (newProject) => setProjects([...projects, newProject]);
+
+  useEffect(() => {
+    console.log(projects.length)
+  }, [projects])
 
   return (
     <div className="min-h-screen bg-gray-50">

@@ -1,12 +1,12 @@
 // src/components/Project.jsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import ProjectCard from "./ProjectCard";
 
 function Projects({ projects, setProjects }) {
 
   const projectCardComponents = projects.map((project) => (
-    <ProjectCard key={project.id} project={project} setProjects={setProjects} />
+    <ProjectCard key={project.id} project={project} projects={projects} setProjects={setProjects} />
   ))
 
   return (
