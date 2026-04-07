@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 
 import { GlobalContext } from "../App";
 
-function ProjectCard({ project, setProjects }) {
+function ProjectCard({ project, projects, setProjects }) {
   const [expanded, setExpanded] = useState(true);
   const [newTaskInput, setNewTaskInput] = useState("");
   const [confirmDelete, setConfirmDelete] = useState(false);
@@ -15,7 +15,7 @@ function ProjectCard({ project, setProjects }) {
 
   const STATUS_COLORS = {
     "On track": "bg-green-100 text-green-700",
-    Behind: "bg-yellow-100 text-yellow-700",
+    "Behind": "bg-yellow-100 text-yellow-700",
     "At risk": "bg-red-100 text-red-700",
   };
 
@@ -47,6 +47,7 @@ function ProjectCard({ project, setProjects }) {
           : { ...p, tasks: p.tasks.map((t) => (t.id === taskId ? { ...t, done: !t.done } : t)) }
       )
     );
+    console.log(projects[project.id - 1].tasks[taskId - 1].done)
   }
 
   const deleteProject = () => {
