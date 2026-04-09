@@ -3,14 +3,14 @@ import axios from "axios";
 
 // Create a single Axios instance
 const API = axios.create({
-  baseURL: "http://127.0.0.1:5000", // backend URL
-  withCredentials: true,
+  baseURL: "https://agile-backend-ddva.onrender.com", // backend URL
+  withCredentials: false,
 });
 
 // =======================
 // MAIN ROUTES
 // =======================
-export const testConnection = () => API.get("/test");
+export const testConnection = () => API.get("/users");
 export const dbCreate = () => API.get("/api/db_create");
 export const dbDrop = () => API.get("/api/db_drop");
 
@@ -28,9 +28,10 @@ export const deleteUser = (userId) => API.delete(`/users/${userId}`);
 // =======================
 export const getProjects = () => API.get("/projects");
 export const getProject = (projectId) => API.get(`/projects/${projectId}`);
-export const createProject = (projectData) => API.post("/projects", projectData);
+export const createProject = (projectData) => API.post(`/projects`, projectData);
 export const updateProject = (projectId, projectData) => API.put(`/projects/${projectId}`, projectData);
 export const deleteProject = (projectId) => API.delete(`/projects/${projectId}`);
+
 
 // =======================
 // SPRINT ROUTES
