@@ -12,11 +12,11 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
 export const GlobalContext = createContext()
-const api = "http://localhost:5173"
+const dummyUserID = "637ad83c-12d8-4f84-a88f-8b9be7493017"
 
 function App() {
   return (
-    <GlobalContext.Provider value={{ api }} >
+    <GlobalContext.Provider value={{ dummyUserID }} >
       <BrowserRouter>
         <Navbar />
 

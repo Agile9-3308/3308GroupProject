@@ -1,15 +1,13 @@
 import { useState, useContext, useEffect } from "react";
 
-import { GlobalContext } from "../App";
+import { createTask, createSprint, createProject } from "../api/api"
 
 function ProjectCard({ project, projects, setProjects }) {
   const [expanded, setExpanded] = useState(true);
   const [newTaskInput, setNewTaskInput] = useState("");
   const [confirmDelete, setConfirmDelete] = useState(false);
 
-  const { api } = useContext(GlobalContext)
-
-  const done = project.tasks.filter((t) => t.done).length;
+  const done = project.tasks.filter((t) => t.complete).length;
   const pct = project.tasks.length ? Math.round((done / project.tasks.length) * 100) : 0;
   const status = getStatus(project.tasks);
 
@@ -18,6 +16,64 @@ function ProjectCard({ project, projects, setProjects }) {
     "Behind": "bg-yellow-100 text-yellow-700",
     "At risk": "bg-red-100 text-red-700",
   };
+
+  // Create Task
+  // Sprint id
+  // UserID
+  // post task
+  // taskData{
+  // id:
+  // 
+  // }
+  /**
+   * taskData{
+   * title: ,
+   * description: ,
+   * due_at: ,
+   * value: 5 , 
+   * complete: not yet,
+   * user_id: ,
+   * sprint_id:,
+   */
+
+
+  const projectData = {
+    title: "NEEEEWW Project!!!",
+    description: "Something description",
+    end_at: new Date(),
+    owner_id: "0f05f5c2-66c0-44ea-8e6f-9407755ceabc"
+  }
+
+  createProject(projectData)
+  .then((res) => {console.log(res.data)})
+  .catch((err) => {console.error(err)})
+
+  const taskData = {
+    title: "Test sdsdsdsdsdwdede!!!!!!!!",
+    description: "Description added",
+    due_at: new Date(),
+    value: 5,
+    complete: false, // Automatically false, so it is unnecessary
+    user_id: "0f05f5c2-66c0-44ea-8e6f-9407755ceabc",
+    sprint_id: "d506603c-1b6b-4877-b6b2-7b2cb955908f",
+  }
+
+  createTask(taskData)
+  .then((res) => {console.log(res.data)})
+  .catch((err) => {console.error(err)})
+
+
+  const sprintData = {
+      title: "NEW Sprint!!!!!!!!!",
+      end_at: new Date(),
+      project_id: "3064f090-60d1-4bd7-8659-8adbb3870c81",
+    }
+
+  createSprint(sprintData)
+  .then((res) => {console.log(res.data)})
+  .catch((err) => {console.error(err)})
+
+
 
   // {
   //   id: 1,
@@ -183,11 +239,10 @@ function ProjectCard({ project, projects, setProjects }) {
               {project.tasks.map((task) => (
                 <li key={task.id} className="flex items-center gap-2 group">
                   <div
-                    className={`w-4 h-4 rounded border flex items-center justify-center cursor-pointer transition-colors flex-shrink-0 ${
-                      task.done
+                    className={`w-4 h-4 rounded border flex items-center justify-center cursor-pointer transition-colors flex-shrink-0 ${task.done
                         ? "bg-indigo-500 border-indigo-500"
                         : "border-gray-300 hover:border-indigo-400"
-                    }`}
+                      }`}
                     onClick={() => toggleTask(task.id)}
                   >
                     {task.done && (
@@ -203,9 +258,8 @@ function ProjectCard({ project, projects, setProjects }) {
                     )}
                   </div>
                   <span
-                    className={`text-sm flex-1 cursor-pointer ${
-                      task.done ? "line-through text-gray-400" : "text-gray-700"
-                    }`}
+                    className={`text-sm flex-1 cursor-pointer ${task.done ? "line-through text-gray-400" : "text-gray-700"
+                      }`}
                     onClick={() => toggleTask(task.id)}
                   >
                     {task.label}

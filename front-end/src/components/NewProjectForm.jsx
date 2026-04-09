@@ -1,5 +1,7 @@
 import { useState, useContext } from "react"
 
+import { GlobalContext } from "../App";
+
 function NewProjectForm({ handleAddProject }) {
   const [name, setName] = useState("");
   const [members, setMembers] = useState("");

@@ -1,6 +1,8 @@
 // src/pages/Dashboard.jsx
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import { Chart, registerables } from "chart.js";
+
+import { getProjects } from "../api/api"
 
 import NewProjectForm from "../components/NewProjectForm";
 import Projects from "../components/Projects";
@@ -36,7 +38,13 @@ function Dashboard() {
 
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
+
   const [projects, setProjects] = useState(dummyProjects);
+  // useEffect(() => {
+  //   getProjects()
+  //     .then(res => console.log(res.data))
+  //     .catch(err => console.error("API error:", err));
+  // }, [])
 
   // Chart useEffect
   useEffect(() => {
