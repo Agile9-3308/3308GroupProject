@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 
 import { createTask, createSprint, createProject } from "../api/api"
 
-function ProjectCard({ project, projects, setProjects }) {
+function ProjectCardFetchesDone({ project, projects, setProjects }) {
   const [expanded, setExpanded] = useState(true);
   const [newTaskInput, setNewTaskInput] = useState("");
   const [confirmDelete, setConfirmDelete] = useState(false);
@@ -16,6 +16,26 @@ function ProjectCard({ project, projects, setProjects }) {
     "Behind": "bg-yellow-100 text-yellow-700",
     "At risk": "bg-red-100 text-red-700",
   };
+
+  // Create Task
+  // Sprint id
+  // UserID
+  // post task
+  // taskData{
+  // id:
+  // 
+  // }
+  /**
+   * taskData{
+   * title: ,
+   * description: ,
+   * due_at: ,
+   * value: 5 , 
+   * complete: not yet,
+   * user_id: ,
+   * sprint_id:,
+   */
+
 
   const projectData = {
     title: "NEEEEWW Project!!!",
@@ -52,6 +72,28 @@ function ProjectCard({ project, projects, setProjects }) {
   createSprint(sprintData)
   .then((res) => {console.log(res.data)})
   .catch((err) => {console.error(err)})
+
+
+
+  // {
+  //   id: 1,
+  //   name: "Auth & Login Flow",
+  //   members: ["Andrew", "Mike", "Eric"],
+  //   sprintDays: 14,
+  //   tasks: [
+  //     { id: 1, label: "OAuth integration", done: true },
+  //     { id: 2, label: "Session management", done: true },
+  //     { id: 3, label: "Password reset flow", done: false },
+  //   ],
+  // },
+
+  // const [cardProject, setCardProject] = useState(project)
+
+  // const toggleTask = (taskId) => {
+  //   cardProject.tasks[taskId - 1].done = !(cardProject.tasks[taskId - 1].done)
+  //   setCardProject(cardProject)
+  //   console.log(cardProject.tasks[taskId - 1].done)
+  // }
 
   const toggleTask = (taskId) => {
     setProjects((prev) =>
