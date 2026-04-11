@@ -1,6 +1,6 @@
-import { createContext } from "react"
+import { createContext, useState, useEffect } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { getUsers } from "./api/api"
 
 import Navbar from "./components/Navbar";
 import ApiTest from "./components/ApiTest";
@@ -12,11 +12,23 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
 export const GlobalContext = createContext()
-const dummyUserID = "637ad83c-12d8-4f84-a88f-8b9be7493017"
 
 function App() {
+
+  const [currentUser, setCurrentUser] = useState(null)
+
+  useEffect(() => {
+    getUsers()
+    .then(res => {
+      setCurrentUser(res.data[0])
+    })
+    .catch(err => {console.log(err)})
+  }, [])
+
+  console.log(currentUser)
+
   return (
-    <GlobalContext.Provider value={{ dummyUserID }} >
+    <GlobalContext.Provider value={{ currentUser }} >
       <BrowserRouter>
         <Navbar />
 
@@ -28,7 +40,7 @@ function App() {
           {/* =========================
               API Test Section
           ========================= */}
-          <ApiTest /> 
+          {/* <ApiTest />  */}
 
           <Routes>
             <Route path="/" element={<Landing />} />

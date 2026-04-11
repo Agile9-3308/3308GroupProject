@@ -1,9 +1,19 @@
 // src/components/Project.jsx
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 
 import ProjectCard from "./ProjectCard";
 
-function Projects({ projects, setProjects }) {
+import { GlobalContext } from "../App";
+
+function Projects() {
+
+  const { currentUser } = useContext(GlobalContext)
+  console.log(currentUser.assigned_projects)
+  const [projects, setProjects] = useState(currentUser.assigned_projects)
+
+  // useEffect(() => {
+
+  // }, [projects])
 
   const projectCardComponents = projects.map((project) => (
     <ProjectCard key={project.id} project={project} projects={projects} setProjects={setProjects} />
