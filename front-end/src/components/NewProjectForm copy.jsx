@@ -41,7 +41,42 @@ function NewProjectForm({ handleAddProject }) {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+        <input
+          className="w-20 border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-400"
+          type="number"
+          placeholder="Days"
+          min={1}
+          value={sprintDays}
+          onChange={(e) => setSprintDays(e.target.value)}
+        />
       </div>
+      <input
+        className="w-full border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-400"
+        placeholder="Members ('Andrew, Mike, Eric')"
+        value={members}
+        onChange={(e) => setMembers(e.target.value)}
+      />
+      <div className="flex gap-2">
+        <input
+          className="flex-1 border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-indigo-400"
+          placeholder="Add a task"
+          value={taskInput}
+          onChange={(e) => setTaskInput(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && addTask()}
+        />
+        <button
+          onClick={addTask}
+          className="px-3 py-1.5 text-sm border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+        >
+          + Add
+        </button>
+      </div>
+      <button
+        onClick={handleSubmit}
+        className="w-full py-2 bg-indigo-500 text-white text-sm font-medium rounded-lg hover:bg-indigo-600 transition-colors"
+      >
+        Create project
+      </button>
     </div>
   );
 }
