@@ -9,14 +9,6 @@ function NewProjectForm({ handleAddProject }) {
   const [taskInput, setTaskInput] = useState("");
   const [tasks, setTasks] = useState([]);
 
-  const addTask = () => {
-    const trimmed = taskInput.trim();
-    if (!trimmed) return;
-    setTasks((prev) => [...prev, { id: Date.now(), label: trimmed, done: false }]);
-    setTaskInput("");
-  };
-
-  const removeTask = (id) => setTasks((prev) => prev.filter((t) => t.id !== id));
 
   const handleSubmit = () => {
     if (!name.trim()) return;
