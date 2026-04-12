@@ -32,13 +32,14 @@ function SprintCard({ sprint, sprints, setSprints }) {
 
   useEffect(() => {
     console.log("triggered status change")
-    setLivePct(((liveTasks.filter((t) => t.complete).length / liveTasks.length) * 100).toFixed(0));
+    const pct = ((liveTasks.filter((t) => t.complete).length / liveTasks.length) * 100).toFixed(0)
+    setLivePct(pct);
     if (!liveTasks.length) {
       setLiveStatus("On track")
     }
-    if (livePct >= 0.6) {
+    if (pct >= 60) {
       setLiveStatus("On track");
-    } else if (livePct >= 0.3) {
+    } else if (pct >= 30) {
       setLiveStatus("Behind");
     } else {
       setLiveStatus("At risk");
