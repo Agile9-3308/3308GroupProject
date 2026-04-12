@@ -10,7 +10,7 @@ function ProjectCard({ project }) {
     const [sprintCardComponents, setSprintCardComponents] = useState([])
 
     useEffect(() => {
-        console.log("trigger effect")
+        console.log("trigger rerender of sprints")
         getProject(project.id)
         .then(res => {
             console.log(res.data.sprints)
