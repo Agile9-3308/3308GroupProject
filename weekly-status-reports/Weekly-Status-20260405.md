@@ -18,13 +18,9 @@
 
 ## Overview
 
-    **FOR SCRUM MASTER:(DELETE LATER)**
-    
-    NOTES FROM TEMPLATE
+   This document captures the **weekly status** of the Agile Flow project for the specified reporting period. It is intended to provide a **concise snapshot** of progress, plans, and risks, and will be updated weekly throughout the project.
 
-    This document captures the **weekly status** of the Agile Flow project for the specified reporting period. It is intended to provide a **concise snapshot** of progress, plans, and risks, and will be updated weekly throughout the project.
-
-    This weekly status format is designed to:
+   This weekly status format is designed to:
     - Monitor progress over time
     - Surface risks and bottlenecks early
     - Provide accountability for individual contributions
@@ -44,23 +40,19 @@ The team is using a shared **Jira board** to manage tasks and sprint progress. A
 
 Snippets of this week's Jira:
   
-<img width="2000" height="1200" alt="image" src="https://github.com/user-attachments/assets/a437782e-6d47-4353-9eef-8689cab2383d" />
-<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/1aed2d08-d531-48b8-9c2d-c32f9621c403" />
 
 ---
 
 ## Progress Since Last Week
 
 
-    NOTES FROM TEMPLATE(DELETE LATER)
+   This week, the team focused on **project setup and schema definition**. Major infrastructure and planning milestones were completed to prepare for active development.
 
-    This week, the team focused on **initial project setup and scope definition**. Major infrastructure and planning milestones were completed to prepare for active development.
-
-    Key accomplishments include:
-    - Creation of a shared GitHub repository with all members added
+   Key accomplishments include:
     - Establishment of a basic frontend and backend project structure
-    - Agreement on the minimum viable product (MVP) feature set
-    - Initial wireframe sketches for core pages (scheduling and tasks)
+    - Adusting the MVP based off what work was done at the moment
+    - Creating schema and testing function for the backend 
+    - creating of different front end component such as the dashboard and burndown chart page
 
 **Sergio Rojas-Aguilar:**
 
@@ -73,7 +65,7 @@ Snippets of this week's Jira:
 
 **Carolina Perez:** 
 
--
+- This week, I focused on developing and testing backend validation for core data models, including projects, tasks, sprints, and users. I implemented validation logic to ensure data integrity and consistency across the application. I also created tests to verify model behavior and documented the validation process to support team understanding and future development.
 
 **Erick Samayoa:** 
 
@@ -88,36 +80,26 @@ Snippets of this week's Jira:
 
 ## Completed Tasks
 
-    NOTES FROM TEMPLATE(DELETE LATER)
+   - Updated Weekly report from the prevous week   
+   - Continued setting up baseline frontend and backend directory structure  
+   - Worked on basic frontend components suc as the burndown chart and different pages
+   - Documentation and testing for backend components
+   - Validation of backend models  
 
 
-    - Created GitHub repository and added all team members  
-    - Established baseline frontend and backend directory structure  
-    - Set up Trello project board with initial task breakdown  
-    - Defined MVP feature scope  
-    - Drafted initial user stories for availability scheduling and task management  
+**Backend:**
+
+- Continued to work on the tesing of CRUD routes
+- Documentation on said testing
+- Validation creating for data being recieved
+- Documentation on validation 
 
 
-**Sergio Rojas-Aguilar:**
 
-- Task 1 : Description 
+**Frontend** 
 
-
-**Michael Davis:** 
-
--
-
-**Carolina Perez:** 
-
--
-
-**Erick Samayoa:** 
-
--
-
-**Andrew MacRossie:** 
-
-- Configured Python, Flask, and NodeJS into environment for future development. 
+- Configured Python, Flask, and NodeJS into environment for future development.
+- Worked on page components and basic page setup 
 
 
 
@@ -128,37 +110,25 @@ Snippets of this week's Jira:
 ## Planned Tasks for Next Week
 
 
+**Backend**
 
-    NOTES FROM TEMPLATE(DELETE LATER)
-
-
-    - Design and implement the initial database schema  
-    - Create basic backend routes for users and groups  
-    - Begin frontend page layout for scheduling and task views  
-    - Refine wireframes based on team feedback and milestone requirements  
+- Meeting with frontend team on Weds inorder to connect the backend and frontend
+- Finish any documnentation needed
+- Finsh up an debugging in the code
+- Meeting tommorrow to discuss remaining tasks
 
 
+**Frontend** 
 
-**Sergio Rojas-Aguilar:**
+- Finish Page components
+- Meeting with backend team Weds
+- Screenshots for the Powerpoint presentation of finsihed pages 
 
-- Task 1 : Description 
+**Other** 
 
-
-**Michael Davis:** 
-
--
-
-**Carolina Perez:** 
-
--
-
-**Erick Samayoa:** 
-
--
-
-**Andrew MacRossie:** 
-
-- 
+- Set up final presentation powerpoint
+- Divide up presentation components
+- Decide how we want to record presntation (Camtasia/Motes etc)
 
 
 
@@ -166,16 +136,6 @@ Snippets of this week's Jira:
 ---
 
 ## Blockers and Issues
-
-    NOTES FROM TEMPLATE(DELETE LATER)
-
-    notes from meeting Delete before submission:
-    No major technical blockers were encountered this week.
-
-    One discussion point involved balancing MVP scope versus optional enhancements. The team agreed to:
-    - Focus on a **simple availability overlap view**
-    - Defer advanced calendar interactions until later milestones (if time allows)
-
 
 **Sergio Rojas-Aguilar:**
 
@@ -188,7 +148,7 @@ Snippets of this week's Jira:
 
 **Carolina Perez:** 
 
--
+- No blockers from me this week work was manageable - no techincal blockers either
 
 **Erick Samayoa:** 
 
@@ -204,63 +164,32 @@ Snippets of this week's Jira:
 ## Risks and Mitigation
 
 
-    NOTES FROM TEMPLATE(DELETE LATER)
+**Identified Risk:** Feature creep (adding too many features beyond MVP scope)
+- *Mitigation:* Strict adherence to MVP requirements and sprint planning priorities
 
-    **Identified Risk:** Feature creep  
-    - *Mitigation:* Strict adherence to MVP scope and milestone requirements
+**Identified Risk:** Frontend/backend integration complexity  
+- *Mitigation:* Develop and test API endpoints incrementally, starting early
 
-    **Identified Risk:** Frontend/backend integration complexity  
-    - *Mitigation:* Develop and test API endpoints incrementally, starting early
+ **Identified Risk:** Schema and API mismatches during development  
+    - *Mitigation:* Incremental testing of Flask routes with database models and validation before integration
 
-
-**Sergio Rojas-Aguilar:**
-
-- *Identified Risk:* Sample Risk
-- *Mitigation:* Smaple Mitigation
-
-
-
-
-**Michael Davis:** 
-
--
-
-**Carolina Perez:** 
-
--
-
-**Erick Samayoa:** 
-
--
-
-**Andrew MacRossie:** 
-
--
 
 
 ---
 
 ## Team Reflection
 
-    **FOR SCRUM MASTER:(DELETE LATER)**
+   
+   - Strong commnication between frontend and backend teams 
+   - Clear alignment on goals and responsibilities
+   - Flexibility and Initiative taken by members to finish final project
+   - Confidence in the project direction entering the final few phases/sprint
 
-    Example Test from template:
-    - Strong communication and consistent participation
-    - Clear alignment on goals and responsibilities
-    - Confidence in the project direction entering the development phase
-
-    The weekly status format was found to be useful for maintaining accountability and focus.
+   The weekly status format was found to be useful for maintaining accountability and focus.
 
 ---
 
 ## Individual Contributions This Week
-
-    NOTES FROM TEMPLATE(DELETE LATER)
-    - **Aisha Rahman:** Coordinated meeting agenda, drafted user stories, set up Trello board  
-    - **Miguel Alvarez:** Initialized backend project structure and reviewed Flask setup  
-    - **Priya Patel:** Outlined initial database entities and relationships  
-    - **Jordan Thompson:** Sketched frontend layouts and navigation flow  
-
 
 **Sergio Rojas-Aguilar:**
 
@@ -273,7 +202,7 @@ Snippets of this week's Jira:
 
 **Carolina Perez:** 
 
--
+- As Scrum Master, I led team coordination while contributing to backend development through implementing and testing validation for core models and creating supporting documentation.
 
 **Erick Samayoa:** 
 
