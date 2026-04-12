@@ -65,7 +65,7 @@ Snippets of this week's Jira:
 
 **Carolina Perez:** 
 
-- 
+- This week, I focused on helping finalizing the backend models, completing model testing, and implementing CRUD routes with corresponding tests and documentation.
 
 **Erick Samayoa:** 
 
@@ -91,7 +91,10 @@ Snippets of this week's Jira:
 
 **Carolina Perez:** 
 
-- 
+- Met with Sergio to disscuss remaining tasks
+- Creating documentation for the files i made to help to the frontend unsderstand their setup
+- CRUD routes
+- routes testing
 
 **Erick Samayoa:** 
 
@@ -120,7 +123,9 @@ Snippets of this week's Jira:
 
 **Carolina Perez:** 
 
-- 
+- Finish route testing
+- Meeting with Backend team again to disscuss remaining tasks
+- Validation build, testing and documentation
 
 **Erick Samayoa:** 
 
@@ -158,7 +163,7 @@ Snippets of this week's Jira:
 
 **Carolina Perez:** 
 
-- 
+- I also have an exam, but other then that no additional blockers 
 
 **Erick Samayoa:** 
 
@@ -195,7 +200,8 @@ Snippets of this week's Jira:
 
 **Carolina Perez:** 
 
-- 
+- *Identified Risk:* Route testing issues due to backend changes  
+- *Mitigation:* Incremental testing of each CRUD route with validation and documentation
 
 **Erick Samayoa:** 
 
@@ -228,7 +234,9 @@ Snippets of this week's Jira:
 
 **Carolina Perez:** 
 
-- 
+- Creation of routes
+- Testing
+- Documentation
 
 **Erick Samayoa:** 
 
