@@ -2,7 +2,9 @@
 import { useEffect, useRef, useState, useContext } from "react";
 import { Chart, registerables } from "chart.js";
 
-import { getProjects } from "../api/api"
+import { createProject } from "../api/api"
+
+import { GlobalContext } from "../App";
 
 import NewProjectForm from "../components/NewProjectForm";
 import Projects from "../components/Projects";
@@ -11,40 +13,37 @@ Chart.register(...registerables);
 
 function Dashboard() {
 
-  const dummyProjects = [
-    {
-      id: 1,
-      name: "Auth & Login Flow",
-      members: ["Andrew", "Mike", "Eric"],
-      sprintDays: 14,
-      tasks: [
-        { id: 1, label: "OAuth integration", done: true },
-        { id: 2, label: "Session management", done: true },
-        { id: 3, label: "Password reset flow", done: false },
-      ],
-    },
-    {
-      id: 2,
-      name: "Dashboard UI",
-      members: ["Andrew", "Mike", "Eric"],
-      sprintDays: 10,
-      tasks: [
-        { id: 1, label: "Chart component", done: true },
-        { id: 2, label: "Responsive layout", done: false },
-        { id: 3, label: "Dark mode", done: false },
-      ],
-    },
-  ];
+  // const dummyProjects = [
+  //   {
+  //     id: 1,
+  //     name: "Auth & Login Flow",
+  //     members: ["Andrew", "Mike", "Eric"],
+  //     sprintDays: 14,
+  //     tasks: [
+  //       { id: 1, label: "OAuth integration", done: true },
+  //       { id: 2, label: "Session management", done: true },
+  //       { id: 3, label: "Password reset flow", done: false },
+  //     ],
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Dashboard UI",
+  //     members: ["Andrew", "Mike", "Eric"],
+  //     sprintDays: 10,
+  //     tasks: [
+  //       { id: 1, label: "Chart component", done: true },
+  //       { id: 2, label: "Responsive layout", done: false },
+  //       { id: 3, label: "Dark mode", done: false },
+  //     ],
+  //   },
+  // ];
 
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
 
-  const [projects, setProjects] = useState(dummyProjects);
-  // useEffect(() => {
-  //   getProjects()
-  //     .then(res => console.log(res.data))
-  //     .catch(err => console.error("API error:", err));
-  // }, [])
+  const { currentUser } = useContext(GlobalContext)
+  console.log(currentUser.assigned_projects)
+  const [projects, setProjects] = useState(currentUser.assigned_projects)
 
   // Chart useEffect
   useEffect(() => {
@@ -84,7 +83,14 @@ function Dashboard() {
     return () => chartInstance.current?.destroy();
   }, []);
 
-  const handleAddProject = (newProject) => setProjects([...projects, newProject]);
+  const handleAddProject = (newProject) => {
+    createProject(newProject)
+    .then(res => {
+      console.log(res.data)
+      setProjects([...projects, res.data]);
+    })
+    
+  }
 
   useEffect(() => {
     console.log(projects.length)
@@ -109,7 +115,7 @@ function Dashboard() {
         {/* Right: Projects */}
         <div className="flex-[2] p-6 overflow-y-auto space-y-4">
           <h2 className="text-lg font-semibold text-gray-700">Projects</h2>
-          <NewProjectForm handleAddProject={handleAddProject} />
+          <NewProjectForm projects={projects} setProjects={setProjects} />
           {/* Renders dummy projects by default, then appends any newly created ones */}
           <Projects projects={projects} setProjects={setProjects} />
           {/* {newProjects.length > 0 && <Projects initialProjects={newProjects} />} */}
