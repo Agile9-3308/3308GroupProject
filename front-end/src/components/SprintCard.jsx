@@ -25,9 +25,11 @@ function SprintCard({ sprint, sprints, setSprints }) {
 
   const handleDeleteSprint = () => {
     deleteSprint(sprint.id)
-    .then(res => {console.log(res.data)})
+    .then(res => {
+      console.log(res.data)
+      setSprints(sprints.filter((s) => s.id !== sprint.id))
+    })
     .catch(err => {console.error(err)})
-    setSprints(sprints.filter((s) => s.id !== sprint.id))
   }
 
   useEffect(() => {
