@@ -9,14 +9,14 @@ function SprintCard({ sprint, sprints, setSprints }) {
   
   const [expanded, setExpanded] = useState(true);
   const [confirmDelete, setConfirmDelete] = useState(false);
+  const [liveTasks, setLiveTasks] = useState(sprint.tasks)
+  const [liveStatus, setLiveStatus] = useState("")
+  const [livePct, setLivePct] = useState(0)
 
-  const done = sprint.tasks.filter((t) => t.complete).length;
-  const pct = sprint.tasks.length ? Math.round((done / sprint.tasks.length) * 100) : 0;
   const start = new Date(sprint.start_at)
   const end = new Date(sprint.end_at)
   const days = Math.abs(end - start) / (1000 * 60 * 60 * 24)
 
-  const status = getStatus(sprint.tasks)
   const STATUS_COLORS = {
     "On track": "bg-green-100 text-green-700",
     "Behind": "bg-yellow-100 text-yellow-700",
@@ -30,13 +30,20 @@ function SprintCard({ sprint, sprints, setSprints }) {
     setSprints(sprints.filter((s) => s.id !== sprint.id))
   }
 
-  function getStatus(tasks) {
-    if (!tasks.length) return "On track";
-    const pct = tasks.filter((t) => t.done).length / tasks.length;
-    if (pct >= 0.6) return "On track";
-    if (pct >= 0.3) return "Behind";
-    return "At risk";
-  }
+  useEffect(() => {
+    console.log("triggered status change")
+    setLivePct(((liveTasks.filter((t) => t.complete).length / liveTasks.length) * 100).toFixed(0));
+    if (!liveTasks.length) {
+      setLiveStatus("On track")
+    }
+    if (livePct >= 0.6) {
+      setLiveStatus("On track");
+    } else if (livePct >= 0.3) {
+      setLiveStatus("Behind");
+    } else {
+      setLiveStatus("At risk");
+    }
+  }, [liveTasks])
 
 
   return (
@@ -49,8 +56,8 @@ function SprintCard({ sprint, sprints, setSprints }) {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${STATUS_COLORS[status]}`}>
-            {status}
+          <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${STATUS_COLORS[liveStatus]}`}>
+            {liveStatus}
           </span>
           {confirmDelete ? (
             <div className="flex items-center gap-1">
@@ -90,14 +97,14 @@ function SprintCard({ sprint, sprints, setSprints }) {
           <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
             <div
               className="h-full bg-indigo-500 rounded-full transition-all"
-              style={{ width: `${pct}%` }}
+              style={{ width: `${livePct}%` }}
             />
           </div>
-          <span className="text-xs text-gray-400">{pct}%</span>
+          <span className="text-xs text-gray-400">{livePct}%</span>
         </div>
       </div>
 
-      {expanded && (<TaskList tasks={sprint.tasks} sprint={sprint} />)}
+      {expanded && (<TaskList liveTasks={liveTasks} setLiveTasks={setLiveTasks} sprint={sprint} />)}
     </div>
   );
 }
