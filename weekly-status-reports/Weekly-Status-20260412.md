@@ -88,38 +88,21 @@ Snippets of this week's Jira:
 
 ## Completed Tasks
 
-    NOTES FROM TEMPLATE(DELETE LATER)
+**Backend:**
 
+- Collaborated with front end team to troubleshoot any issues with fetching to the API
 
-    - Created GitHub repository and added all team members  
-    - Established baseline frontend and backend directory structure  
-    - Set up Trello project board with initial task breakdown  
-    - Defined MVP feature scope  
-    - Drafted initial user stories for availability scheduling and task management  
+**Frontend** 
 
+- Test API connection with all back end routing
+- Troubleshoot CORS and other database communication issues, from front end
+- Troubleshoot state management and dynamic UI updating on CRUD
+- Achieve Minimum Viable Product with full CRUD operations
+- Deploy static site to Render and test functionality on deployed site
 
-**Sergio Rojas-Aguilar:**
+**Other**
 
-- Task 1 : Description 
-
-
-**Michael Davis:** 
-
--
-
-**Carolina Perez:** 
-
--
-
-**Erick Samayoa:** 
-
--
-
-**Andrew MacRossie:** 
-
-- Configured Python, Flask, and NodeJS into environment for future development. 
-
-
+- Finished powerpoint presentation for Milestone 7 
 
 
 
@@ -128,38 +111,21 @@ Snippets of this week's Jira:
 ## Planned Tasks for Next Week
 
 
+**Backend**
 
-    NOTES FROM TEMPLATE(DELETE LATER)
-
-
-    - Design and implement the initial database schema  
-    - Create basic backend routes for users and groups  
-    - Begin frontend page layout for scheduling and task views  
-    - Refine wireframes based on team feedback and milestone requirements  
+- Do final check of version control pushes
 
 
+**Frontend** 
 
-**Sergio Rojas-Aguilar:**
+- Create any additional necessary mockup images for final presentation
+- Build out basic README for end user
 
-- Task 1 : Description 
+**Other** 
 
-
-**Michael Davis:** 
-
--
-
-**Carolina Perez:** 
-
--
-
-**Erick Samayoa:** 
-
--
-
-**Andrew MacRossie:** 
-
-- 
-
+- Record individual portions of final presentation
+- Turn in milestone 7 presentation
+- Begin working on final report
 
 
 
