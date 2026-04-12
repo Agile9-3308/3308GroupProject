@@ -56,7 +56,7 @@ Snippets of this week's Jira:
 
 **Sergio Rojas-Aguilar:**
 
-- This week, the I focused on **insert**. 
+- Providing any help to make sure the Frontend team can connect and create project, sprints , task and users
 
 
 **Michael Davis:** 
@@ -93,6 +93,8 @@ Snippets of this week's Jira:
 - Documentation on said testing
 - Validation creating for data being recieved
 - Documentation on validation 
+- Adding COR to allow cross origin api calles.
+- Adding missing input field missing on create routes
 
 
 
@@ -139,7 +141,7 @@ Snippets of this week's Jira:
 
 **Sergio Rojas-Aguilar:**
 
-- Blockers and Issues : Description 
+- Blockers and Issues : No blockers from me
 
 
 **Michael Davis:** 
@@ -193,7 +195,7 @@ Snippets of this week's Jira:
 
 **Sergio Rojas-Aguilar:**
 
-- Individual Contributions
+- Reached out to the backend team to connect and resolve any issues.
 
 
 **Michael Davis:** 
