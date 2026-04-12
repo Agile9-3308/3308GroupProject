@@ -11,10 +11,6 @@ function Projects() {
   console.log(currentUser.assigned_projects)
   const [projects, setProjects] = useState(currentUser.assigned_projects)
 
-  // useEffect(() => {
-
-  // }, [projects])
-
   const projectCardComponents = projects.map((project) => (
     <ProjectCard key={project.id} project={project} projects={projects} setProjects={setProjects} />
   ))
