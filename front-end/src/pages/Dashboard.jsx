@@ -1,6 +1,6 @@
 // src/pages/Dashboard.jsx
 import { useEffect, useRef, useState, useContext } from "react";
-import { Chart, registerables } from "chart.js";
+import { Chart, registerables } from "chart.js/auto";
 
 import { createProject } from "../api/api"
 
