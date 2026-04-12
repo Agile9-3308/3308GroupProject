@@ -45,17 +45,6 @@ Snippets of this week's Jira:
 
 ## Progress Since Last Week
 
-
-    NOTES FROM TEMPLATE(DELETE LATER)
-
-    This week, the team focused on **initial project setup and scope definition**. Major infrastructure and planning milestones were completed to prepare for active development.
-
-    Key accomplishments include:
-    - Creation of a shared GitHub repository with all members added
-    - Establishment of a basic frontend and backend project structure
-    - Agreement on the minimum viable product (MVP) feature set
-    - Initial wireframe sketches for core pages (scheduling and tasks)
-
 **Sergio Rojas-Aguilar:**
 
 - This week, the I focused on Completing basic unit testing for the postgreSQL design
@@ -85,16 +74,6 @@ Snippets of this week's Jira:
 ---
 
 ## Completed Tasks
-
-NOTES FROM TEMPLATE(DELETE LATER)
-
-
-- Created GitHub repository and added all team members  
-- Established baseline frontend and backend directory structure  
-- Set up Trello project board with initial task breakdown  
-- Defined MVP feature scope  
-- Drafted initial user stories for availability scheduling and task management  
-
 
 **Sergio Rojas-Aguilar:**
 
@@ -128,18 +107,6 @@ NOTES FROM TEMPLATE(DELETE LATER)
 
 ## Planned Tasks for Next Week
 
-
-
-    NOTES FROM TEMPLATE(DELETE LATER)
-
-
-    - Design and implement the initial database schema  
-    - Create basic backend routes for users and groups  
-    - Begin frontend page layout for scheduling and task views  
-    - Refine wireframes based on team feedback and milestone requirements  
-
-
-
 **Sergio Rojas-Aguilar:**
 
 - Add a joined table for all the ANY to ANY relationships that are needed
@@ -172,16 +139,6 @@ NOTES FROM TEMPLATE(DELETE LATER)
 
 ## Blockers and Issues
 
-    NOTES FROM TEMPLATE(DELETE LATER)
-
-    notes from meeting Delete before submission:
-    No major technical blockers were encountered this week.
-
-    One discussion point involved balancing MVP scope versus optional enhancements. The team agreed to:
-    - Focus on a **simple availability overlap view**
-    - Defer advanced calendar interactions until later milestones (if time allows)
-
-
 **Sergio Rojas-Aguilar:**
 
 - Blockers and Issues : Getting to the end of the time alloted for the semseter can get into time constraints and other projects and finals
@@ -207,16 +164,6 @@ NOTES FROM TEMPLATE(DELETE LATER)
 ---
 
 ## Risks and Mitigation
-
-
-    NOTES FROM TEMPLATE(DELETE LATER)
-
-    **Identified Risk:** Feature creep  
-    - *Mitigation:* Strict adherence to MVP scope and milestone requirements
-
-    **Identified Risk:** Frontend/backend integration complexity  
-    - *Mitigation:* Develop and test API endpoints incrementally, starting early
-
 
 **Sergio Rojas-Aguilar:**
 
@@ -245,24 +192,12 @@ NOTES FROM TEMPLATE(DELETE LATER)
 
 ## Team Reflection
 
-    **FOR SCRUM MASTER:(DELETE LATER)**
+This week we focused on splitting the backend and frontend work into two teams. The backend team used the SQL design document to create and deployed headless backend API, while establishing initial routes and model testing. We also began documenting some of the routes to support integration.
 
-    Example Test from template:
-    - Strong communication and consistent participation
-    - Clear alignment on goals and responsibilities
-    - Confidence in the project direction entering the development phase
-
-    The weekly status format was found to be useful for maintaining accountability and focus.
-
+The frontend team worked on creating initial views for login, create account, and the Burndown UI. Together, these efforts gave us a solid foundation with a functional API and core user-facing screens ready for the next phase of development.
 ---
 
 ## Individual Contributions This Week
-
-    NOTES FROM TEMPLATE(DELETE LATER)
-    - **Aisha Rahman:** Coordinated meeting agenda, drafted user stories, set up Trello board  
-    - **Miguel Alvarez:** Initialized backend project structure and reviewed Flask setup  
-    - **Priya Patel:** Outlined initial database entities and relationships  
-    - **Jordan Thompson:** Sketched frontend layouts and navigation flow  
 
 
 **Sergio Rojas-Aguilar:**

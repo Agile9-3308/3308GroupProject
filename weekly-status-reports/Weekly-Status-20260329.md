@@ -55,7 +55,9 @@ Snippets of this week's Jira:
 
 **Sergio Rojas-Aguilar:**
 
-- This week, the I focused on **insert**. 
+- Finished testing for the API backend.
+- Created utilities for generating dummy data.
+- Corrected some fetch requests to include back population.
 
 
 **Michael Davis:** 
@@ -82,7 +84,7 @@ Snippets of this week's Jira:
 
 **Sergio Rojas-Aguilar:**
 
-- Task 1 : Description 
+- Create more Testing of Models and CRUD
 
 
 **Michael Davis:** 
@@ -114,7 +116,7 @@ Snippets of this week's Jira:
 
 **Sergio Rojas-Aguilar:**
 
-- Task 1 : Description 
+- Reviewed join tables. Helped the frontend team connect via a meeting this week.
 
 **Michael Davis:** 
 
@@ -154,7 +156,7 @@ Snippets of this week's Jira:
 
 **Sergio Rojas-Aguilar:**
 
-- Blockers and Issues : Description 
+- Blockers and Issues : Any unforseen issue with render or sql database
 
 
 **Michael Davis:** 
@@ -190,8 +192,8 @@ Snippets of this week's Jira:
 
 **Sergio Rojas-Aguilar:**
 
-- *Identified Risk:* Sample Risk
-- *Mitigation:* Smaple Mitigation
+- *Identified Risk:* Error in join tables
+- *Mitigation:* Review and test before pushing any changes
 
 **Michael Davis:** 
 
@@ -226,7 +228,7 @@ Snippets of this week's Jira:
 
 **Sergio Rojas-Aguilar:**
 
-- Individual Contributions
+- Correcting blueprint connections. Utilities functions. Continued routes testing for the project.
 
 **Michael Davis:** 
 
