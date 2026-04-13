@@ -42,25 +42,18 @@ The team is using a shared **Jira board** to manage tasks and sprint progress. A
    - Due dates and priorities are tracked per task
    - Team interaction is monitored and encouuraged through comments
 
-Snippets of this week's Jira:
-  
-<img width="2000" height="1200" alt="image" src="https://github.com/user-attachments/assets/a437782e-6d47-4353-9eef-8689cab2383d" />
-<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/1aed2d08-d531-48b8-9c2d-c32f9621c403" />
 
 ---
 
 ## Progress Since Last Week
 
 
-    NOTES FROM TEMPLATE(DELETE LATER)
-
-    This week, the team focused on **initial project setup and scope definition**. Major infrastructure and planning milestones were completed to prepare for active development.
+    This week, the team completed the full-stack MVP for AgileFlow. This included CRUD operations and dynamic rendering of API information on the front end.
 
     Key accomplishments include:
-    - Creation of a shared GitHub repository with all members added
-    - Establishment of a basic frontend and backend project structure
-    - Agreement on the minimum viable product (MVP) feature set
-    - Initial wireframe sketches for core pages (scheduling and tasks)
+    - Troubleshooting of API connections
+    - Finalization of UI
+    - Presentation of MVP to the group
 
 **Sergio Rojas-Aguilar:**
 
