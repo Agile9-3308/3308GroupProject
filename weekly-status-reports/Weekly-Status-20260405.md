@@ -61,7 +61,7 @@ Snippets of this week's Jira:
 
 **Michael Davis:** 
 
--
+- Got the front end started by creating React architecture and axios API endpoint setup.
 
 **Carolina Perez:** 
 
@@ -146,7 +146,7 @@ Snippets of this week's Jira:
 
 **Michael Davis:** 
 
--
+- Only blockers will be any unforeseen issues with deployment, connection to the API, or state variable management.
 
 **Carolina Perez:** 
 
@@ -200,7 +200,8 @@ Snippets of this week's Jira:
 
 **Michael Davis:** 
 
-- 
+- Provided guidance on React development
+- Led the front end team in planning meetings
 
 **Carolina Perez:** 
 
