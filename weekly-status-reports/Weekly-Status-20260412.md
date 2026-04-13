@@ -18,12 +18,6 @@
 
 ## Overview
 
-    **FOR SCRUM MASTER:(DELETE LATER)**
-    
-    NOTES FROM TEMPLATE
-
-    This document captures the **weekly status** of the Agile Flow project for the specified reporting period. It is intended to provide a **concise snapshot** of progress, plans, and risks, and will be updated weekly throughout the project.
-
     This weekly status format is designed to:
     - Monitor progress over time
     - Surface risks and bottlenecks early
@@ -38,7 +32,7 @@
 
 The team is using a shared **Jira board** to manage tasks and sprint progress. At the time of this report:
    - Columns include: Completed, In Progress and Assigned/Created tasks 
-   - Tasks are assigned to individual team members and typically created by the scrum master
+   - Tasks are assigned to individual team members and created by the scrum master
    - Due dates and priorities are tracked per task
    - Team interaction is monitored and encouuraged through comments
 
@@ -62,15 +56,15 @@ The team is using a shared **Jira board** to manage tasks and sprint progress. A
 
 **Michael Davis:** 
 
--
+- This week, I focused on finalizing the MVP for the front end, and troubleshooting any issues with communicating to the API, such as CORS and proper endpoint formatting
 
 **Carolina Perez:** 
 
--
+- 
 
 **Erick Samayoa:** 
 
--
+- 
 
 **Andrew MacRossie:** 
 
@@ -143,7 +137,7 @@ The team is using a shared **Jira board** to manage tasks and sprint progress. A
 
 **Michael Davis:** 
 
--
+- The possible blocker for this week is that I and two fellow group members have an exam on Friday for algorithms class, which may interfere with spending time on the presentation and final report
 
 **Carolina Perez:** 
 
@@ -163,26 +157,14 @@ The team is using a shared **Jira board** to manage tasks and sprint progress. A
 ## Risks and Mitigation
 
 
-    NOTES FROM TEMPLATE(DELETE LATER)
-
-    **Identified Risk:** Feature creep  
-    - *Mitigation:* Strict adherence to MVP scope and milestone requirements
-
-    **Identified Risk:** Frontend/backend integration complexity  
-    - *Mitigation:* Develop and test API endpoints incrementally, starting early
-
-
 **Sergio Rojas-Aguilar:**
 
 - *Identified Risk:* Sample Risk
 - *Mitigation:* Smaple Mitigation
 
-
-
-
 **Michael Davis:** 
 
--
+- No risks identified for this week outside of hitting our deadlines, which will be rectified by staying in communication as we have done throughout the semester.
 
 **Carolina Perez:** 
 
@@ -228,15 +210,16 @@ The team is using a shared **Jira board** to manage tasks and sprint progress. A
 
 **Michael Davis:** 
 
-- 
+- Got the front end MVP to the finish line and gave a full demonstration to the group.
+- Troubleshooted the front end's connection to the API.
 
 **Carolina Perez:** 
 
--
+- 
 
 **Erick Samayoa:** 
 
--
+- 
 
 **Andrew MacRossie:** 
 
