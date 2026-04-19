@@ -14,11 +14,10 @@ AgileFlow - An Agile-Methodology Project Management Platform
 
 ## Required Links
 
-- [Jira Project Tracker](https://sergrojas29.atlassian.net/jira/software/projects/AGL/summary)
-- [GitHub Repo - Front End](https://github.com/Agile9-3308/3308GroupProject)
-- [Github Repo - Back End](https://github.com/Sergrojas29/Agile-Backend)
-- [Project Presentation (With Demo)](https://youtu.be/studysync-demo)
-- [AgileFlow Deployed Front End Site](https://three308groupproject.onrender.com)
+- Project tracker (instructor can access): [Trello Board](https://trello.com/b/studysync-project)
+- Version control repository (instructors have access): [GitHub Repo](https://github.com/StudySync/studysync)
+- 5-minute customer demo video: [Demo Video](https://youtu.be/studysync-demo)
+- Public deployment site: [StudySync Deployment](https://studysync-production.app)
 
 ## Repository Readiness
 
