@@ -26,11 +26,6 @@ AgileFlow - An Agile-Methodology Project Management Platform
 - [Github Repo - Back End](https://github.com/Sergrojas29/Agile-Backend)
 - [Project Presentation (With Demo)](https://www.youtube.com/watch?v=c3rO-X5K2BQ)
 - [AgileFlow Deployed Front End Site](https://three308groupproject.onrender.com)
-- [Jira Project Tracker](https://sergrojas29.atlassian.net/jira/software/projects/AGL/summary)
-- [GitHub Repo - Front End](https://github.com/Agile9-3308/3308GroupProject)
-- [Github Repo - Back End](https://github.com/Sergrojas29/Agile-Backend)
-- [Project Presentation (With Demo)](https://youtu.be/studysync-demo)
-- [AgileFlow Deployed Front End Site](https://three308groupproject.onrender.com)
 
 ## Repository Readiness
 
