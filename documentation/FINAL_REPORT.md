@@ -25,15 +25,23 @@ All team members have verified that their latest work is pushed to the remote re
 
 The repository contains the following required files and assets:
 
-- README.md (/)
-- WEEKLY_STATUS.md (/documentation/weekly-status-reports)
-- PAGE_TESTING.md (/documentation)
-- SQL_TESTING.md (/documentation/sql-testing)
-- FINAL_REPORT.md (/documentation)
-- Project Presentation PDF (/documentation)
-- Video of Demo - Part of [Presentation](https://www.youtube.com/watch?v=c3rO-X5K2BQ)
-- Source Code (/front-end, /back-end)
-- Test Cases - Unit and Integration (/back-end/tests) 
+- [README.md](../README.md)
+- Weekly Status Reports:
+    - [3/1/2026](./weekly-status-reports/Weekly-Status-20260301.md)
+    - [3/8/2026](./weekly-status-reports/Weekly-Status-20260308.md)
+    - [3/15/2026](./weekly-status-reports/Weekly-Status-20260315.md)
+    - [3/22/2026](./weekly-status-reports/Weekly-Status-20260322.md)
+    - [3/29/2026](./weekly-status-reports/Weekly-Status-20260329.md)
+    - [4/5/2026](./weekly-status-reports/Weekly-Status-20260405.md)
+    - [4/12/2026](./weekly-status-reports/Weekly-Status-20260412.md)
+- [PAGE_TESTING.md](./PAGE_TESTING.md)
+- [SQL_DESIGN.md](./sql-testing/SQL_Design.md)
+- [FINAL_REPORT.md](./FINAL_REPORT.md)
+- [Project Presentation PDF](./DevDash_Milestone7.pdf)
+- Video of Demo - Part of [Video Presentation](https://www.youtube.com/watch?v=c3rO-X5K2BQ)
+- [Front End Source Code](../front-end/)
+- [Back End Source Code](../back-end/)
+- [Test Cases - Unit and Integration](../back-end/tests/) 
 
 ## Final Status Report
 
