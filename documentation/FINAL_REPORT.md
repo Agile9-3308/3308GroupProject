@@ -1,22 +1,23 @@
-# StudySync Final Report
+# AgileFlow Final Report
 
 ## Milestone 8: Final Report Submission
 
 ## Project Title
-StudySync - A Collaborative Study Group Coordination Platform
+AgileFlow - An Agile-Method Project Tracking Platform
 
 ## Team Members
-- Aisha Raman
-- Diego Martinez
-- Lily Chen
-- Marcus Thompson
+- Andrew MacRossie
+- Carolina Perez
+- Erick Samayoa
+- Mike Davis
+- Sergio Rojas-Aguilar
 
 ## Required Links
 
-- Project tracker (instructor can access): [Trello Board](https://trello.com/b/studysync-project)
-- Version control repository (instructors have access): [GitHub Repo](https://github.com/StudySync/studysync)
-- 5-minute customer demo video: [Demo Video](https://youtu.be/studysync-demo)
-- Public deployment site: [StudySync Deployment](https://studysync-production.app)
+- [Jira Project Tracker](https://sergrojas29.atlassian.net/jira/software/projects/AGL/summary)
+- [GitHub Repo](https://github.com/Agile9-3308/3308GroupProject)
+- [Project Presentation (With Demo)](https://www.youtube.com/watch?v=c3rO-X5K2BQ)
+- [AgileFlow Deployed Front End Site](https://three308groupproject.onrender.com)
 
 ## Repository Readiness
 
@@ -24,16 +25,15 @@ All team members have verified that their latest work is pushed to the remote re
 
 The repository contains the following required files and assets:
 
-- README.md
-- WEEKLY_STATUS.md
-- PAGE_TESTING.md
-- SQL_TESTING.md
-- FINAL_REPORT.md
-- Project presentation files from the Presentation Milestone
-- Video of demo
-- Source code (frontend and backend)
-- Test cases (unit and integration)
-- Source documentation and auto-generated documentation files
+- README.md (/)
+- WEEKLY_STATUS.md (/documentation/weekly-status-reports)
+- PAGE_TESTING.md (/documentation)
+- SQL_TESTING.md (/documentation/sql-testing)
+- FINAL_REPORT.md (/documentation)
+- Project Presentation PDF (/documentation)
+- Video of Demo - Part of [Presentation](https://www.youtube.com/watch?v=c3rO-X5K2BQ)
+- Source Code (/front-end, /back-end)
+- Test Cases - Unit and Integration (/back-end/tests) 
 
 ## Final Status Report
 
