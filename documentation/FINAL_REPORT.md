@@ -1,9 +1,9 @@
 # AgileFlow Final Report
-
 ## Milestone 8: Final Report Submission
 
 ## Project Title
 AgileFlow - An Agile-Method Project Tracking Platform
+
 
 ## Team Members
 - Andrew MacRossie
@@ -12,12 +12,14 @@ AgileFlow - An Agile-Method Project Tracking Platform
 - Mike Davis
 - Sergio Rojas-Aguilar
 
+
 ## Required Links
 
 - [Jira Project Tracker](https://sergrojas29.atlassian.net/jira/software/projects/AGL/summary)
 - [GitHub Repo](https://github.com/Agile9-3308/3308GroupProject)
 - [Project Presentation (With Demo)](https://www.youtube.com/watch?v=c3rO-X5K2BQ)
 - [AgileFlow Deployed Front End Site](https://three308groupproject.onrender.com)
+
 
 ## Repository Readiness
 
@@ -43,101 +45,152 @@ The repository contains the following required files and assets:
 - [Back End Source Code](../back-end/)
 - [Test Cases - Unit and Integration](../back-end/tests/) 
 
+
 ## Final Status Report
 
 ### What We Completed
 - Working MVP including:
-  - User authentication
-  - Study group creation and membership management
-  - Task creation, assignment, and status tracking
-  - Weekly availability input
-  - Availability overlap calculation
-- React frontend with a consistent navigation flow
-- FastAPI backend with REST endpoints
-- PostgreSQL database with a relational schema
-- Public deployment of the application
+    - Models for User, Project, Sprint, and Task
+    - GET action for all models
+    - POST action for Project, Sprint, and Task
+    - PUT action for Task
+    - DELETE action for Sprint and Task
+- React front end with smooth navigation
+    -Tailwind CSS for sleek design
+- Flask backend with REST endpoints
+- PostgreSQL database with relational interconnectedness
+- Publicly accessible via deployment through Render
 - Project presentation slides and a customer-facing demo video
 
 ### What We Were in the Middle of Implementing
-- Improved ranking of suggested meeting times
-- Messaging improvements (moving from polling toward real-time updates)
-- UI polish and accessibility pass
-- Expanded automated test coverage
+- User auth
+- Data population of burndown chart
+- PUT actions for Sprint and Project
+- DELETE action for Project
+- Additional value inputs for POST/PUT actions on multiple models
 
 ### What We Planned for the Future
-- Mobile-first redesign
-- Calendar integrations (Google Calendar, Outlook)
-- Notifications for upcoming sessions and deadlines
-- Rich messaging features (threads, attachments)
-- Additional themes (including dark mode)
-- More advanced scheduling preferences
+- Mobile responsiveness
+- Potential mobile app
+- Interactions between users, such as comments
+- More robust admin permission structures
 
 ### Known Problems and Limitations
-- Messaging uses polling rather than WebSockets
-- Scheduling logic is heuristic-based and may not scale well to very large groups
-- Mobile layout is usable but not fully optimized
-- Error handling is solid for common paths but needs more edge-case coverage
+- Burndown chart is currently a placeholder with no live data
+- User auth is non-functional
+- Pages have not been built for more detailed views of projects
+
 
 ## System Overview
 
-StudySync uses a standard three-tier architecture:
+AgileFlow uses a standard three-tier architecture:
 
 - Frontend: React
-- Backend: FastAPI
+- Backend: Flask
 - Database: PostgreSQL
 
-The system was designed to support incremental development, clear separation of concerns, and straightforward testing.
+The system was implemented to support collaborative incremental development, clear separation of functions/concerns, and straightforward testing structure.
 
-## Pages That Access Database Information
 
-- Login: users
-- Dashboard: users, groups, tasks
-- Group Page: groups, group_members, tasks, availability
-- Availability Page: availability
-- Task Management Page: tasks, users
+## Pages That Interact with Database
+
+- Home: users
+- Dashboard: projects, sprints, tasks
+
 
 ## Page Data Access Tests (High-Level)
 
-### Use case name
-Dashboard loads correct data for the logged-in user
+### GET Action for Users, Creation of currentUser in Global Context
+Home Page fetches data from users (visible in console), affixing the first user object to the global context container for use on sub-pages, as currentUser.
 
-### Description
-Verify the dashboard displays only the logged-in user's groups and tasks.
+#### Description
+Navigation to Dashboard Page will populate page with associated data for currentUser, including projects, sprints, and tasks.
 
-### Pre-conditions
-- User account exists
-- User is logged in
-- User belongs to at least one group
-- User has at least one assigned task
+#### Pre-conditions
+- At least one user account exists in database
+- currentUser object exists in GlobalContext container
+- currentUser is part of at least:
+    - One project
+- At least one of currentUser's projects has at least:
+    - One sprint
+    - One task
 
-### Test steps
-1. Navigate to Dashboard
-2. Observe Groups list
-3. Observe Tasks Due list
+#### Test steps
+1. Navigate to Home Page
+2. Navigate to Dashboard Page
+3. Observe Project(s), Sprint(s), and Task(s)
 
-### Expected result
-- Groups list includes only groups where the user is a member
-- Tasks list includes only tasks assigned to the user (excluding completed tasks)
+#### Expected result
+- Projects section shows all Project(s), Sprint(s), and Task(s) associated with currentUser
 
-### Actual result
-- Dashboard shows the correct groups and tasks for the user
+#### Actual result
+- Projects section shows all Project(s), Sprint(s), and Task(s) associated with currentUser
 
-### Status
+#### Status
 Pass
 
-### Notes
+#### Notes
 N/A
 
-### Post-conditions
+#### Post-conditions
 No data is modified.
+
+
+<hr width="25%" align="left">
+
+
+### POST/PUT/DELETE Actions on Dashboard Page
+Using currentUser as a DB reference point, Dashboard Page will create new projects, create/delete sprints, and create/update/delete tasks.
+
+#### Description
+Once currentUser is available in Global Context, user can create, update, and delete different items via fetch requests to the API. Upon a successful return from the fetch request, the updated state of the items will be reflected on the page.
+
+#### Pre-conditions
+- At least one user account exists in database
+- currentUser object exists in GlobalContext container
+- API is running properly, ready to serve fetch requests
+
+#### Test steps
+1. Navigate to Home Page
+2. Navigate to Dashboard Page
+3. Create Project(s), Sprint(s), Task(s)
+4. Update Task(s)
+5. Delete Task(s), Sprint(s)
+
+#### Expected result
+- Projects section shows all associate Project(s), Sprint(s), and Task(s)
+- Task items each have a checkbox
+- There are functional input boxes for creating a Project, Sprint, and Task
+- There are checkboxes for updating Tasks
+- There are delete buttons for Tasks and Sprints
+- All of this functionality works by triggering fetch requests with the API
+
+#### Actual result
+- Projects section shows all associate Project(s), Sprint(s), and Task(s)
+- Task items each have a checkbox
+- There are functional input boxes for creating a Project, Sprint, and Task
+- There are checkboxes for updating Tasks
+- There are delete buttons for Tasks and Sprints
+- All of this functionality works by triggering fetch requests with the API
+
+#### Status
+Pass
+
+#### Notes
+N/A
+
+#### Post-conditions
+Data from first user in database is modified, based on the actions taken during the test.
+
 
 ## Reflection
 
-This project provided hands-on experience building, testing, deploying, and presenting a full-stack application.
+AgileFlow gave the team the opportunity to create a robust full-stack web application. Team members gained experience with multiple different technologies, on both the front end and back end. The team also was able to improve their abilities in coordination/delegation, through utilization of Discord and the project management platform Jira.
 
 Key takeaways:
-- Scope control matters. The MVP focus kept the project shippable.
-- Frequent integration reduces surprises later.
-- Clear task ownership and weekly check-ins kept progress steady.
-- Deployment and CI/CD work early paid off during final integration.
+- Ability to adapt to changing priorities and circumstances is paramount in reaching an MVP.
+- Testing during every sprint is a great way to reduce big hurdles later in the project timeline.
+- Frequent communication and task delegation are important tools for encouraging specialization, while allowing the project to be completed on time.
+- Agile Methodologies are very useful in boosting accountability across team members and sprint timelines.
+- Software development is a very engaging, fun, and rewarding experience - especially when the product is something that everyone can find a use case for.
 
