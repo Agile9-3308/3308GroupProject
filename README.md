@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-
 # Milestone 1: Project Proposal
 ## Project Title
 **Agile Flow**
